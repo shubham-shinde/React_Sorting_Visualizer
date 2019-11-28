@@ -10,7 +10,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import './index.scss'
+import './index.scss';
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
@@ -20,8 +20,9 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-import AlgorithmList from "../AlgorithmList/AlgorithmList"
-import SortingBox from '../SortingBox/SortingBox'
+import AlgorithmList from '../AlgorithmList/AlgorithmList';
+import SortingBox from '../SortingBox/SortingBox';
+import Head from '../Head/Head';
 
 import GlobalStyle from '../../global-styles';
 
@@ -34,14 +35,18 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
+      <Head />
       <div className="main">
-        <div className='main-div'>
-          <div><AlgorithmList/></div>
-          <div><SortingBox/></div>
+        <div className="main-div">
+          <div>
+            <AlgorithmList />
+          </div>
+          <div>
+            <SortingBox />
+          </div>
         </div>
-      
       </div>
-     
+
       <GlobalStyle />
     </div>
   );

@@ -2,18 +2,24 @@
     min-width: 443px;
     max-width: 237px;
     max-height: 237px;
-    min-height: 237px;
+    min-height: 464px;
     text-align: center;
     list-style-type: none;
     background-color:rgba(11, 14, 18, 0.74);
     div{
         h1{
             margin:0;
+            color:#0B0E12;
+            background-color: #3b59d7;
+            margin-bottom:2rem
         }
+        
         li{
             a{
                 cursor: pointer;
+                color:#95386b;
             }
+            margin-bottom: 2rem;
         }
     }
 }

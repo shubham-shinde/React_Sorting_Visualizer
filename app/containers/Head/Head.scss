@@ -1,0 +1,19 @@
+.Head{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    
+    .logo{
+        img{
+            WIDTH: 5REM;
+            MARGIN-TOP: .5REM;
+            MARGIN-RIGHT: 1REM;
+        }
+    }
+    .heading{
+        h1{
+            color: #11aaa6;
+            
+        }
+    }
+}
