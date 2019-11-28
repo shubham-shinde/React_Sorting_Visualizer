@@ -1,0 +1,1 @@
+export const RANDOMIZE_LIST = 'RANDOMIZE_LIST'
