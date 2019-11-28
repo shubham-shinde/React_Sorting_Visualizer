@@ -12,7 +12,7 @@ class AlgorithmList extends React.Component {
           <h1>Algorithms</h1>
         </div>
         <div>
-          <li onClick={this.props.actions.randomize_array}>
+          <li onClick={this.props.actions.start_bubble_sort}>
             <a>BubbleSort</a>
           </li>
           <li>

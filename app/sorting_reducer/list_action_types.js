@@ -1,1 +1,5 @@
 export const RANDOMIZE_LIST = 'RANDOMIZE_LIST'
+export const START_BUBBLE_SORT = 'START_BUBBLE_SORT';
+export const UPDATE_LIST = 'UPDATE_LIST';
+
+export const STOP_SORTING = 'STOP_SORTING';

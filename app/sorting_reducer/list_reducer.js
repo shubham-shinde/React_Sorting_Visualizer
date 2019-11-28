@@ -1,7 +1,7 @@
 import * as types from './list_action_types';
 
 function range(start, end) {
-    return Array(end - start + 1).fill().map((_, idx) => start + idx);
+    return Array(end - start + 1).fill().map((_, idx) => ({ num: start + idx, white: false, pointer: false}));
 }
 
 const initialState = {
@@ -17,7 +17,13 @@ const listReducer = (state = initialState, action) => {
             new_state.list = list;
             return new_state;
         }
-        default:
+        case types.UPDATE_LIST: {
+            const new_state = {...state};
+            const list = [...action.list];
+            new_state.list = [...list];
+            return new_state;
+        }
+        default: 
             return state
     }
 }
