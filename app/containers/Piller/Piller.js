@@ -43,6 +43,7 @@ class Piller extends React.Component {
     return (
       <div
         className="piller"
+        key={color[height]}
         style={{
           backgroundColor: color[height],
           height: `${height}rem`,

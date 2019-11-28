@@ -6,7 +6,8 @@ function range(start, end) {
 
 const initialState = {
     list : range(1, 29),
-    sorting : false
+    sorting : false,
+    wait_time : 10
 }
 
 const listReducer = (state = initialState, action) => {

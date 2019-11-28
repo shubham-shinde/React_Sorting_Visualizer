@@ -15,7 +15,7 @@ class AlgorithmList extends React.Component {
           <li onClick={this.props.actions.start_bubble_sort}>
             <button className="offset">BubbleSort</button>
           </li>
-          <li>
+          <li onClick={this.props.actions.selection_sort}>
             <button className="offset">SelectionSort</button>
           </li>
           <li>
