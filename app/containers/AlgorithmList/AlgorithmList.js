@@ -33,9 +33,11 @@ class AlgorithmList extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  list: state.list
-})
+const mapStateToProps = (state) => (
+    {
+        list: state.list
+    }
+)
 
 const mapDispatchToProps = (dispatch) => (
   {

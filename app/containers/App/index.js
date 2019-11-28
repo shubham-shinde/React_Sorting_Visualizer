@@ -23,6 +23,7 @@ import Footer from 'components/Footer';
 import AlgorithmList from '../AlgorithmList/AlgorithmList';
 import SortingBox from '../SortingBox/SortingBox';
 import Head from '../Head/Head';
+import ButtonBox from '../ButtonBar/ButtonBar'
 
 import GlobalStyle from '../../global-styles';
 
@@ -46,7 +47,7 @@ export default function App() {
           </div>
         </div>
       </div>
-
+      <ButtonBox/>
       <GlobalStyle />
     </div>
   );
