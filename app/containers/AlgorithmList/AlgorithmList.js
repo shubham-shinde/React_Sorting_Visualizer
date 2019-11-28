@@ -1,9 +1,10 @@
 import React from 'react';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as actions from '../../sorting_reducer/list_actions';
 import './AlgorithmList.scss';
 
 class AlgorithmList extends React.Component {
-  state = {};
-
   render() {
     return (
       <div className="algorithmlist">
@@ -11,7 +12,7 @@ class AlgorithmList extends React.Component {
           <h1>Algorithms</h1>
         </div>
         <div>
-          <li>
+          <li onClick={this.props.actions.randomize_array}>
             <a>BubbleSort</a>
           </li>
           <li>
@@ -32,4 +33,14 @@ class AlgorithmList extends React.Component {
   }
 }
 
-export default AlgorithmList;
+const mapStateToProps = (state) => ({
+  list: state.list
+})
+
+const mapDispatchToProps = (dispatch) => (
+  {
+    actions: bindActionCreators(actions,dispatch)
+  }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlgorithmList);
