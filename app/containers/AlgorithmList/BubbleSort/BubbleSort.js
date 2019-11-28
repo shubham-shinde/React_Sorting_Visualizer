@@ -87,7 +87,7 @@ function mergeSort (unsortedArray) {
     checkLoopInvariant(nums, input, 0)
     for (let i = 1; i < nums.length; i++) {
       checkLoopInvariant(nums, input, i)
-      while (j >= 0 && nums[j] > tmp) {
+      while (j >= 0 && nums[j] > tmp) {ad
       }
       nums[j+1] = tmp
     }
