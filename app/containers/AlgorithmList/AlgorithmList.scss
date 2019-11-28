@@ -11,15 +11,108 @@
             margin:0;
             color:#0B0E12;
             background-color: #3b59d7;
-            margin-bottom:2rem
+            margin-bottom:1rem;
+            padding:1rem;
         }
         
         li{
-            a{
-                cursor: pointer;
-                color:#95386b;
+            // button{
+            //     cursor: pointer;
+            //     color:#95386b;
+            //     height: 2rem;
+            //     border-radius: 0.5rem;
+            //     background-color: #753f8d;
+            //     color: #e7e7e7;
+            //     border: none;
+            //     width: 6rem;
+            // }
+            margin-bottom: 1rem;
+            .pulse:hover,
+            .pulse:focus {
+                animation: pulse 1s;
+                box-shadow: 0 0 0 2em rgba(#fff,0);
             }
-            margin-bottom: 2rem;
+            
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 var(--hover); }
+            }
+            
+            .offset {  
+                box-shadow: 
+                  0.3em 0.3em 0 0 var(--color),
+                  inset 0.3em 0.3em 0 0 var(--color);
+                
+                &:hover,
+                &:focus {
+                  box-shadow: 
+                    0 0 0 0 var(--hover),
+                    inset 6em 3.5em 0 0 var(--hover);
+                }
+              }
         }
     }
+}
+
+$colors: (
+  fill: #a972cb,
+  pulse: #ef6eae, 
+  close: #ff7f82, 
+  raise: #ffa260, 
+  up: #e4cb58, 
+  slide: #8fc866, 
+  offset: #19bc8b
+);
+
+// Sass variables compile to a static string; CSS variables are dynamic and inherited
+  // Loop through the map and set CSS custom properties using Sass variables
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #95386b;
+    --hover: #753f8d;
+  }
+}
+
+// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+
+//=== Pen styling, ignore
+body {
+  color: #fff;
+  background: hsl(227, 10%, 10%);
+  font: 300 1em 'Fira Sans', sans-serif;
+  
+  // Center everything ever
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+// Basic button styles
+button {
+  background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    width: 10rem;
+    padding: 0.7rem;
+}
+
+h1 { font-weight: 400; }
+
+code { 
+  color: #e4cb58;
+  font: inherit;
 }

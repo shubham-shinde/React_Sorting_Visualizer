@@ -13,19 +13,19 @@ class AlgorithmList extends React.Component {
         </div>
         <div>
           <li onClick={this.props.actions.randomize_array}>
-            <a>BubbleSort</a>
+            <button className="offset">BubbleSort</button>
           </li>
           <li>
-            <a>SelectionSort</a>
+            <button className="offset">SelectionSort</button>
           </li>
           <li>
-            <a>QuickSort</a>
+            <button className="offset">QuickSort</button>
           </li>
           <li>
-            <a>MergeSort</a>
+            <button className="offset">MergeSort</button>
           </li>
           <li>
-            <a>InsertionSort</a>
+            <button className="offset">InsertionSort </button>
           </li>
         </div>
       </div>

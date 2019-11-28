@@ -1,16 +1,34 @@
 .button{
     text-align: center;
-    button{
+    display: flex;
+    justify-content: space-around;
+    .random{
         border-style: none;
         height: 2rem;
-        border-radius: 0.6rem;
+        border-radius: 0.5rem;
         font-family: Lato;
         font-size: 1rem;
-        background-color: #753f8d;
+        background-color: #95386a;
         margin-top: 1rem;
         border: 1px solid #5e46a6;
-        color: #0b0e11;
+        color: rgb(14, 17, 22);
+        color:#e7e7e7;
         width: 8rem;
         outline:none;
+        padding: 0;
+        margin:1rem;
     }
-}
+    .random:hover{
+        cursor: pointer;
+    }
+    .raise:hover,
+    .raise:focus {
+      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+      transform: translateY(-0.25em);
+        }
+    }
+    .pulse:hover, 
+    .pulse:focus {
+     animation: pulse 1s;
+     box-shadow: 0 0 0 2em rgba(#fff,0);
+    }
