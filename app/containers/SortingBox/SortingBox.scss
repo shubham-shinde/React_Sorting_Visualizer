@@ -1,0 +1,15 @@
+.SortingBox{
+display: flex;
+justify-content: space-around;
+min-width: 443px ;
+max-height:539px ;
+min-height: 237px;
+background-color: #0B0E12;
+align-items: flex-end;
+
+    .piller{
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+}

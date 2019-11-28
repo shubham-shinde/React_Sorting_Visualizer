@@ -1,0 +1,19 @@
+.algorithmlist{
+    min-width: 443px;
+    max-width: 237px;
+    max-height: 237px;
+    min-height: 237px;
+    text-align: center;
+    list-style-type: none;
+    background-color:rgba(11, 14, 18, 0.74);
+    div{
+        h1{
+            margin:0;
+        }
+        li{
+            a{
+                cursor: pointer;
+            }
+        }
+    }
+}
