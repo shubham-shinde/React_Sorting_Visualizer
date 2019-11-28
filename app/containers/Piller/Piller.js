@@ -2,7 +2,7 @@ import React from 'react';
 import './Piller.scss';
 class Piller extends React.Component {
   render() {
-    const { height,white,pinter} = this.props;
+    const { height,white, pointer} = this.props;
     let color = [
       '#0802f7',
       '#1003ef',
@@ -36,7 +36,7 @@ class Piller extends React.Component {
       '#f73108',
     ];
     if(white){
-        color[height]="white"
+        color[height]="white";
     }
     
 
@@ -45,11 +45,14 @@ class Piller extends React.Component {
         className="piller"
         key={color[height]}
         style={{
-          backgroundColor: color[height],
-          height: `${height}rem`,
-          width: '1rem',
+            backgroundColor: color[height],
+            height: `${height}rem`,
+            width: '1rem',
+            
         }}
-      ></div>
+        >
+            { pointer && <div className="pointer"></div> }
+        </div>
     );
   }
 }
