@@ -42,8 +42,8 @@ class SortingBox extends React.Component {
     return ( 
       <div className="SortingBox">
         {list.map(i=>(
-                    <Piller height={i} />
-                ))
+            <Piller height={i} />
+        ))
         }
       </div>
     );
