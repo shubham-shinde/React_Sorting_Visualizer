@@ -12,13 +12,8 @@ class AlgorithmList extends React.Component {
           <h1>Algorithms</h1>
         </div>
         <div>
-<<<<<<< HEAD
-          <li onClick={this.props.actions.randomize_array}>
-            <button className="offset">BubbleSort</button>
-=======
           <li onClick={this.props.actions.start_bubble_sort}>
-            <a>BubbleSort</a>
->>>>>>> c936b3360e82e001eb3d6301298fd824f35e3a9c
+            <button className="offset">BubbleSort</button>
           </li>
           <li>
             <button className="offset">SelectionSort</button>
