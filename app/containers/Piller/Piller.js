@@ -3,7 +3,7 @@ import './Piller.scss';
 class Piller extends React.Component {
   render() {
     const { height } = this.props;
-    const color = [
+    let color = [
       '#0802f7',
       '#1003ef',
       '#1905e6',
