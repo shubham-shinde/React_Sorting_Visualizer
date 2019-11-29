@@ -5,16 +5,19 @@ class Head extends React.Component {
   state = {};
 
   render() {
-    return (
+    return (<div>
       <div className="Head">
         <div className="logo">
           <img src={logo}></img>
         </div>
         <div className="heading ">
-          <h1>SORTING VISUALIZER</h1>
+          <h1>SORTING <br></br> VISUALIZER</h1>
         </div>
       </div>
-    );
+      <div className="ray">
+    </div>
+  </div>
+      );
   }
 }
 

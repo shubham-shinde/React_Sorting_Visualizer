@@ -3,38 +3,7 @@ import './Piller.scss';
 class Piller extends React.Component {
   render() {
     const { height,white, pointer} = this.props;
-    let color = [
-      '#0802f7',
-      '#1003ef',
-      '#1905e6',
-      '#2107de',
-      '#2908d6',
-      '#310ace',
-      '#3a0cc5',
-      '#420dbd',
-      '#4a0fb5',
-      '#5210ad',
-      '#5a12a5',
-      '#63149c',
-      '#6b1594',
-      '#73178c',
-      '#7b1984',
-      '#841a7b',
-      '#8c1c73',
-      '#941e6b',
-      '#9c1f63',
-      '#a5215a',
-      '#ad2352',
-      '#b5244a',
-      '#bd2642',
-      '#c5273a',
-      '#ce2931',
-      '#d62b29',
-      '#de2c21',
-      '#e62e19',
-      '#ef3010',
-      '#f73108',
-    ];
+    let color = ["#0501fa","#0a02f5","#0f03f0","#1404eb","#1905e6","#1e06e1","#2307dc","#2808d7","#2d09d2","#320acd","#370bc8","#3c0cc3","#410dbe","#460eb9","#4b0fb4","#5010af","#5511aa","#5a12a5","#5f13a0","#64149b","#691596","#6e1691","#73178c","#781887","#7d1982","#821a7d","#871b78","#8c1c73","#911d6e","#961e69","#9b1f64","#a0205f","#a5215a","#aa2255","#af2350","#b4244b","#b92546","#be2641","#c3273c","#c82837","#cd2932","#d22a2d","#d72b28","#dc2c23","#e12d1e","#e62e19","#eb2f14","#f0300f","#f5310a","#fa3205"]
     if(white){
         color[height]="white";
     }
@@ -45,8 +14,9 @@ class Piller extends React.Component {
         className="piller"
         style={{
             backgroundColor: color[height],
-            height: `${height}rem`,
-            width: '1rem',
+            height: `${height/2}rem`,
+            minWidth: '1rem',
+            flexGrow:1
             
         }}
         >

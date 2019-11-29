@@ -5,7 +5,7 @@ function range(start, end) {
 }
 
 const initialState = {
-    list : range(1, 29),
+    list : range(1, 35),
 }
 
 const listReducer = (state = initialState, action) => {
