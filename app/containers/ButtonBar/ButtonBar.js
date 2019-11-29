@@ -12,9 +12,9 @@ class ButtonBar extends React.Component {
               <button className="random raise"> Stop</button>
             </div>
             <div>
-                <button className="random pulse"> Fast</button>
-                <button className="random pulse">Medium</button>
-                <button className="random pulse">Slow</button>
+                <button className=" speed pulse"> 1x</button>
+                <button className=" speed pulse">2x</button>
+                <button className=" speed pulse">4x</button>
             </div>
         </div> );
     }

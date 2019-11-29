@@ -7,11 +7,8 @@ import './AlgorithmList.scss';
 class AlgorithmList extends React.Component {
   render() {
     return (
-      <div className="algorithmlist">
-        <div>
-          <h1>Algorithms</h1>
-        </div>
-        <div>
+      <div className="algorithmlist"> 
+        <div className="buttons">
           <li onClick={this.props.actions.start_bubble_sort}>
             <button className="offset">BubbleSort</button>
           </li>
