@@ -14,8 +14,7 @@ class Head extends React.Component {
           <h1>SORTING <br></br> VISUALIZER</h1>
         </div>
       </div>
-      <div className="ray">
-    </div>
+      
   </div>
       );
   }
