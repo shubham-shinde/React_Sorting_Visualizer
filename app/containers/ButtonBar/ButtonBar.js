@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import * as actions from '../../sorting_reducer/list_actions';
 import './ButtonBar.scss'
 class ButtonBar extends React.Component {
-    state = {  }
     render() { 
+        const {sorting} = this.props.list;
         return ( <div className="button">
             <div>
               <button className="random raise" onClick={this.props.actions.randomize_array}>Randomize</button>
