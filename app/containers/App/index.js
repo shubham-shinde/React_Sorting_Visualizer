@@ -37,17 +37,11 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Head />
-      <div className="main">
-        <div className="main-div">
-          <div>
-            <AlgorithmList />
-          </div>
-          <div>
-            <SortingBox />
-          </div>
-        </div>
-      </div>
       <ButtonBox/>
+      <div className="main">
+         <SortingBox />
+      </div>
+      <AlgorithmList/>
       <GlobalStyle />
     </div>
   );

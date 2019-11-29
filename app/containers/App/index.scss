@@ -2,10 +2,6 @@ body{
     background: #141927;
 }
 .main{
-    
-    text-align: center;
-    .main-div{
-        display: flex;
-        justify-content: center;
-    }
+    max-width: 800px;
+    margin: auto;
 }

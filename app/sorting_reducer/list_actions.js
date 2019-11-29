@@ -14,6 +14,11 @@ export const sorting_end = () => ({
     type: types.SORTING_END
 })
 
+export const speed_change = (speed) => ({
+    type: types.SPEED_CHANGE,
+    speed
+})
+
 export const update_list = (list) => async (dispatch, getState) => {
     const ms = getState().list.wait_time;
     await waitTime(ms);
@@ -131,3 +136,43 @@ export const selection_sort = () => async (dispatch, getState) => {
 
     dispatch(sorting_end());
 }
+
+
+export const insertion_sort = () => async (dispatch, getState) => {
+    let list = [...getState().list.list];
+    const len = list.length;
+    const ms = 10;
+    dispatch(sorting_start());
+
+    let i, key, j;  
+    for (i = 1; i < len; i++) {  
+
+        list[i] = {...list[i], pointer: true};
+        await dispatch(update_list(list));
+
+        key = {...list[i]};  
+        j = i - 1;  
+        /* Move elements of list[0..i-1], that are  
+        greater than key, to one position ahead  
+        of their current position */
+        while (j >= 0 && list[j].num > key.num) 
+        {  
+            list[j] = {...list[j], pointer: true};
+            await dispatch(update_list(list));
+
+            list[j + 1] = list[j];  
+
+            list[j] = {...list[j], pointer: false};
+            await dispatch(update_list(list));
+
+            j = j - 1;
+        }  
+
+        list[j + 1] = key; 
+
+        list[i] = {...list[i], pointer: false};
+        await dispatch(update_list(list));
+    }
+
+    dispatch(sorting_end());
+} 

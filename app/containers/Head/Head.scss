@@ -1,7 +1,8 @@
 .Head{
     display:flex;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top:10rem;
     
     .logo{
         img{
@@ -12,8 +13,15 @@
     }
     .heading{
         h1{
-            color: #11aaa6;
-            
+            color: #e7e7e7;
+            font-weight: 600;
         }
     }
+}
+.ray{
+    max-width: 800px;
+    height: 1rem;
+    background: linear-gradient(90deg, rgba(0,0,255,1) 0%, rgba(255,51,0,1) 100%);
+    margin: auto;
+    margin-bottom: 1rem;
 }
