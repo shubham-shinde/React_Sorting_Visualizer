@@ -2,11 +2,11 @@ body{
     background: #141927;
 }
 .main{
-    max-width: 800px;
-    margin: auto;
+   flex-grow: 1;
 }
 .godfather{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    max-width: 800px;
+    margin:auto;
 }

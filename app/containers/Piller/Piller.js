@@ -17,7 +17,7 @@ class Piller extends React.Component {
         style={{
             backgroundColor: color[height],
             height: `${height/2}rem`,
-            minWidth: '1rem',
+            minWidth: '',
             flexGrow:1
             
         }}
