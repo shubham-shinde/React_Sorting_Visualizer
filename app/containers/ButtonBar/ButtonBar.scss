@@ -3,7 +3,6 @@
     display: flex;
     max-width: 800px;
     justify-content: space-between;
-    margin: auto;
     margin-bottom: 1rem;
     .random{
         border-style: none;
@@ -19,7 +18,6 @@
         width: 8rem;
         outline:none;
         padding: 0;
-        margin:1rem;
     }
     .random:hover{
         cursor: pointer;
