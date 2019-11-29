@@ -12,9 +12,9 @@ class ButtonBar extends React.Component {
               <button className="random raise"> Stop</button>
             </div>
             <div>
-                <button className=" speed pulse"> 1x</button>
-                <button className=" speed pulse">2x</button>
-                <button className=" speed pulse">4x</button>
+                <button className="speed pulse" onClick={() => this.props.actions.speed_change(200)}>1x</button>
+                <button className="speed pulse" onClick={() => this.props.actions.speed_change(50)}>2x</button>
+                <button className="speed pulse" onClick={() => this.props.actions.speed_change(10)}>4x</button>
             </div>
         </div> );
     }

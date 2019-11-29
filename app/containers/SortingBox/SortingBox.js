@@ -15,7 +15,7 @@ class SortingBox extends React.Component {
       <div className="SortingBox">
         { 
           list.map(i=>(
-            <Piller height={i.num} white={i.white} />
+            <Piller height={i.num} white={i.white} pointer={i.pointer} />
           ))
         }
       </div>
