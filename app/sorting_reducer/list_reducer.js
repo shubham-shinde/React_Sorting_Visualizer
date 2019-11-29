@@ -33,7 +33,13 @@ const listReducer = (state = initialState, action) => {
         }
         case types.SORTING_END: {
             const new_state = {...state};
+            let list = [...new_state.list];
+            for(let i in list) {
+                list[i] = {...list[i], white: false, pointer: false};
+            }
+            new_state.list = [...list];
             new_state.sorting = false;
+            new_state.pause = false;
             return new_state;
         }
         case types.SORTING_PAUSE: {

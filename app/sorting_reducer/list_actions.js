@@ -43,68 +43,58 @@ const pause_wait = async (getState) => {
     } 
 }
 
+const check = async (getState, dispatch, list) => {
+    await pause_wait(getState);
+    if(!getState().list.sorting) return true;
+    await update_list(getState, dispatch, list);
+    return false
+}
+
 export const start_bubble_sort = () => async (dispatch, getState) => {
     let list = [...getState().list.list];
     const len = list.length;
-    const ms = 10;
 
     dispatch(sorting_start());
 
     for(let i=0; i<len; i++){
         list[i] = {...list[i], pointer: true};
         
-        await update_list(getState, dispatch, list);
-        await pause_wait(getState);
-        if(!getState().list.sorting) return;
+        if(await check(getState, dispatch, list)) return;
 
         for(let j=0; j<len-1; j++){
             list[j] = {...list[j], pointer: true};
 
-            await update_list(getState, dispatch, list);
-            await pause_wait(getState);
-            if(!getState().list.sorting) return;
+            if(await check(getState, dispatch, list)) return;
 
             if(list[j].num>list[j+1].num) {
                 list[j] = {...list[j], white: true};
                 list[j+1] = {...list[j+1], white: true};
-
-                await update_list(getState, dispatch, list);
-                await pause_wait(getState);
-                if(!getState().list.sorting) return;
+                
+                if(await check(getState, dispatch, list)) return;
 
                 let temp= {...list[j]};
                 list[j] = {...list[j+1]};
                 list[j+1]= {...temp};
 
-                await update_list(getState, dispatch, list);
-                await pause_wait(getState);
-                if(!getState().list.sorting) return;
+                if(await check(getState, dispatch, list)) return;
 
                 list[j] = {...list[j], white: false};
                 list[j+1] = {...list[j+1], white: false};
 
-                await update_list(getState, dispatch, list);
-                await pause_wait(getState);
-                if(!getState().list.sorting) return;
+                if(await check(getState, dispatch, list)) return;
 
                 list[j+1] = {...list[j+1], pointer: false};
-                
-                await update_list(getState, dispatch, list);
-                await pause_wait(getState);
-                if(!getState().list.sorting) return;
+
+                if(await check(getState, dispatch, list)) return;
             }
             else {
                 list[j] = {...list[j], pointer: false};
-                await update_list(getState, dispatch, list);
-                await pause_wait(getState);
-                if(!getState().list.sorting) return;
+                if(await check(getState, dispatch, list)) return;
             }
         }
         list[i] = {...list[i], pointer: false};
 
-        await update_list(getState, dispatch, list);
-        await pause_wait(getState);
-        if(!getState().list.sorting) return;
+        if(await check(getState, dispatch, list)) return;
     }
     dispatch(sorting_end());
 }
@@ -119,45 +109,47 @@ export const selection_sort = () => async (dispatch, getState) => {
     for (let i = 0; i < len; i++) {
 
         list[i] = {...list[i], pointer: true};
-        await dispatch(update_list(list));
-        // await waitTime(ms);
+        
+        if(await check(getState, dispatch, list)) return;
 
         let min = i;
         for (let j = i + 1; j < len; j++) {
             
             list[j] = {...list[j], pointer: true};
-            await dispatch(update_list(list));
-            // await waitTime(ms);
+            
+            if(await check(getState, dispatch, list)) return;
 
             if (list[min].num > list[j].num) {
                 min = j;
             }
 
             list[j] = {...list[j], pointer: false};
-            await dispatch(update_list(list));
+            
+            if(await check(getState, dispatch, list)) return;
         }
         if (min !== i) {
             list[i] = {...list[i], white: true};
             list[min] = {...list[min], white: true};
-            await dispatch(update_list(list));
+            
+            if(await check(getState, dispatch, list)) return;
             // await waitTime(ms+100);
 
             let tmp = {...list[i]};
             list[i] = {...list[min]};
             list[min] = {...tmp};
 
-            await dispatch(update_list(list));
-            // await waitTime(ms);
+            
+            if(await check(getState, dispatch, list)) return;
 
             list[i] = {...list[i], white: false};
             list[min] = {...list[min], white: false};
-            await dispatch(update_list(list));
-            // await waitTime(ms);
+            
+            if(await check(getState, dispatch, list)) return;
         }
 
         list[i] = {...list[i], pointer: false};
-        await dispatch(update_list(list));
-        // await waitTime(ms);
+        
+            if(await check(getState, dispatch, list)) return;
     }
 
     dispatch(sorting_end());
