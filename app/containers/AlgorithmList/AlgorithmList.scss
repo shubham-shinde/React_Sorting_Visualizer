@@ -19,17 +19,17 @@
     //         padding:1rem;
     //     }
         
-    //     li{
-    //         // button{
-    //         //     cursor: pointer;
-    //         //     color:#95386b;
-    //         //     height: 2rem;
-    //         //     border-radius: 0.5rem;
-    //         //     background-color: #753f8d;
-    //         //     color: #e7e7e7;
-    //         //     border: none;
-    //         //     width: 6rem;
-    //         // }
+        .active{
+               color:#e7e7e7;
+               background-color: #95386b;
+               outline: none;
+            }
+        .inactive{
+            color: #e7e7e7;
+            background-color: #0b0e11;
+            border-color: hsl(227, 10%, 10%);
+            outline: none;
+        }
     //         margin-bottom: 1rem;
     //         .pulse:hover,
     //         .pulse:focus {
@@ -106,7 +106,7 @@ body {
 // Basic button styles
 button {
   background: none;
-    border: 2px solid;
+    border: 2px solid #95386D;
     font: inherit;
     line-height: 1;
     margin: 0.5em;

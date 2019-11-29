@@ -15,7 +15,7 @@
         border: 1px solid #5e46a6;
         color: rgb(14, 17, 22);
         color:#e7e7e7;
-        width: 8rem;
+        width: 6rem;
         outline:none;
         padding: 0;
     }
@@ -28,6 +28,22 @@
         margin-top:.4rem ;
 
     }
+    .X{
+        display: flex;
+        align-items: center;
+    }
+    .active{
+        --color: #e7e7e7;
+        border-color: #95386D;
+        outline: none;
+       
+    }
+    .active:hover{
+        color: #95386a;
+        cursor: pointer;
+    }
+
+    
     .raise:hover,
     .raise:focus {
       box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
