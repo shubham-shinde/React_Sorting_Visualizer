@@ -8,12 +8,18 @@ class SortingBox extends React.Component {
     let list = this.props.list.list;
 
     return ( 
+      <div className="father">
+        
+      <div className="ray">
+    </div>
       <div className="SortingBox">
         { 
           list.map(i=>(
             <Piller height={i.num} white={i.white} />
           ))
         }
+      </div>
+
       </div>
     );
   }
