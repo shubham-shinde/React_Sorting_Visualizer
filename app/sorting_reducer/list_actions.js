@@ -16,11 +16,11 @@ export const sorting_end = () => ({
 
 export const update_list = (list) => async (dispatch, getState) => {
     const ms = getState().list.wait_time;
+    await waitTime(ms);
     dispatch({
         type : types.UPDATE_LIST,
         list : [...list]
     })
-    await waitTime(ms);
 }
 
 export const start_bubble_sort = () => async (dispatch, getState) => {
@@ -101,6 +101,9 @@ export const selection_sort = () => async (dispatch, getState) => {
             if (list[min].num > list[j].num) {
                 min = j;
             }
+
+            list[j] = {...list[j], pointer: false};
+            await dispatch(update_list(list));
         }
         if (min !== i) {
             list[i] = {...list[i], white: true};
