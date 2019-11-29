@@ -9,7 +9,7 @@ class ButtonBar extends React.Component {
         return ( <div className="button">
             <div>
               <button className="random raise" onClick={this.props.actions.randomize_array}>Randomize</button>
-              <button className="random raise"> Stop</button>
+              <button className="random raise" onClick={this.props.actions.sorting_end}> Stop</button>
             </div>
             <div>
                 <button className="speed pulse" onClick={() => this.props.actions.speed_change(200)}>1x</button>
