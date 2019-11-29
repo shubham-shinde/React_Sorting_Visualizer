@@ -5,24 +5,34 @@ import * as actions from '../../sorting_reducer/list_actions';
 import './AlgorithmList.scss';
 
 class AlgorithmList extends React.Component {
-  render() {
+  render() { 
+    const {sorting}=this.props.list; 
     return (
       <div className="algorithmlist"> 
         <div className="buttons">
-          <li onClick={this.props.actions.start_bubble_sort}>
-            <button className="offset">BubbleSort</button>
+          <li >
+            <button 
+              onClick={!sorting && this.props.actions.start_bubble_sort} 
+              className={`offset ${sorting ? `active`: `inactive`}`}
+            >BubbleSort</button>
           </li>
-          <li onClick={this.props.actions.selection_sort}>
-            <button className="offset">SelectionSort</button>
+          <li >
+            <button 
+              className="offset inactive"
+              onClick={this.props.actions.selection_sort}
+            >SelectionSort</button>
           </li>
           <li>
-            <button className="offset">QuickSort</button>
+            <button className="offset inactive">Quick Sort</button>
           </li>
           <li>
-            <button onClick={this.props.actions.merge_sort} className="offset">MergeSort</button>
+            <button onClick={this.props.actions.merge_sort} className="offset inactive">Merge Sort</button>
           </li>
           <li>
-            <button onClick={this.props.actions.insertion_sort} className="offset">InsertionSort </button>
+            <button
+              onClick={this.props.actions.insertion_sort}
+              className="offset inactive"
+            >InsertionSort </button>
           </li>
           <li>
             <button onClick={this.props.actions.try_me} className="offset">Try me</button>
