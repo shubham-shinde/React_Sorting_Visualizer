@@ -19,10 +19,13 @@ class AlgorithmList extends React.Component {
             <button className="offset">QuickSort</button>
           </li>
           <li>
-            <button className="offset">MergeSort</button>
+            <button onClick={this.props.actions.merge_sort} className="offset">MergeSort</button>
           </li>
           <li>
             <button onClick={this.props.actions.insertion_sort} className="offset">InsertionSort </button>
+          </li>
+          <li>
+            <button onClick={this.props.actions.try_me} className="offset">Try me</button>
           </li>
         </div>
       </div>
