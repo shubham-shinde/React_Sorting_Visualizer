@@ -6,10 +6,16 @@ import './ButtonBar.scss'
 class ButtonBar extends React.Component {
     state = {  }
     render() { 
+        const {pause} = this.props.list;
         return ( <div className="button">
             <div>
               <button className="random raise" onClick={this.props.actions.randomize_array}>Randomize</button>
-              <button className="random raise" onClick={this.props.actions.sorting_end}> Stop</button>
+              { !pause ?
+                <button className="random raise" onClick={this.props.actions.pause_sorting}>Pause</button>
+                :
+                <button className="random raise" onClick={this.props.actions.restart_sorting}>Play</button>
+              }
+              <button className="random raise" onClick={this.props.actions.sorting_end}>Stop</button>
             </div>
             <div>
                 <button className="speed pulse" onClick={() => this.props.actions.speed_change(200)}>1x</button>

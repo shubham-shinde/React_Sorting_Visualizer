@@ -7,6 +7,7 @@ function range(start, end) {
 const initialState = {
     list : range(1, 35),
     sorting : false,
+    pause : false,
     wait_time : 20
 }
 
@@ -33,6 +34,16 @@ const listReducer = (state = initialState, action) => {
         case types.SORTING_END: {
             const new_state = {...state};
             new_state.sorting = false;
+            return new_state;
+        }
+        case types.SORTING_PAUSE: {
+            const new_state = {...state};
+            new_state.pause = true;
+            return new_state;
+        }
+        case types.SORTING_RESTART: {
+            const new_state = {...state};
+            new_state.pause = false;
             return new_state;
         }
         case types.SPEED_CHANGE: {
