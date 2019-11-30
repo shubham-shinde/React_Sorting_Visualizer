@@ -12,26 +12,26 @@ class AlgorithmList extends React.Component {
         <div className="buttons">
           <li >
             <button 
-              onClick={!sorting && this.props.actions.start_bubble_sort} 
+              onClick={this.props.actions.start_bubble_sort} 
               className={`offset ${sorting ? `active`: `inactive`}`}
             >BubbleSort</button>
           </li>
           <li >
             <button 
-              className="offset inactive"
+              className="offset"
               onClick={this.props.actions.selection_sort}
             >SelectionSort</button>
           </li>
           <li>
-            <button className="offset inactive">Quick Sort</button>
+            <button className="offset" onClick={this.props.actions.quick_sort}>Quick Sort</button>
           </li>
           <li>
-            <button onClick={this.props.actions.merge_sort} className="offset inactive">Merge Sort</button>
+            <button onClick={this.props.actions.merge_sort} className="offset">Merge Sort</button>
           </li>
           <li>
             <button
               onClick={this.props.actions.insertion_sort}
-              className="offset inactive"
+              className="offset"
             >InsertionSort </button>
           </li>
           <li>
