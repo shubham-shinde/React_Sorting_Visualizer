@@ -14,7 +14,7 @@ class AlgorithmList extends React.Component {
             <button 
               className={`offset tooltip ${sorting && (algo==='Bubble'  ? `active`: `inactive`)}`}
               onClick={() => (!sorting && this.props.actions.start_bubble_sort())} 
-            >Bubble Sort <a class="hyper" href="https://en.wikipedia.org/wiki/Bubble_sort" title="Learn More">ⓘ</a> 
+            >Bubble Sort <a class="hyper" href="https://en.wikipedia.org/wiki/Bubble_sort" title="Learn More" target="_blank">ⓘ</a> 
               </button>
           </li>
           <li >
@@ -22,7 +22,7 @@ class AlgorithmList extends React.Component {
               className={`offset tooltip ${sorting && (algo==='Selection'  ? `active`: `inactive`)}`}
               onClick={() => (!sorting && this.props.actions.selection_sort())}
             >
-              SelectionSort <a class="hyper" href="https://en.wikipedia.org/wiki/Selection_sort" title="Learn More">ⓘ
+              SelectionSort <a class="hyper" href="https://en.wikipedia.org/wiki/Selection_sort" title="Learn More" target="_blank">ⓘ
               </a>
             </button>
           </li>
@@ -30,7 +30,7 @@ class AlgorithmList extends React.Component {
             <button 
               className={`offset tooltip ${sorting && (algo==='Quick'  ? `active`: `inactive`)}`}
               onClick={() => (!sorting && this.props.actions.quick_sort())}
-            >Quick Sort <a class="hyper" href="https://en.wikipedia.org/wiki/Quicksort" title="Learn More">ⓘ
+            >Quick Sort <a class="hyper" href="https://en.wikipedia.org/wiki/Quicksort" title="Learn More" target="_blank">ⓘ
               </a>
               </button>
           </li>
@@ -38,7 +38,7 @@ class AlgorithmList extends React.Component {
             <button 
               className={`offset tooltip ${sorting && (algo==='Merge'  ? `active`: `inactive`)}`}
               onClick={() => (!sorting && this.props.actions.merge_sort())} 
-            >Merge Sort <a class="hyper" href="https://en.wikipedia.org/wiki/Merge_sort" title="Learn More">ⓘ
+            >Merge Sort <a class="hyper" href="https://en.wikipedia.org/wiki/Merge_sort" title="Learn More" target="_blank">ⓘ
               </a>
               </button>
           </li>
@@ -46,9 +46,9 @@ class AlgorithmList extends React.Component {
             <button
               className={`offset tooltip ${sorting && (algo==='Insertion'  ? `active`: `inactive`)}`}
               onClick={() => (!sorting && this.props.actions.insertion_sort())}
-            >InsertionSort <a class="hyper" href="https://en.wikipedia.org/wiki/Insertion_sort" title="Learn More">ⓘ
+            >InsertionSort <a class="hyper" href="https://en.wikipedia.org/wiki/Insertion_sort" title="Learn More" target="_blank">ⓘ
               </a>
-             .</button>
+            </button>
           </li>
           <li>
             <button 

@@ -8,7 +8,7 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './index.scss';
 
@@ -36,14 +36,33 @@ export default function App() {
       >
       <meta name="description" content="Sorting Visualizer"/>
       </Helmet>
+      <Header/>
       <div className="godfather">
-      <Head />
-      <ButtonBox/>
-      <div className="main">
-        <SortingBox />
+        <Switch>
+          <Route path="/pathfinding">
+            <div>
+              <Head />
+              {/* <ButtonBox/> */}
+              <div className="main">
+                {/* <SortingBox /> */}
+              </div>
+              <AlgorithmList/>
+            </div>
+          </Route>
+          <Route path="/">
+            <div>
+              <Head />
+              <ButtonBox/>
+              <div className="main">
+                <SortingBox />
+              </div>
+              <AlgorithmList/>
+            </div>
+          </Route>
+        </Switch>
       </div>
-      <AlgorithmList/>
-      </div>
+      
+
       <GlobalStyle />
     </div>
   );
