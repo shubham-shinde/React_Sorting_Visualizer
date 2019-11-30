@@ -12,6 +12,39 @@
       li {
         flex-grow: 1;
         min-width: 8rem;
+        
+          .tooltip { 
+            position: relative; 
+            display: inline-block;  
+            text-align: center; 
+            display: inline-block; 
+            font-size: 16px; 
+        } 
+        .tooltip .text { 
+          visibility: hidden;
+          width: 8.1rem;
+          background-color: grey;
+          color: black;
+          text-align: center;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          padding: 10px 0;
+          position: absolute;
+          z-index: 1;
+          top: -120%;
+          left: -1.5%;
+          a{
+            text-decoration: none;
+            color:black;
+          }
+          a:hover{
+            color:#753f8d;
+          }
+        } 
+        .tooltip:hover .text { 
+            visibility: visible; 
+        } 
+
         button {
           background: none;
           border: 2px solid #95386D;
@@ -20,6 +53,9 @@
           line-height: 1;
           margin: 0.5rem;
           padding: 0.5rem;
+
+
+          
         }        
         .active{
           color:#e7e7e7;
