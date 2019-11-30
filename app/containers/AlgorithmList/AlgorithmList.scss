@@ -60,25 +60,28 @@
           padding: 0.5rem;
           position: relative;
           .hyper{
-               position: absolute;
+              //  position: absolute;
                 display: inline-block;
-                margin-left: 0.5rem;
-                -webkit-transform: translate(0, 0.5rem);
-                transform: translate(0, 0);
-                transition: color 0.25s, opacity 0.125s 0.25s, -webkit-transform 0.25s 0.25s;
-                transition: transform 0.25s 0.25s, color 0.25s, opacity 0.125s 0.25s;
-                transition: transform 0.25s 0.25s, color 0.25s, opacity 0.125s 0.25s, -webkit-transform 0.25s 0.25s;
-                opacity: 0;
+                color: white;
+                text-decoration: none;
+                // background-color: blueviolet;
+                // border-radius: 50%;
+                // margin-left: 0.5rem;
+                // -webkit-transform: translate(0, 0.5rem);
+                // transform: translate(0, 0);
+                // transition: color 0.25s, opacity 0.125s 0.25s, -webkit-transform 0.25s 0.25s;
+                // transition: transform 0.25s 0.25s, color 0.25s, opacity 0.125s 0.25s;
+                // transition: transform 0.25s 0.25s, color 0.25s, opacity 0.125s 0.25s, -webkit-transform 0.25s 0.25s;
+                opacity: 1;
                 }
-          .hyper:focus{
-            transform: translate(0, 0);
-            opacity: 1;
-            color: #536dfe;
-            }
-            .hyper:hover{
-              color:#e7e7e7;
-              opacity: 1;
-            }
+          // .hyper:focus{
+          //   opacity: 1;
+          //   color: #536dfe;
+          //   }
+          //   .hyper:hover{
+          //     color:#e7e7e7;
+          //     opacity: 1;
+          //   }
 
           
         }        
