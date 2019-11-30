@@ -7,8 +7,9 @@ function waitTime(ms) {
 export const randomize_array = () => ({
     type: types.RANDOMIZE_LIST
 })
-export const sorting_start = () => ({
-    type: types.SORTING_START
+export const sorting_start = (algo) => ({
+    type: types.SORTING_START,
+    algo
 })
 export const sorting_end = () => async (dispatch, getState) => {
     dispatch({
@@ -61,7 +62,7 @@ export const start_bubble_sort = () => async (dispatch, getState) => {
     let list = [...getState().list.list];
     const len = list.length;
 
-    dispatch(sorting_start());
+    dispatch(sorting_start('Bubble'));
 
     for (let i = 0; i < len; i++) {
         list[i] = { ...list[i], pointer: true };
@@ -112,7 +113,7 @@ export const selection_sort = () => async (dispatch, getState) => {
     const len = list.length;
     const ms = 10;
 
-    dispatch(sorting_start());
+    dispatch(sorting_start("Selection"));
 
     for (let i = 0; i < len; i++) {
 
@@ -168,7 +169,7 @@ export const insertion_sort = () => async (dispatch, getState) => {
     let list = [...getState().list.list];
     const len = list.length;
     const ms = 10;
-    dispatch(sorting_start());
+    dispatch(sorting_start("Insertion"));
 
     let i, key, j;
     for (i = 1; i < len; i++) {
@@ -208,7 +209,7 @@ export const try_me = () => async (dispatch, getState) => {
     let list = [...getState().list.list];
     const len = list.length;
     const ms = 10;
-    dispatch(sorting_start());
+    dispatch(sorting_start("Try"));
 
     async function merge(left, right) {
         let resultArray = [], leftIndex = 0, rightIndex = 0;
@@ -265,7 +266,7 @@ export const merge_sort = () => async (dispatch, getState) => {
     try {
         let list = [...getState().list.list];
         let n = list.length;
-        dispatch(sorting_start());
+        dispatch(sorting_start("Merge"));
 
         let curr_size;  // For current size of subarrays to be merged 
         // curr_size varies from 1 to n/2 
@@ -357,7 +358,7 @@ export const quick_sort = () => async (dispatch, getState) => {
     try {
         let list = [...getState().list.list];
         let n = list.length;
-        dispatch(sorting_start());
+        dispatch(sorting_start("Quick"));
 
         let l = 0, h = n - 1;
 

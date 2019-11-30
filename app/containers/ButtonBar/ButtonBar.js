@@ -9,7 +9,7 @@ import stopButton  from "../../images/stop.svg";
 
 class ButtonBar extends React.Component {
     render() { 
-        const {pause, sorting} = this.props.list;
+        const {pause, sorting, wait_time} = this.props.list;
         return ( <div className="button">
             <div className="pause">
               {!sorting ?
@@ -30,9 +30,9 @@ class ButtonBar extends React.Component {
               
             </div>
             <div className='X'>
-                <button className="speed pulse active" onClick={() => this.props.actions.speed_change(200)}>1x</button>
-                <button className="speed pulse active" onClick={() => this.props.actions.speed_change(50)}>2x</button>
-                <button className="speed pulse active" onClick={() => this.props.actions.speed_change(10)}>4x</button>
+                <button className={wait_time===200 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(200)}>1x</button>
+                <button className={wait_time===50 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(50)}>2x</button>
+                <button className={wait_time===10 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(10)}>4x</button>
             </div>
         </div> );
     }

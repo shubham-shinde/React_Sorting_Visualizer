@@ -6,36 +6,45 @@ import './AlgorithmList.scss';
 
 class AlgorithmList extends React.Component {
   render() { 
-    const {sorting}=this.props.list; 
+    const {sorting, algo}=this.props.list; 
     return (
       <div className="algorithmlist"> 
         <div className="buttons">
           <li >
             <button 
+              className={`offset ${sorting  && (algo==='Bubble'  ? `active`: `inactive`)}`}
               onClick={this.props.actions.start_bubble_sort} 
-              className={`offset ${sorting ? `active`: `inactive`}`}
-            >BubbleSort</button>
+            >Bubble Sort</button>
           </li>
           <li >
             <button 
-              className="offset"
+              className={`offset ${sorting  && (algo==='Selection'  ? `active`: `inactive`)}`}
               onClick={this.props.actions.selection_sort}
-            >SelectionSort</button>
+            >Selection Sort</button>
           </li>
           <li>
-            <button className="offset" onClick={this.props.actions.quick_sort}>Quick Sort</button>
+            <button 
+              className={`offset ${sorting  && (algo==='Quick'  ? `active`: `inactive`)}`}
+              onClick={this.props.actions.quick_sort}
+            >Quick Sort</button>
           </li>
           <li>
-            <button onClick={this.props.actions.merge_sort} className="offset">Merge Sort</button>
+            <button 
+              className={`offset ${sorting  && (algo==='Merge'  ? `active`: `inactive`)}`}
+              onClick={this.props.actions.merge_sort} 
+            >Merge Sort</button>
           </li>
           <li>
             <button
+              className={`offset ${sorting && (algo==='Insertion'  ? `active`: `inactive`)}`}
               onClick={this.props.actions.insertion_sort}
-              className="offset"
-            >InsertionSort </button>
+            >Insertion Sort </button>
           </li>
           <li>
-            <button onClick={this.props.actions.try_me} className="offset">Try me</button>
+            <button 
+              className={`offset ${sorting  && (algo==='Try'  ? `active`: `inactive`)}`}
+              onClick={this.props.actions.try_me} 
+            >Try me</button>
           </li>
         </div>
       </div>
