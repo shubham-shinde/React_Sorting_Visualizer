@@ -3,17 +3,13 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as actions from '../../sorting_reducer/list_actions';
 import './ButtonBar.scss'
-import pauseButton  from "../../images/pause.svg";
-import playButton  from "../../images/play.svg";
-import stopButton  from "../../images/stop.svg";
 import { FaPause,FaPlay, FaStop } from 'react-icons/fa';
-import { IconContext } from "react-icons";
 class ButtonBar extends React.Component {
     render() { 
         const {pause, sorting, wait_time} = this.props.list;
         return ( <div className="button">
               {!sorting ?
-              <button className="random raise" onClick={this.props.actions.randomize_array}>Randomize</button>
+              <button className="random" onClick={this.props.actions.randomize_array}>Randomize</button>
               :
               (
                 <div className='X'> 
@@ -29,6 +25,7 @@ class ButtonBar extends React.Component {
                 <button className={wait_time===200 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(200)}>1x</button>
                 <button className={wait_time===50 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(50)}>2x</button>
                 <button className={wait_time===10 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(10)}>4x</button>
+                <button className={wait_time===2 ? "speed pulse active" : "speed pulse"} onClick={() => this.props.actions.speed_change(2)}>8x</button>
             </div>
         </div> );
     }

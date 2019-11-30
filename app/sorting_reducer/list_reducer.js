@@ -5,7 +5,7 @@ function range(start, end) {
 }
 
 const initialState = {
-    list : range(1, 35),
+    list : range(1, 49),
     sorting : false,
     pause : false,
     wait_time : 50,

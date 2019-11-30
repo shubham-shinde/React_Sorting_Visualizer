@@ -1,60 +1,39 @@
 .algorithmlist{
-    max-width: 800px;
-    text-align: center;
     list-style-type: none;
     margin:auto;
-    .buttons{
+    width: 100%;
+    .buttons {
       padding-bottom:1rem ;
-      padding-top:1rem ;
+      padding-top:1rem;
       display: flex;
       flex-flow: wrap;
-      justify-content: center;
-    }
-    // .buttons{
-    //     h1{
-    //         margin:0;
-    //         color:#0B0E12;
-    //         background-color: #3b59d7;
-    //         margin-bottom:1rem;
-    //         padding:1rem;
-    //     }
-        
+      align-content: stretch;
+      // justify-content: space-between;
+      li {
+        flex-grow: 1;
+        min-width: 8rem;
+        button {
+          background: none;
+          border: 2px solid #95386D;
+          font: inherit;
+          width: calc(100% - 1rem);
+          line-height: 1;
+          margin: 0.5rem;
+          padding: 0.5rem;
+        }        
         .active{
-               color:#e7e7e7;
-               background-color: #95386b;
-               outline: none;
-            }
-        .inactive{
-            color: #e7e7e7;
-            background-color: #0b0e11;
-            border-color: hsl(227, 10%, 10%);
-            outline: none;
+          color:#e7e7e7;
+          background-color: #95386b;
+          outline: none;
         }
-    //         margin-bottom: 1rem;
-    //         .pulse:hover,
-    //         .pulse:focus {
-    //             animation: pulse 1s;
-    //             box-shadow: 0 0 0 2em rgba(#fff,0);
-    //         }
-            
-    //         @keyframes pulse {
-    //             0% { box-shadow: 0 0 0 0 var(--hover); }
-    //         }
-            
-    //         .offset {  
-    //             box-shadow: 
-    //               0.3em 0.3em 0 0 var(--color),
-    //               inset 0.3em 0.3em 0 0 var(--color);
-                
-    //             &:hover,
-    //             &:focus {
-    //               box-shadow: 
-    //                 0 0 0 0 var(--hover),
-    //                 inset 6em 3.5em 0 0 var(--hover);
-    //             }
-    //           }
-    //     }
-    // }
+        .inactive{
+          color: #e7e7e7;
+          background-color: #0b0e11;
+          border-color: hsl(227, 10%, 10%);
+          outline: none;
+        }
+      }
+    }
 }
 
 $colors: (
@@ -89,28 +68,30 @@ button {
 }
 
 //=== Pen styling, ignore
-body {
-  color: #fff;
-  background: hsl(227, 10%, 10%);
-  font: 300 1em 'Fira Sans', sans-serif;
+// body {
+//   color: #fff;
+//   background: hsl(227, 10%, 10%);
+//   font: 300 1em 'Fira Sans', sans-serif;
   
-  // Center everything ever
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-}
+//   // Center everything ever
+//   justify-content: center;
+//   align-content: center;
+//   align-items: center;
+//   text-align: center;
+//   min-height: 100vh;
+//   display: flex;
+// }
 
 // Basic button styles
-button {
-  background: none;
+.button {
+  button {
+    background: none;
     border: 2px solid #95386D;
     font: inherit;
     line-height: 1;
     margin: 0.5em;
     padding: 0.7rem;
+  }
 }
 
 h1 { font-weight: 400; }

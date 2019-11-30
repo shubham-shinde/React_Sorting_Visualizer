@@ -34,13 +34,13 @@ export default function App() {
         titleTemplate="%s - React.js Boilerplate"
         defaultTitle="React.js Boilerplate"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+      <meta name="description" content="Sorting Visualizer"/>
       </Helmet>
       <div className="godfather">
       <Head />
       <ButtonBox/>
       <div className="main">
-         <SortingBox />
+        <SortingBox />
       </div>
       <AlgorithmList/>
       </div>

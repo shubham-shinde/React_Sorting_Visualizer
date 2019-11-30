@@ -1,27 +1,24 @@
 .Head{
     display:flex;
     justify-content: center;
-    margin-bottom: 2rem;
-    margin-top:1rem;
+    align-items: center;;
+    // margin-bottom: 2rem;
+    // margin-top:1rem;
     
     .logo{
         img{
             WIDTH: 4REM;
-            MARGIN-TOP: 1.5REM;
-            MARGIN-RIGHT: 1REM;
+            // MARGIN-TOP: 1.5REM;
+            MARGIN-RIGHT: 0.2rem;
+            transform: rotate(-15deg);
         }
     }
     .heading{
+        text-align: center;
+        line-height: 2.25rem;
         h1{
             color: #e7e7e7;
             font-weight: 600;
         }
     }
-}
-.ray{
-    max-width: 800px;
-    height: 1rem;
-    background: linear-gradient(90deg, rgba(0,0,255,1) 0%, rgba(255,51,0,1) 100%);
-    margin: auto;
-    margin-bottom: 1rem;
 }

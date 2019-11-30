@@ -10,7 +10,7 @@ class Head extends React.Component {
         <div className="logo">
           <img src={logo}></img>
         </div>
-        <div className="heading ">
+        <div className="heading">
           <h1>SORTING <br></br> VISUALIZER</h1>
         </div>
       </div>

@@ -1,8 +1,8 @@
 .button{
     text-align: center;
     display: flex;
-    max-width: 800px;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 1rem;
     .playpause{
         display: flex;
@@ -15,7 +15,6 @@
         font-family: Lato;
         font-size: 1rem;
         background-color: #95386a;
-        margin-top: 1rem;
         border: 1px solid #5e46a6;
         color: rgb(14, 17, 22);
         color:#e7e7e7;

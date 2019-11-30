@@ -4,7 +4,7 @@ class Piller extends React.Component {
   render() {
     const { height, white, pointer} = this.props;
     
-    let color = ["#0701f8","#0e03f1","#1504ea","#1c06e3","#2207dd","#2908d6","#300acf","#370bc8","#3e0cc1","#450eba","#4c0fb3","#5311ac","#5a12a5","#60139f","#671598","#6e1691","#75178a","#7c1983","#831a7c","#8a1c75","#911d6e","#981e67","#9f2060","#a5215a","#ac2253","#b3244c","#ba2545","#c1273e","#c82837","#cf2930","#d62b29","#dd2c22","#e32d1c","#ea2f15","#f1300e","#f83207"]
+    let color = ["#0501fa","#0a02f5","#0f03f0","#1404eb","#1905e6","#1e06e1","#2307dc","#2808d7","#2d09d2","#320acd","#370bc8","#3c0cc3","#410dbe","#460eb9","#4b0fb4","#5010af","#5511aa","#5a12a5","#5f13a0","#64149b","#691596","#6e1691","#73178c","#781887","#7d1982","#821a7d","#871b78","#8c1c73","#911d6e","#961e69","#9b1f64","#a0205f","#a5215a","#aa2255","#af2350","#b4244b","#b92546","#be2641","#c3273c","#c82837","#cd2932","#d22a2d","#d72b28","#dc2c23","#e12d1e","#e62e19","#eb2f14","#f0300f","#f5310a","#fa3205"]
         if(white){
         color[height]="white";
     }
@@ -16,7 +16,7 @@ class Piller extends React.Component {
         key={color[height]}
         style={{
             backgroundColor: color[height],
-            height: `${height/2}rem`,
+            height: `${height*2}%`,
             minWidth: '',
             flexGrow:1
             
