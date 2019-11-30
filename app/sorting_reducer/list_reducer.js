@@ -8,7 +8,8 @@ const initialState = {
     list : range(1, 35),
     sorting : false,
     pause : false,
-    wait_time : 20
+    wait_time : 50,
+    algo: ''
 }
 
 const listReducer = (state = initialState, action) => {
@@ -29,6 +30,7 @@ const listReducer = (state = initialState, action) => {
         case types.SORTING_START: {
             const new_state = {...state};
             new_state.sorting = true;
+            new_state.algo = action.algo;
             return new_state;
         }
         case types.SORTING_END: {
