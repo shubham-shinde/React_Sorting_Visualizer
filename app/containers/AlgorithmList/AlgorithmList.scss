@@ -11,7 +11,7 @@
       // justify-content: space-between;
       li {
         flex-grow: 1;
-        min-width: 8rem;
+        min-width: 8.2rem;
         
           .tooltip { 
             position: relative; 
@@ -22,7 +22,7 @@
         } 
         .tooltip .text { 
           visibility: hidden;
-          width: 8.1rem;
+          min-width: 8.2rem;
           background-color: grey;
           color: black;
           text-align: center;
