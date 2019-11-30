@@ -4,6 +4,22 @@
     max-width: 800px;
     justify-content: space-between;
     margin-bottom: 1rem;
+    .playpause{
+        display: flex;
+        justify-content: space-around;
+    }
+    .pause{
+        height: 1rem !important;
+        width: 2rem !important;
+        border-radius: 50% !important;
+        margin-right: 1rem;
+        border: none !important;
+        img{
+            background-color: #95386b;
+            border-radius: 50%;
+            width: 2rem;
+        }
+    }
     .random{
         border-style: none;
         height: 2rem;
@@ -47,7 +63,7 @@
     .raise:hover,
     .raise:focus {
       box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-      transform: translateY(-0.25em);
+    //   transform: translateY(-0.25em);
         }
     }
     .pulse:hover, 
