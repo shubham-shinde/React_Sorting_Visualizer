@@ -7,6 +7,10 @@ class Head extends React.Component {
   render() {
     return (<div>
       <div className="Head">
+      <button className="sidebutton">
+        <h1 className='symbol'>≔</h1>
+        <h1 className='symbol'>≔</h1>
+      </button>
         <div className="logo">
           <img src={logo}></img>
         </div>

@@ -37,12 +37,12 @@ export default function App() {
       <meta name="description" content="Sorting Visualizer"/>
       </Helmet>
     <div className="grand-father">
-      <button className="sidebutton">
+      {/* <button className="sidebutton">
         <h1 className='symbol'>≔</h1>
         <h1 className='symbol'>≔</h1>
-      </button>
+      </button> */}
       <Header/>
-      <div>
+      <div className='big-godfather'>
         <Switch>
           <Route path="/pathfinding">
             <div className="godfather">
