@@ -1,6 +1,6 @@
 import React from 'react';
 import './Head.scss';
-import logo from '../../images/logo.png';
+import logo from '../../../images/logo.png';
 class Head extends React.Component {
   state = {};
 

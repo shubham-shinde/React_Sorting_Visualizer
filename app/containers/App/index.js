@@ -20,10 +20,10 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-import AlgorithmList from '../AlgorithmList/AlgorithmList';
-import SortingBox from '../SortingBox/SortingBox';
-import Head from '../Head/Head';
-import ButtonBox from '../ButtonBar/ButtonBar'
+import AlgorithmList from '../SortingPage/AlgorithmList/AlgorithmList';
+import SortingBox from '../SortingPage/SortingBox/SortingBox';
+import Head from '../SortingPage/Head/Head';
+import ButtonBox from '../SortingPage/ButtonBar/ButtonBar'
 
 import GlobalStyle from '../../global-styles';
 
@@ -36,11 +36,16 @@ export default function App() {
       >
       <meta name="description" content="Sorting Visualizer"/>
       </Helmet>
+    <div className="grand-father">
+      <button className="sidebutton">
+        <h1 className='symbol'>≔</h1>
+        <h1 className='symbol'>≔</h1>
+      </button>
       <Header/>
-      <div className="godfather">
+      <div>
         <Switch>
           <Route path="/pathfinding">
-            <div>
+            <div className="godfather">
               <Head />
               {/* <ButtonBox/> */}
               <div className="main">
@@ -50,7 +55,7 @@ export default function App() {
             </div>
           </Route>
           <Route path="/">
-            <div>
+            <div className="godfather">
               <Head />
               <ButtonBox/>
               <div className="main">
@@ -61,6 +66,8 @@ export default function App() {
           </Route>
         </Switch>
       </div>
+
+    </div>
       
 
       <GlobalStyle />

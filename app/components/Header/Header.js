@@ -12,17 +12,27 @@ import Banner from '../common/assets/images/Main.png';
 function Header() {
   return (
     <div className="Header">
+      <div  className='side-tray' alt="react-boilerplate - Logo">
+        <h1>Fuck Off</h1>
+        <ul>
+          <li>Fuck</li>
+          <li>Fuck</li>
+          <li>Fuck</li>
+          <li>Fuck</li>
+
+        </ul>
+        </div>
       <a href="https://github.com/EvilSpark/react-redux-boilerplate/">
-        <img src={Banner} alt="react-boilerplate - Logo" />
+        
       </a>
 
-      <ul>
+      {/* <ul>
         <a href="/">Home</a>
         <a href="/features">Features</a>
         <a href="https://github.com/EvilSpark/react-redux-boilerplate">
           Github
         </a>
-      </ul>
+      </ul> */}
     </div>
   );
 }

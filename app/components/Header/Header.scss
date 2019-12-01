@@ -1,17 +1,18 @@
 .Header {
-  min-width: 100%;
+  max-width: 20%;
   display: flex;
   flex-direction: column;
-
-  a {
-    margin: 1rem auto;
+  // background-color: cadetblue;
+  width: 15rem;
+  .side-tray{
+    max-width: 20rem;
+   color: cornsilk;
+    height: 100vh;
+    
+    background: linear-gradient(90deg, #ff330060 0%, rgba(0, 0, 255, 0.336) 100%);
+    width:100%;
   }
 
-  ul {
-    margin: 0 auto;
-
-    a {
-      margin: 1rem;
-    }
-  }
 }
+
+
