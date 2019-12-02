@@ -30,7 +30,35 @@ import ButtonBox from '../SortingPage/ButtonBar/ButtonBar'
 
 import GlobalStyle from '../../global-styles';
 
+const mql = window.matchMedia(`(min-width: 1000px)`);
+
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpen: false,
+      sidebarDocked: mql.matches,
+    };
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+    this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
+  }
+
+  componentWillMount() {
+    mql.addListener(this.mediaQueryChanged);
+  }
+
+  componentWillUnmount() {
+    mql.removeListener(this.mediaQueryChanged);
+  }
+
+  onSetSidebarOpen(open) {
+    this.setState({ sidebarOpen: open });
+  }
+
+  mediaQueryChanged() {
+    this.setState({ sidebarDocked: mql.matches, sidebarOpen: false });
+  }
+
   render() {
     return (
       <div>
@@ -45,14 +73,31 @@ class App extends React.Component {
           <h1 className='symbol'>≔</h1>
           <h1 className='symbol'>≔</h1>
         </button> */}
-        <Header/>
+
+
+        {/*SIdeBAr*/}
+        <Sidebar
+        sidebar={<Header/>}
+        open={this.state.sidebarOpen}
+        onSetOpen={this.onSetSidebarOpen}
+        docked={this.state.sidebarDocked}
+        styles={{ sidebar: { background: "white" } }}
+      >
+        {/* <button onClick={() => this.onSetSidebarOpen(true)}>
+          Open sidebar
+        </button> */}
+      </Sidebar>
+
+
+{/* 
+        <Header/> */}
 
 
         <div className='big-godfather'>
           <Switch>
             <Route path="/pathfinding">
               <div className="godfather">
-                <Head />
+                <Head onSetSidebarOpen={this.onSetSidebarOpen} />
                 {/* <ButtonBox/> */}
                 <div className="main">
                   {/* <SortingBox /> */}
@@ -62,7 +107,7 @@ class App extends React.Component {
             </Route>
             <Route path="/">
               <div className="godfather">
-                <Head />
+                <Head onSetSidebarOpen={this.onSetSidebarOpen} />
                 <ButtonBox/>
                 <div className="main">
                   <SortingBox />
