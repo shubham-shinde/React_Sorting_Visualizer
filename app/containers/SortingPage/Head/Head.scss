@@ -3,7 +3,6 @@
     // justify-content: center;
     align-items: center;;
     position: relative;
-    justify-content: space-evenly;
     // margin-bottom: 2rem;
     // margin-top:1rem;
     
@@ -19,8 +18,8 @@
             border-radius: 50%;
           
             outline: none;
-            width: 3rem;
-            height: 3rem;
+            width: 2.5rem;
+            height: 2.5rem;
              .symbol{
                 margin: 0;
                 padding: 0;
@@ -68,6 +67,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-grow: 1;
         .logo{
             img{
                 WIDTH: 4REM;
