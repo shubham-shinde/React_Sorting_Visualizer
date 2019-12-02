@@ -20,6 +20,9 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
+//SIDEBAR
+import Sidebar from "react-sidebar";
+
 import AlgorithmList from '../SortingPage/AlgorithmList/AlgorithmList';
 import SortingBox from '../SortingPage/SortingBox/SortingBox';
 import Head from '../SortingPage/Head/Head';
@@ -27,50 +30,56 @@ import ButtonBox from '../SortingPage/ButtonBar/ButtonBar'
 
 import GlobalStyle from '../../global-styles';
 
-export default function App() {
-  return (
-    <div>
-      <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
-      >
-      <meta name="description" content="Sorting Visualizer"/>
-      </Helmet>
-    <div className="grand-father">
-      {/* <button className="sidebutton">
-        <h1 className='symbol'>≔</h1>
-        <h1 className='symbol'>≔</h1>
-      </button> */}
-      <Header/>
-      <div className='big-godfather'>
-        <Switch>
-          <Route path="/pathfinding">
-            <div className="godfather">
-              <Head />
-              {/* <ButtonBox/> */}
-              <div className="main">
-                {/* <SortingBox /> */}
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Helmet
+          titleTemplate="%s - React.js Boilerplate"
+          defaultTitle="React.js Boilerplate"
+        >
+        <meta name="description" content="Sorting Visualizer"/>
+        </Helmet>
+      <div className="grand-father">
+        {/* <button className="sidebutton">
+          <h1 className='symbol'>≔</h1>
+          <h1 className='symbol'>≔</h1>
+        </button> */}
+        <Header/>
+
+
+        <div className='big-godfather'>
+          <Switch>
+            <Route path="/pathfinding">
+              <div className="godfather">
+                <Head />
+                {/* <ButtonBox/> */}
+                <div className="main">
+                  {/* <SortingBox /> */}
+                </div>
+                <AlgorithmList/>
               </div>
-              <AlgorithmList/>
-            </div>
-          </Route>
-          <Route path="/">
-            <div className="godfather">
-              <Head />
-              <ButtonBox/>
-              <div className="main">
-                <SortingBox />
+            </Route>
+            <Route path="/">
+              <div className="godfather">
+                <Head />
+                <ButtonBox/>
+                <div className="main">
+                  <SortingBox />
+                </div>
+                <AlgorithmList/>
               </div>
-              <AlgorithmList/>
-            </div>
-          </Route>
-        </Switch>
+            </Route>
+          </Switch>
+        </div>
+
       </div>
+        
 
-    </div>
-      
-
-      <GlobalStyle />
-    </div>
-  );
+        <GlobalStyle />
+      </div>
+    );
+  }
 }
+
+export default App;

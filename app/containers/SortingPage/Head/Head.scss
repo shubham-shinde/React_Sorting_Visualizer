@@ -1,72 +1,103 @@
 .Head{
     display:flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;;
     position: relative;
+    justify-content: space-evenly;
     // margin-bottom: 2rem;
     // margin-top:1rem;
-    .sidebutton{
-        position: absolute;
-        display: none;
-        border: 2px solid #e7e7e7;
-        color: black;
-        border-radius: 50%;
-        padding: 0.8rem;
-        left: 5%;
-        outline: none;
-         .symbol{
-            margin: 0;
-            padding: 0;
-            line-height: 0.45;
-            margin-block-start: 0;
-            margin-block-end: 0;
-         } 
-     }
-     .sidebutton:hover{
-         color:#5e46a6;
-         border: 2px solid black;
-         background-color: black;
-         cursor: pointer;
-     }
-     @media screen  and (max-width:600px){
+    
+    
+     .Head_button{
+         display: none;
+         align-items: center;
         .sidebutton{
-            position:relative;
-            margin-right:2rem;
-            left: 0;
-        }
-     }
+            position: absolute;
+            display: none;
+            border: 2px solid #e7e7e7;
+            color: black;
+            border-radius: 50%;
+          
+            outline: none;
+            width: 3rem;
+            height: 3rem;
+             .symbol{
+                margin: 0;
+                padding: 0;
+                line-height: 0.4;
+                font-size: 1.5rem ;
+                margin-block-start: 0;
+                margin-block-end: 0;
+             } 
+         }
+         .sidebutton:hover{
+             color:#5e46a6;
+             border: 2px solid black;
+             background-color: black;
+             cursor: pointer;
+         }
+                  
+    }
     @media screen  and (max-width:1000px){
+                
+        .Head_button{
+            display: block;
             .sidebutton{
                 display: block;
+                position:relative;
             }
-            
-         
-     }
+        }
+    }
+    @media screen  and (max-width:600px){
+        .Head_button{
+            .sidebutton{
+                position:relative;
+                
+                
+                .symbol{
+                    h1{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
     
-    .logo{
-        img{
-            WIDTH: 4REM;
-            // MARGIN-TOP: 1.5REM;
-            MARGIN-RIGHT: 0.2rem;
-            transform: rotate(-15deg);
-        }
-    }
-    .heading{
-        text-align: center;
-        line-height: 2.25rem;
-        h1{
-            color: #e7e7e7;
-            font-weight: 600;
-        }
-    }
-    @media screen  and (max-width:500px){
-        .heading{
-            line-height: 1.25rem;
-            h1{
-                font-size: 18px;
+
+    .Head_logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logo{
+            img{
+                WIDTH: 4REM;
+                // MARGIN-TOP: 1.5REM;
+                MARGIN-RIGHT: 0.2rem;
+                transform: rotate(-15deg);
             }
         }
-
+        .heading{
+            text-align: center;
+            line-height: 2.25rem;
+            h1{
+                color: #e7e7e7;
+                font-weight: 600;
+            }
+        }
+        @media screen  and (max-width:500px){
+            .heading{
+                line-height: 1.25rem;
+                h1{
+                    font-size: 18px;
+                }
+            }
+            .logo{
+                img{
+                    width: 3rem;
+                }
+            }
+    
+        }
     }
     
 }
