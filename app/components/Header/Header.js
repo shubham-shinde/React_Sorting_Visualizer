@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../images/logo.png';
+import { NavLink } from 'react-router-dom'
 import './Header.scss';
 import shivam from '../../images/shivam.jpg'
 import shubham from '../../images/shubham.jpg'
@@ -26,14 +27,18 @@ function Header() {
         </div>
       </div>
         <div className='content'>
-          <li className='content-li'>
-            <div className ='open'></div>
-            <div className="tag">SORTING </div>
-          </li>
-          <li className='content-li'>
-            <div className='open'></div>
-            <div className='tag'> SHORTEST PATH </div>
-          </li>
+          <NavLink to={'/'} exact activeClassName="active">
+            <li className='content-li'>
+              <div className ='open'></div>
+              <div className="tag">SORTING </div>
+            </li>
+          </NavLink>
+          <NavLink to={'/pathfinding'} exact activeClassName="active">
+            <li className='content-li'>
+              <div className='open'></div>
+              <div className='tag'> SHORTEST PATH </div>
+            </li>
+          </NavLink>
         </div>
           <br></br>
           <div className="profile">

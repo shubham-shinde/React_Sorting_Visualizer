@@ -39,52 +39,59 @@
     .content{
       margin-top: 3rem;
       align-items: center;
-      .content-li{
-        display: flex;
-        justify-content: flex-end;
-        .open{
-          width: 20%;
-          height: 1.5rem;
-          border-top-right-radius: 10px;
-          border-bottom-right-radius: 10px;
-          background: #0a1123;
-          margin-right:0.5rem;
+      a {
+        text-decoration: none;
+        .content-li{
+          display: flex;
+          justify-content: flex-end;
+          // .open{
+          //   width: 20%;
+          //   height: 1.5rem;
+          //   border-top-right-radius: 10px;
+          //   border-bottom-right-radius: 10px;
+          //   background: #282d38;
+          //   margin-right:0.5rem;
+          //   flex-grow: 1;
+          // }
+          // .open:hover{
+          //   width: 2rem;
+          //   height: 1rem;
+          //   border-top-right-radius: 10px;
+          //   border-bottom-right-radius: 10px;
+          //   background: #524b9a;
+          //   margin-right:0.5rem ;
+          // }
+          .tag{
+            align-items: center;
+            margin-bottom: 1rem;
+            width: 12rem;
+            font-weight: 600;
+            text-align: right;
+            margin-right: 0.5rem;
+            font-size: 22px;
+  
+          }
+          
         }
-        // .open:hover{
-        //   width: 2rem;
-        //   height: 1rem;
-        //   border-top-right-radius: 10px;
-        //   border-bottom-right-radius: 10px;
-        //   background: #524b9a;
-        //   margin-right:0.5rem ;
-        // }
-        .tag{
-          align-items: center;
-          margin-bottom: 1rem;
-          width: 12rem;
-          font-weight: 600;
-          text-align: right;
-          margin-right: 0.5rem;
-          font-size: 22px;
 
-        }
-        
       }
-      .content-li:hover{
-        cursor: pointer;
-        .open{
-          width: 20%;
-          height: 1.5rem;
-          border-top-right-radius: 10px;
-          border-bottom-right-radius: 10px;
-          background: #524b9a;
-          margin-right:0.5rem ;
-          flex-grow: 1;
-        }
-        .tag{
-          color: #524b9a;
-          font-size: 22px;
+      .active {
+        .content-li{
+          cursor: pointer;
+          .open{
+            width: 20%;
+            height: 1.5rem;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background: #524b9a;
+            margin-right:0.5rem ;
+            flex-grow: 1;
+          }
+          .tag{
+            color: #524b9a;
+            font-size: 22px;
 
+          }
         }
       }
     }

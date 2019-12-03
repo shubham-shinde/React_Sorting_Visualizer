@@ -80,7 +80,7 @@ class App extends React.Component {
 
           <div className='big-godfather'>
             <Switch>
-              <Route path="/pathfinding">
+              <Route exact path="/pathfinding">
                 <div className="godfather">
                   <Head onSetSidebarOpen={this.onSetSidebarOpen} />
                   <div className="main">
@@ -89,7 +89,7 @@ class App extends React.Component {
                   <AlgorithmList />
                 </div>
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <div className="godfather">
                   <Head onSetSidebarOpen={this.onSetSidebarOpen} />
                   <ButtonBox />

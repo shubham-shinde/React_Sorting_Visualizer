@@ -1,8 +1,13 @@
 .grid{
     display: flex;
-    width: 500px;
-    background: yellow;
-    height: 500px;
-    flex-wrap: ;;;
+    flex-direction: column;
+    // width: 500px;
+    // background: yellow;
+    .array {
+        display: flex;
+        justify-content: center;
+    }
+    // height: 500px;
+    // flex-wrap: ;;;
     
 }
