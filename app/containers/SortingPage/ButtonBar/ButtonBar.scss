@@ -54,12 +54,12 @@
     
     .raise:hover,
     .raise:focus {
-      box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     //   transform: translateY(-0.25em);
         }
     }
     .pulse:hover, 
     .pulse:focus {
-     animation: pulse 1s;
-     box-shadow: 0 0 0 2em rgba(#fff,0);
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(#fff,0);
     }

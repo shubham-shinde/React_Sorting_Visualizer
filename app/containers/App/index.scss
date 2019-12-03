@@ -11,7 +11,7 @@ body{
     }
     .main{
         flex-grow: 1;
-     }
+    }
     //  .sidebutton{
     //     position: absolute;
     //     top: 5%;
@@ -35,27 +35,27 @@ body{
     //      background-color: black;
     //      cursor: pointer;
     //  }
-     .godfather{
-         display: flex;
-         flex-direction: column;
-         height: 100vh;
-         justify-content: space-evenly;
-         max-width: 80%;
-         margin:auto;
-         padding: .5rem;
-     }
+    .godfather{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-evenly;
+        max-width: 80%;
+        margin:auto;
+        padding: .5rem;
+    }
      
 
 }
 
 @media screen and (max-width: 1000px) {
-    .grand-father{
-       .godfather{
-        max-width: 100%;
-       }
-       .Header{
-           display: block;
-       }
+    .grand-father {
+        .godfather{
+            max-width: 100%;
+        }
+        .Header{
+            display: block;
+        }
 
     }
-  }
+}
