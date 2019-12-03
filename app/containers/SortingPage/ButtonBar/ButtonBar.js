@@ -9,7 +9,7 @@ class ButtonBar extends React.Component {
         const {pause, sorting, wait_time} = this.props.list;
         return ( <div className="button">
               {!sorting ?
-              <button className="random" onClick={this.props.actions.randomize_array}>Randomize</button>
+              <button className="speed pulse active end" onClick={this.props.actions.randomize_array}>Randomize</button>
               :
               (
                 <div className='X'> 

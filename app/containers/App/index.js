@@ -29,6 +29,8 @@ import Head from '../SortingPage/Head/Head';
 import ButtonBox from '../SortingPage/ButtonBar/ButtonBar'
 
 import Grid from '../../containers/ShortestPath/Grid/Grid.js'
+import Head1 from '../../containers/ShortestPath/Head1/Head1.js';
+import ButtonBar1 from '../../containers/ShortestPath/ButtonBar1/ButtonBar1.js'
 import GlobalStyle from '../../global-styles';
 
 const mql = window.matchMedia(`(min-width: 1000px)`);
@@ -82,11 +84,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/pathfinding">
                 <div className="godfather">
-                  <Head onSetSidebarOpen={this.onSetSidebarOpen} />
+                  <Head1 onSetSidebarOpen={this.onSetSidebarOpen} />
+                  <ButtonBar1/>
                   <div className="main">
                     <Grid/>
                   </div>
-                  <AlgorithmList />
                 </div>
               </Route>
               <Route exact path="/">
