@@ -5,13 +5,121 @@
   // background-color: cadetblue;
   width: 15rem;
   .side-tray{
-    max-width: 20rem;
-    color: cornsilk;
+    max-width: 100%;
+    color: #aba7de;
     height: 100vh;
-    background: linear-gradient(90deg, #ff330060 0%, rgba(0, 0, 255, 0.336) 100%);
+    background:#0d121f;
     width:100%;
-  }
+    .Head_logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      .logo{
+        img
+        {
+          WIDTH: 3REM;
+          // MARGIN-TOP: 1.5REM;
+          MARGIN-RIGHT: 0.2rem;
+          transform: rotate(-15deg);
+        }
+      }
+      .heading{
+        text-align: center;
+        line-height: 1.5rem;
+        h1{
+          color: #aba7de;
+          font-weight: 700;
+          font-size: 24px;
+        }
+      }
+  
+    }
+    .content{
+      margin-top: 3rem;
+      align-items: center;
+      .content-li{
+        display: flex;
+        
+        .open{
+          width: 20%;
+          height: 1.5rem;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          background: #0a1123;
+          margin-right:0.5rem;
+        }
+        // .open:hover{
+        //   width: 2rem;
+        //   height: 1rem;
+        //   border-top-right-radius: 10px;
+        //   border-bottom-right-radius: 10px;
+        //   background: #524b9a;
+        //   margin-right:0.5rem ;
+        // }
+        .tag{
+          align-items: center;
+          margin-bottom: 1rem;
+          width: 12rem;
+          font-weight: 600;
 
+        }
+        
+      }
+      .content-li:hover{
+        cursor: pointer;
+        .open{
+          width: 20%;
+          height: 1.5rem;
+          border-top-right-radius: 10px;
+          border-bottom-right-radius: 10px;
+          background: #524b9a;
+          margin-right:0.5rem ;
+        }
+      }
+    }
+    .portfolio{
+      margin-top:3rem;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 1REM;
+      align-items: center;
+      .text_p{
+       
+      }
+      .icon_p{
+        margin-left: 0.5REM;
+        cursor: pointer;
+      }
+    }
+    .help{
+      margin-top:1rem;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 1REM;
+      cursor: pointer;
+
+    }
+  }
+} 
+@media screen  and (max-width:800px){
+  .Header{
+    width: 80vw;
+    .side-tray{
+      .Head_logo{
+        .heading{
+          h1{
+            font-size: 28px;
+          }
+        }
+        .logo{
+          img{
+            width:4rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 

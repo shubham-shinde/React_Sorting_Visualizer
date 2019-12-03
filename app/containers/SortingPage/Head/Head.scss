@@ -40,15 +40,16 @@
     @media screen  and (max-width:1000px){
                 
         .Head_button{
-            display: block;
+            display: none;
             .sidebutton{
                 display: block;
                 position:relative;
             }
         }
     }
-    @media screen  and (max-width:600px){
+    @media screen  and (max-width:800px){
         .Head_button{
+            display: block;
             .sidebutton{
                 position:relative;
                 
@@ -80,7 +81,7 @@
             text-align: center;
             line-height: 2.25rem;
             h1{
-                color: #e7e7e7;
+                color: #aba7de;
                 font-weight: 600;
             }
         }
