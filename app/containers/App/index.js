@@ -28,6 +28,7 @@ import SortingBox from '../SortingPage/SortingBox/SortingBox';
 import Head from '../SortingPage/Head/Head';
 import ButtonBox from '../SortingPage/ButtonBar/ButtonBar'
 
+import Grid from '../../containers/ShortestPath/Grid/Grid.js'
 import GlobalStyle from '../../global-styles';
 
 const mql = window.matchMedia(`(min-width: 1000px)`);
@@ -83,6 +84,7 @@ class App extends React.Component {
                 <div className="godfather">
                   <Head onSetSidebarOpen={this.onSetSidebarOpen} />
                   <div className="main">
+                    <Grid/>
                   </div>
                   <AlgorithmList />
                 </div>

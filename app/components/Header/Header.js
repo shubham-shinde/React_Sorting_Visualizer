@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../../images/logo.png';
 import './Header.scss';
+import shivam from '../../images/shivam.jpg'
+import shubham from '../../images/shubham.jpg'
 import {FaExternalLinkAlt} from 'react-icons/fa'
 
 // components
@@ -26,18 +28,32 @@ function Header() {
         <div className='content'>
           <li className='content-li'>
             <div className ='open'></div>
-            <div className="tag">SORTING VISUALIZER</div>
+            <div className="tag">SORTING </div>
           </li>
           <li className='content-li'>
             <div className='open'></div>
-            <div className='tag'> SHORTEST PATH VISUALIZER</div>
+            <div className='tag'> SHORTEST PATH </div>
           </li>
         </div>
-        <div className='portfolio'>
-            <div className='text_p'>View Portfolio</div>
-            <div className='icon_p'><FaExternalLinkAlt/></div>
-        </div>
-        <div className='help'>Help</div>
+          <br></br>
+          <div className="profile">
+            <div className='portfolio'>
+              <div className='photo'><img src={shubham}></img></div>
+              <div className='text_p'>
+                <div>Shubham Shinde</div>
+                <div className='text_p_link'><a href='https://github.com/shubham-shinde'>Protfolio <FaExternalLinkAlt/></a> </div>
+              </div>
+            </div>
+            <div className='portfolio'>
+              <div className='photo'><img src={shivam}></img></div>
+              <div className='text_p'>
+                <div>Shivam Srivastava</div>
+                <div className='text_p_link'><a href='https://github.com/shivam1534       '>Protfolio <FaExternalLinkAlt/> </a> </div>
+              </div>
+            </div>
+          </div>
+        
+        {/* <div className='help'>Help</div> */}
         </div>
       {/* <a href="https://github.com/EvilSpark/react-redux-boilerplate/">
         
