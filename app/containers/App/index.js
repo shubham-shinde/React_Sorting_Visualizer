@@ -21,7 +21,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 //SIDEBAR
-// import Sidebar from "react-sidebar";
+import Sidebar from "react-sidebar";
 
 import AlgorithmList from '../SortingPage/AlgorithmList/AlgorithmList';
 import SortingBox from '../SortingPage/SortingBox/SortingBox';
@@ -66,48 +66,43 @@ class App extends React.Component {
           titleTemplate="%s - React.js Boilerplate"
           defaultTitle="React.js Boilerplate"
         >
-        <meta name="description" content="Sorting Visualizer"/>
+          <meta name="description" content="Sorting Visualizer" />
         </Helmet>
-      <div className="grand-father">
-        {/* <Sidebar
-        sidebar={<Header/>}
-        open={this.state.sidebarOpen}
-        onSetOpen={this.onSetSidebarOpen}
-        docked={this.state.sidebarDocked}
-        styles={{ sidebar: { background: "white" } }}
-      >
-      </Sidebar> */}
+        <div className="grand-father">
+          <Sidebar
+            sidebar={<Header />}
+            open={this.state.sidebarOpen}
+            onSetOpen={this.onSetSidebarOpen}
+            docked={this.state.sidebarDocked}
+            // styles={{ sidebar: { background: "white" } }}
+          >
 
-
-{/* 
-        <Header/> */}
-
-
-        <div className='big-godfather'>
-          <Switch>
-            {/* <Route path="/pathfinding">
-              <div className="godfather">
-                <Head onSetSidebarOpen={this.onSetSidebarOpen} />
-                <div className="main">
+          <div className='big-godfather'>
+            <Switch>
+              <Route path="/pathfinding">
+                <div className="godfather">
+                  <Head onSetSidebarOpen={this.onSetSidebarOpen} />
+                  <div className="main">
+                  </div>
+                  <AlgorithmList />
                 </div>
-                <AlgorithmList/>
-              </div>
-            </Route> */}
-            <Route path="/">
-              <div className="godfather">
-                <Head onSetSidebarOpen={this.onSetSidebarOpen} />
-                <ButtonBox/>
-                <div className="main">
-                  <SortingBox />
+              </Route>
+              <Route path="/">
+                <div className="godfather">
+                  <Head onSetSidebarOpen={this.onSetSidebarOpen} />
+                  <ButtonBox />
+                  <div className="main">
+                    <SortingBox />
+                  </div>
+                  <AlgorithmList />
                 </div>
-                <AlgorithmList/>
-              </div>
-            </Route>
-          </Switch>
+              </Route>
+            </Switch>
+          </div>
+          </Sidebar>
+
         </div>
 
-      </div>
-        
 
         <GlobalStyle />
       </div>
