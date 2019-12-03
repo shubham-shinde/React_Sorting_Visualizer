@@ -17,7 +17,7 @@ class ButtonBar extends React.Component {
                     ? <button className="speed pulse active" onClick={this.props.actions.pause_sorting}><FaPause/></button>
                     : <button className="speed pulse active" onClick={this.props.actions.restart_sorting}><FaPlay/></button>
                   }
-                  <button className="speed pulse active" onClick={this.props.actions.sorting_end}><FaStop/></button>
+                  <button className="speed pulse active end" onClick={this.props.actions.sorting_end}>END</button>
                 </div>
               )
             }

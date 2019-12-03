@@ -7,11 +7,11 @@ class Head extends React.Component {
     return (
       <div>
         <div className="Head">
-          <div className="Head_button">
+          {/* <div className="Head_button">
             <button onClick={() => this.props.onSetSidebarOpen(true)} className="sidebutton">
               <div className='symbol'><DiGhostSmall/ ></div>
             </button>
-          </div>
+          </div> */}
           <div className="Head_logo">
             <div className="logo">
                 <img src={logo}></img>

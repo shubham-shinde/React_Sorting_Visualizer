@@ -21,7 +21,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 //SIDEBAR
-import Sidebar from "react-sidebar";
+// import Sidebar from "react-sidebar";
 
 import AlgorithmList from '../SortingPage/AlgorithmList/AlgorithmList';
 import SortingBox from '../SortingPage/SortingBox/SortingBox';
@@ -69,24 +69,14 @@ class App extends React.Component {
         <meta name="description" content="Sorting Visualizer"/>
         </Helmet>
       <div className="grand-father">
-        {/* <button className="sidebutton">
-          <h1 className='symbol'>≔</h1>
-          <h1 className='symbol'>≔</h1>
-        </button> */}
-
-
-        {/*SIdeBAr*/}
-        <Sidebar
+        {/* <Sidebar
         sidebar={<Header/>}
         open={this.state.sidebarOpen}
         onSetOpen={this.onSetSidebarOpen}
         docked={this.state.sidebarDocked}
         styles={{ sidebar: { background: "white" } }}
       >
-        {/* <button onClick={() => this.onSetSidebarOpen(true)}>
-          Open sidebar
-        </button> */}
-      </Sidebar>
+      </Sidebar> */}
 
 
 {/* 
@@ -95,16 +85,14 @@ class App extends React.Component {
 
         <div className='big-godfather'>
           <Switch>
-            <Route path="/pathfinding">
+            {/* <Route path="/pathfinding">
               <div className="godfather">
                 <Head onSetSidebarOpen={this.onSetSidebarOpen} />
-                {/* <ButtonBox/> */}
                 <div className="main">
-                  {/* <SortingBox /> */}
                 </div>
                 <AlgorithmList/>
               </div>
-            </Route>
+            </Route> */}
             <Route path="/">
               <div className="godfather">
                 <Head onSetSidebarOpen={this.onSetSidebarOpen} />
