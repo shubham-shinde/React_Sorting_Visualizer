@@ -51,9 +51,9 @@ const pause_wait = async (getState) => {
     }
 }
 
-const check = async (getState, dispatch, list) => {
+const check = async (getState, dispatch, list, force) => {
     await pause_wait(getState);
-    if (!getState().list.sorting) return true;
+    if (!getState().list.sorting && !force) return true;
     await update_list(getState, dispatch, list);
     return false
 }
@@ -191,8 +191,8 @@ export const insertion_sort = () => async (dispatch, getState) => {
 
         key = { ...list[i] };
 
-        list[i] = { ...list[i], pointer: [...list[i].pointer, { color: 'orange'}] };
-        if (await check(getState, dispatch, list)) return;
+        // list[i] = { ...list[i], pointer: [...list[i].pointer, { color: 'orange'}] };
+        // if (await check(getState, dispatch, list)) return;
 
         j = i - 1;
         /* Move elements of list[0..i-1], that are  
@@ -201,30 +201,53 @@ export const insertion_sort = () => async (dispatch, getState) => {
         while (j >= 0) {
             if(list[j].num > key.num) {
                 list[j] = { ...list[j], pointer: [...list[j].pointer, { color: 'red'}] };
-                if (await check(getState, dispatch, list)) return;
+                if (await check(getState, dispatch, list)) {
+                    // list[j + 1] = key;
+                    // if (await check(getState, dispatch, list)) return;
+                    return;
+                }
 
                 list[j] = { ...list[j], white: true };
                 list[j+1] = { ...list[j+1], white: true };
-                if (await check(getState, dispatch, list)) return;
+                if (await check(getState, dispatch, list)) {
+                    // list[j + 1] = key;
+                    // if (await check(getState, dispatch, list)) return;
+                    return;
+                }
 
-                list[j + 1] = { ...list[j], pointer: [...list[j + 1].pointer] };
-                if (await check(getState, dispatch, list)) return;
+
+                // list[j] = { ...list[j], pointer: [...list[j].pointer.slice(0,list[j].pointer.length - 1 )] };
+                list[j + 1] = { ...list[j] };
+                list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
+                if (await check(getState, dispatch, list)) {
+                    // list[j] = {...key};
+                    // if (await check(getState, dispatch, list, true)) return;
+                    return;
+                }
 
                 list[j] = { ...list[j], white: false };
                 list[j+1] = { ...list[j+1], white: false };
-                if (await check(getState, dispatch, list)) return;
+                if (await check(getState, dispatch, list)) {
+                    // list[j] = {...key};
+                    // if (await check(getState, dispatch, list, true)) return;
+                    return;
+                }
 
-                list[j] = { ...list[j], pointer: [...list[j].pointer.slice(0,list[j].pointer.length - 1 )] };
-                if (await check(getState, dispatch, list)) return;
+                // list[j] = { ...list[j], pointer: [...list[j].pointer.slice(0,list[j].pointer.length - 1 )] };
+                // if (await check(getState, dispatch, list)) return;
 
                 j = j - 1;
             }
             else {
-                list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
-                if (await check(getState, dispatch, list)) return;
+                // list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
+                // if (await check(getState, dispatch, list)) return;
                 break;
             }
         }
+
+
+        list[j+1] = { ...list[j+1], white: true };
+        if (await check(getState, dispatch, list)) return;
 
         list[j + 1] = key;
         if (await check(getState, dispatch, list)) return;
