@@ -65,12 +65,12 @@ export const start_bubble_sort = () => async (dispatch, getState) => {
     dispatch(sorting_start('Bubble'));
 
     for (let i = 0; i < len; i++) {
-        list[i] = { ...list[i], pointer: true };
+        list[i] = { ...list[i], pointer: [...list[i].pointer, { color: 'white'}] };
 
         if (await check(getState, dispatch, list)) return;
 
         for (let j = 0; j < len - 1; j++) {
-            list[j] = { ...list[j], pointer: true };
+            list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer, { color: 'orange'}] };
 
             if (await check(getState, dispatch, list)) return;
 
@@ -81,8 +81,8 @@ export const start_bubble_sort = () => async (dispatch, getState) => {
                 if (await check(getState, dispatch, list)) return;
 
                 //swap
-                let temp = { ...list[j] };
-                list[j] = { ...list[j + 1] };
+                let temp = { ...list[j], pointer: [...list[j+1].pointer] };
+                list[j] = { ...list[j + 1], pointer: [...list[j].pointer] };
                 list[j + 1] = { ...temp };
 
                 if (await check(getState, dispatch, list)) return;
@@ -92,16 +92,16 @@ export const start_bubble_sort = () => async (dispatch, getState) => {
 
                 if (await check(getState, dispatch, list)) return;
 
-                list[j + 1] = { ...list[j + 1], pointer: false };
+                list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
 
                 if (await check(getState, dispatch, list)) return;
             }
             else {
-                list[j] = { ...list[j], pointer: false };
+                list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
                 if (await check(getState, dispatch, list)) return;
             }
         }
-        list[i] = { ...list[i], pointer: false };
+        list[i] = { ...list[i], pointer: [...list[i].pointer.slice(0,list[i].pointer.length - 1 )] };
 
         if (await check(getState, dispatch, list)) return;
     }
@@ -111,30 +111,39 @@ export const start_bubble_sort = () => async (dispatch, getState) => {
 export const selection_sort = () => async (dispatch, getState) => {
     let list = [...getState().list.list];
     const len = list.length;
-    const ms = 10;
 
     dispatch(sorting_start("Selection"));
 
     for (let i = 0; i < len; i++) {
 
-        list[i] = { ...list[i], pointer: true };
+        list[i] = { ...list[i], pointer: [...list[i].pointer, { color: 'white'}] };
 
         if (await check(getState, dispatch, list)) return;
 
         let min = i;
+
+        list[min] = { ...list[min], pointer: [...list[min].pointer, { color: 'red'}] };
+
+        if (await check(getState, dispatch, list)) return;
+
         for (let j = i + 1; j < len; j++) {
 
-            list[j] = { ...list[j], pointer: true };
+            list[j] = { ...list[j], pointer: [...list[j].pointer, { color: 'orange'}] };
 
             if (await check(getState, dispatch, list)) return;
 
             if (list[min].num > list[j].num) {
+                list[min] = { ...list[min], pointer: [...list[min].pointer.slice(0,list[min].pointer.length - 1 )] };
+                if (await check(getState, dispatch, list)) return;
                 min = j;
+                list[j] = { ...list[j], pointer: [...list[j].pointer.slice(0,list[j].pointer.length - 1 )] };
+                list[min] = { ...list[min], pointer: [...list[min].pointer, { color: 'red'}] };
+                if (await check(getState, dispatch, list)) return;
             }
-
-            list[j] = { ...list[j], pointer: false };
-
-            if (await check(getState, dispatch, list)) return;
+            else {
+                list[j] = { ...list[j], pointer: [...list[j].pointer.slice(0,list[j].pointer.length - 1 )] };
+                if (await check(getState, dispatch, list)) return;
+            }
         }
         if (min !== i) {
             list[i] = { ...list[i], white: true };
@@ -144,19 +153,22 @@ export const selection_sort = () => async (dispatch, getState) => {
             // await waitTime(ms+100);
 
             //swap
-            let tmp = { ...list[i], pointer: false };
-            list[i] = { ...list[min] };
+            let tmp = { ...list[i], pointer: [...list[min].pointer] };
+            list[i] = { ...list[min], pointer: [...list[i].pointer] };
             list[min] = { ...tmp };
 
             if (await check(getState, dispatch, list)) return;
 
             list[i] = { ...list[i], white: false };
             list[min] = { ...list[min], white: false };
+            if (await check(getState, dispatch, list)) return;
+
+            list[min] = { ...list[min], pointer: [...list[min].pointer.slice(0,list[min].pointer.length - 1 )] };
 
             if (await check(getState, dispatch, list)) return;
         }
 
-        list[i] = { ...list[i], pointer: false };
+        else list[i] = { ...list[i], pointer: [...list[i].pointer.slice(0,list[i].pointer.length - 1 )] };
 
         if (await check(getState, dispatch, list)) return;
     }
@@ -172,34 +184,53 @@ export const insertion_sort = () => async (dispatch, getState) => {
     dispatch(sorting_start("Insertion"));
 
     let i, key, j;
-    for (i = 1; i < len; i++) {
+    for (i = 0; i < len; i++) {
 
-        list[i] = { ...list[i], pointer: true };
+        list[i] = { ...list[i], pointer: [...list[i].pointer, { color: 'white'}] };
         if (await check(getState, dispatch, list)) return;
 
         key = { ...list[i] };
+
+        list[i] = { ...list[i], pointer: [...list[i].pointer, { color: 'orange'}] };
+        if (await check(getState, dispatch, list)) return;
+
         j = i - 1;
         /* Move elements of list[0..i-1], that are  
         greater than key, to one position ahead  
         of their current position */
-        while (j >= 0 && list[j].num > key.num) {
-            list[j] = { ...list[j], pointer: true };
-            if (await check(getState, dispatch, list)) return;
+        while (j >= 0) {
+            if(list[j].num > key.num) {
+                list[j] = { ...list[j], pointer: [...list[j].pointer, { color: 'red'}] };
+                if (await check(getState, dispatch, list)) return;
 
-            list[j + 1] = { ...list[j] };
-            if (await check(getState, dispatch, list)) return;
+                list[j] = { ...list[j], white: true };
+                list[j+1] = { ...list[j+1], white: true };
+                if (await check(getState, dispatch, list)) return;
 
-            list[j + 1] = { ...list[j + 1], pointer: false };
-            if (await check(getState, dispatch, list)) return;
+                list[j + 1] = { ...list[j], pointer: [...list[j + 1].pointer] };
+                if (await check(getState, dispatch, list)) return;
 
-            j = j - 1;
+                list[j] = { ...list[j], white: false };
+                list[j+1] = { ...list[j+1], white: false };
+                if (await check(getState, dispatch, list)) return;
+
+                list[j] = { ...list[j], pointer: [...list[j].pointer.slice(0,list[j].pointer.length - 1 )] };
+                if (await check(getState, dispatch, list)) return;
+
+                j = j - 1;
+            }
+            else {
+                list[j+1] = { ...list[j+1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
+                if (await check(getState, dispatch, list)) return;
+                break;
+            }
         }
 
         list[j + 1] = key;
         if (await check(getState, dispatch, list)) return;
 
-        list[j + 1] = { ...list[j + 1], pointer: false };
-        if (await check(getState, dispatch, list)) return;
+        // list[j + 1] = { ...list[j + 1], pointer: [...list[j+1].pointer.slice(0,list[j+1].pointer.length - 1 )] };
+        // if (await check(getState, dispatch, list)) return;
     }
 
     dispatch(sorting_end());

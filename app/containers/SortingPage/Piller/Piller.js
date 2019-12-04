@@ -22,7 +22,7 @@ class Piller extends React.Component {
             
         }}
         >
-            { pointer && <div className="pointer"></div> }
+            { pointer.length>0 && <div className="pointer" style={{background: pointer[pointer.length - 1].color}} ></div> }
         </div>
     );
   }
