@@ -297,63 +297,6 @@ export const merge_sort = () => async (dispatch, getState) => {
         let left_start; // For picking starting index of left subarray 
         // to be merged 
 
-        const merge = async (l, m, r) => {
-            let i, j, k;
-            let n1 = m - l + 1;
-            let n2 = r - m;
-
-
-            list[l] = { ...list[l], pointer: true };
-            list[m] = { ...list[m], pointer: true };
-
-            if (await check(getState, dispatch, list)) return true;
-
-            /* create temp arrays */
-            let L = [], R = [];
-
-            /* Copy data to temp arrays L[] and R[] */
-            for (i = 0; i < n1; i++)
-                L.push({ ...list[l + i] });
-            for (j = 0; j < n2; j++)
-                R.push({ ...list[m + 1 + j] });
-
-            /* Merge the temp listays back into list[l..r]*/
-            i = 0;
-            j = 0;
-            k = l;
-            while (i < n1 && j < n2) {
-                if (L[i].num <= R[j].num) {
-                    list[k] = { ...L[i] };
-                    i++;
-                }
-                else {
-                    list[k] = { ...R[j] };
-                    j++;
-                }
-                k++;
-            }
-
-            /* Copy the remaining elements of L[], if there are any */
-            while (i < n1) {
-                list[k] = { ...L[i] };
-                i++;
-                k++;
-            }
-
-            /* Copy the remaining elements of R[], if there are any */
-            while (j < n2) {
-                list[k] = { ...R[j] };
-                j++;
-                k++;
-            }
-
-
-            list[l] = { ...list[l], pointer: false };
-            list[m] = { ...list[m], pointer: false };
-
-            if (await check(getState, dispatch, list)) return true;
-        }
-
         // Merge subarrays in bottom up manner.  First merge subarrays of 
         // size 1 to create sorted subarrays of size 2, then merge subarrays 
         // of size 2 to create sorted subarrays of size 4, and so on. 
@@ -365,8 +308,41 @@ export const merge_sort = () => async (dispatch, getState) => {
                 let mid = Math.min(left_start + curr_size - 1, n - 1);
                 let right_end = Math.min(left_start + 2 * curr_size - 1, n - 1);
 
+                list[left_start] = { ...list[left_start], pointer: [...list[left_start].pointer, { color: 'red'}] };
+                list[right_end] = { ...list[right_end], pointer: [...list[right_end].pointer, { color: 'red'}] };
+                if (await check(getState, dispatch, list)) return;
+                list[mid] = { ...list[mid], pointer: [...list[mid].pointer, { color: 'orange'}] };
+                if (await check(getState, dispatch, list)) return;
+
                 // Merge Subarrays arr[left_start...mid] & arr[mid+1...right_end] 
-                await merge(left_start, mid, right_end);
+                let i = left_start;
+                let j = mid+1;
+                let k = left_start;
+                
+                while (i < mid+1 && j < right_end+1) {
+                    if (list[i].num <= list[j].num) {
+                        i++;
+                    }
+                    else {
+                        for(let kk=j; kk>k; kk--) {
+                            let temp = { ...list[kk], pointer: [...list[kk-1].pointer] };
+                            list[kk] = { ...list[kk-1], pointer: [...list[kk].pointer] };
+                            list[kk-1] = { ...temp };
+                        }
+                        j++;
+                        list[mid] = { ...list[mid], pointer: [...list[mid].pointer.slice(0,list[mid].pointer.length - 1 )] };
+                        mid++;
+                        list[mid] = { ...list[mid], pointer: [...list[mid].pointer, { color: 'orange'}] };
+                        i++;
+                    }
+                    if(await check(getState, dispatch, list)) return true;
+                    k++;
+                }
+
+                list[left_start] = { ...list[left_start], pointer: [...list[left_start].pointer.slice(0,list[left_start].pointer.length - 1 )] };
+                list[right_end] = { ...list[right_end], pointer: [...list[right_end].pointer.slice(0,list[right_end].pointer.length - 1 )] };
+                list[mid] = { ...list[mid], pointer: [...list[mid].pointer.slice(0,list[mid].pointer.length - 1 )] };
+                if (await check(getState, dispatch, list)) return;
             }
         }
 
