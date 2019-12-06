@@ -27,7 +27,7 @@ class ButtonBar1 extends React.Component {
     this.setState({ pause: !this.state.pause });
   };
 
-  handleStart = () => {
+  handleSearch = () => {
     this.setState({ searching: true });
   };
   handleStart = () => {
@@ -85,7 +85,7 @@ class ButtonBar1 extends React.Component {
                 <button
                   className="speed1 pulse active end"
                   style={{ color: 'oramge' }}
-                  onClick={this.handleStart}
+                  onClick={this.handleSearch}
                 >
                   <span>START</span>
                   <span className="emoji">
