@@ -27,9 +27,7 @@ class Grid extends React.Component {
         {grid.map(row => (
           <div className="array">
             {row.map(box => (
-              <div className="selected_box">
                 <Box {...box} {...start} />
-              </div>
             ))}
           </div>
         ))}
