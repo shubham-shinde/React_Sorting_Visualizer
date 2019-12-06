@@ -11,14 +11,30 @@
   .X1 {
     display: flex;
     align-items: center;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 
     .X1_1 {
       display: flex;
       flex-flow: wrap;
       justify-content: center;
+
+      .pp {
+        width: 2rem;
+        align-items: center;
+
+        span {
+
+          padding-bottom: .2rem;
+          margin: 0;
+        }
+      }
+
+      .end {
+        width: 4rem;
+        align-items: center;
+
+      }
     }
 
     .X1_2 {
@@ -47,7 +63,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #000000;
+      background-color: #141927;
       border: 2px solid #95386D;
 
       span {
@@ -102,7 +118,7 @@
       height: 2.2rem;
       margin-right: 1rem;
       border: 1px solid #95386D;
-      background-color: black;
+      background-color: #141927;
       color: #e7e7e7;
       border-radius: 50%;
       padding: 0.4rem;

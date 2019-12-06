@@ -23,6 +23,16 @@ class ButtonBar1 extends React.Component {
       searching: false,
     };
   }
+
+  handlReset = () => {
+    this.setState({
+      start: 'white',
+      dest: 'white',
+      obst: 'white',
+      pause: false,
+      searching: false,
+    });
+  };
   handlePause = () => {
     this.setState({ pause: !this.state.pause });
   };
@@ -49,7 +59,7 @@ class ButtonBar1 extends React.Component {
             {!this.state.searching ? (
               <div className="X1_1">
                 <button
-                  className="speed1 pulse active end"
+                  className="speed1 pulse active "
                   onClick={this.props.actions.sorting_end}
                   onClick={this.handleStart}
                   style={{ color: this.state.start }}
@@ -60,7 +70,7 @@ class ButtonBar1 extends React.Component {
                   </span>
                 </button>
                 <button
-                  className="speed1 pulse active end"
+                  className="speed1 pulse active "
                   onClick={this.props.actions.sorting_end}
                   onClick={this.handleDest}
                   style={{ color: this.state.dest }}
@@ -72,7 +82,7 @@ class ButtonBar1 extends React.Component {
                 </button>
 
                 <button
-                  className="speed1 pulse active end"
+                  className="speed1 pulse active "
                   onClick={this.props.actions.sorting_end}
                   onClick={this.handleObst}
                   style={{ color: this.state.obst }}
@@ -83,7 +93,7 @@ class ButtonBar1 extends React.Component {
                   </span>
                 </button>
                 <button
-                  className="speed1 pulse active end"
+                  className="speed1 pulse active "
                   style={{ color: 'oramge' }}
                   onClick={this.handleSearch}
                 >
@@ -95,7 +105,7 @@ class ButtonBar1 extends React.Component {
               </div>
             ) : !this.state.pause ? (
               <button
-                className="speed1 pulse active end"
+                className="speed1 pulse active pp"
                 style={{ color: 'oramge' }}
                 onClick={this.handlePause}
               >
@@ -105,17 +115,31 @@ class ButtonBar1 extends React.Component {
                 </span>
               </button>
             ) : (
+              <div>
+                <div>
+                  <button
+                    className="speed1 pulse active pp"
+                    style={{ color: 'oramge' }}
+                    onClick={this.handlePause}
+                  >
+                    <span></span>
+                    <span className="emoji">
+                      <IoMdPlay />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            )}
+            <div>
               <button
                 className="speed1 pulse active end"
                 style={{ color: 'oramge' }}
-                onClick={this.handlePause}
+                onClick={this.handlReset}
               >
-                <span></span>
-                <span className="emoji">
-                  <IoMdPlay />
-                </span>
+                <span>RESET</span>
+                <span className="emoji"></span>
               </button>
-            )}
+            </div>
             {/* <button
               className="speed1 pulse active end"
               onClick={this.props.actions.sorting_end}
@@ -161,22 +185,24 @@ class ButtonBar1 extends React.Component {
               </span>
             </button> */}
           </div>
-          <div className="X1_2">
-            <button
-              className="pulse active end xxx"
-              onClick={this.props.actions.sorting_end}
-            >
-              <div className="xx">
-                <span>1x</span>
-              </div>
-              <div className="xx">
-                <span>2x</span>
-              </div>
-              <div className="xx">
-                <span>4x</span>
-              </div>
-            </button>
-          </div>
+          {this.state.searching && (
+            <div className="X1_2">
+              <button
+                className="pulse active end xxx"
+                onClick={this.props.actions.sorting_end}
+              >
+                <div className="xx">
+                  <span>1x</span>
+                </div>
+                <div className="xx">
+                  <span>2x</span>
+                </div>
+                <div className="xx">
+                  <span>4x</span>
+                </div>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );
