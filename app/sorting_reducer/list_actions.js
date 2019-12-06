@@ -338,7 +338,6 @@ export const merge_sort = () => async (dispatch, getState) => {
                     if(await check(getState, dispatch, list)) return true;
                     k++;
                 }
-
                 list[left_start] = { ...list[left_start], pointer: [...list[left_start].pointer.slice(0,list[left_start].pointer.length - 1 )] };
                 list[right_end] = { ...list[right_end], pointer: [...list[right_end].pointer.slice(0,list[right_end].pointer.length - 1 )] };
                 list[mid] = { ...list[mid], pointer: [...list[mid].pointer.slice(0,list[mid].pointer.length - 1 )] };
@@ -442,7 +441,6 @@ export const quick_sort = () => async (dispatch, getState) => {
                 stack[++top] = h;
             }
         }
-
 
         dispatch(sorting_end());
     }
