@@ -1,13 +1,17 @@
-.grid{
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  // width: 500px;
+  // background: yellow;
+  .array {
     display: flex;
-    flex-direction: column;
-    // width: 500px;
-    // background: yellow;
-    .array {
-        display: flex;
-        justify-content: center;
-    }
-    // height: 500px;
-    // flex-wrap: ;;;
-    
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  // height: 500px;
+  // flex-wrap: ;;;
+
 }

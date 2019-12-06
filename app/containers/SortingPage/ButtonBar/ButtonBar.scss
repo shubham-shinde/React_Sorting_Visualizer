@@ -1,65 +1,76 @@
-.button{
-    text-align: center;
+.button {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .X {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-    .playpause{
-        display: flex;
-        justify-content: space-around;
-    }
-    .random{
-        border-style: none;
-        height: 2rem;
-        border-radius: 0.5rem;
-        font-family: Lato;
-        font-size: 1rem;
-        background-color: #95386a;
-        border: 1px solid #5e46a6;
-        color: rgb(14, 17, 22);
-        color:#e7e7e7;
-        width: 6rem;
-        outline:none;
-        padding: 0;
-    }
-    .random:hover{
-        cursor: pointer;
-    }
-    .speed{
-        border-radius: 50%;
-        padding: 0.4rem;
-        margin-top:.4rem ;
-        outline: none;
-    }
-    // .speed:hover{
-    //     border: 2px solid #e7e7e7;
-    //     color:#e7e7e7 !important
-    // }
-    .X{
-        display: flex;
-        align-items: center;
-    }
-    .active{
-        --color: #e7e7e7;
-        border-color: #95386D;
-        outline: none;
-    }
-    .active:hover{
-        cursor: pointer;
-    }
-    .end {
-        border-radius: 1rem;
-        padding: 0.4rem 1rem;
-    }
-    
-    .raise:hover,
-    .raise:focus {
+  }
+
+  .playpause {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .random {
+    border-style: none;
+    height: 2rem;
+    border-radius: 0.5rem;
+    font-family: Lato;
+    font-size: 1rem;
+    background-color: #95386a;
+    border: 1px solid #5e46a6;
+    color: rgb(14, 17, 22);
+    color: #e7e7e7;
+    width: 6rem;
+    outline: none;
+    padding: 0;
+  }
+
+  .random:hover {
+    cursor: pointer;
+  }
+
+  .speed {
+    border-radius: 50%;
+    padding: 0.4rem;
+    margin-top: .4rem;
+    outline: none;
+  }
+
+  // .speed:hover{
+  //     border: 2px solid #e7e7e7;
+  //     color:#e7e7e7 !important
+  // }
+
+
+  .active {
+    --color: #e7e7e7;
+    border-color: #95386D;
+    outline: none;
+  }
+
+  .active:hover {
+    cursor: pointer;
+  }
+
+  .end {
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .raise:hover,
+  .raise:focus {
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
     //   transform: translateY(-0.25em);
-        }
-    }
-    .pulse:hover, 
-    .pulse:focus {
-    animation: pulse 1s;
-    box-shadow: 0 0 0 2em rgba(#fff,0);
-    }
+  }
+}
+
+.pulse:hover,
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff, 0);
+}
