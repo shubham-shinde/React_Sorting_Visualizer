@@ -19,7 +19,7 @@ This Web App Visualize the Complex Sorting Technique in straightforward. This wi
  ![](https://imgur.com/XNBNAKC.png)
  
  ## Installation
- Project is developed in Reacjs environment with custom boilerplate. You Have to Run following command for installation and starting project. 
+ Project is developed in Reacjs environment with custom boilerplate. You have to Run following command for installation and starting project. 
  ```bash
  pnpm install
  ```
@@ -33,7 +33,7 @@ This Web App Visualize the Complex Sorting Technique in straightforward. This wi
  This project is Develop by Team of Shubham Shinde and Shivam Srivastava. The idea of this project is retrieve from Internet.
  
  ## RoadMap
- We are extending this project and adding [Shortest Path Algorithm] and changing the UI of the Application
+ We are extending this project and adding **Shortest Path Algorithm** and changing the UI of the Application
   
  #### This is Comming Soon ...
  ![](https://imgur.com/r2LbLEZ.png)
