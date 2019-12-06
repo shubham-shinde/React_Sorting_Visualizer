@@ -1,7 +1,7 @@
 import * as types from './list_action_types';
 
 function range(start, end) {
-    return Array(end - start + 1).fill().map((_, idx) => ({ num: start + idx, white: false, pointer: false}));
+    return Array(end - start + 1).fill().map((_, idx) => ({ num: start + idx, white: false, pointer: []}));
 }
 
 const initialState = {
@@ -37,7 +37,7 @@ const listReducer = (state = initialState, action) => {
             const new_state = {...state};
             let list = [...new_state.list];
             for(let i in list) {
-                list[i] = {...list[i], white: false, pointer: false};
+                list[i] = {...list[i], white: false, pointer: []};
             }
             new_state.list = [...list];
             new_state.sorting = false;
@@ -48,7 +48,7 @@ const listReducer = (state = initialState, action) => {
             const new_state = {...state};
             let list = [...new_state.list];
             for(let i in list) {
-                list[i] = {...list[i], white: false, pointer: false};
+                list[i] = {...list[i], white: false, pointer: []};
             }
             new_state.list = [...list];
             new_state.sorting = false;

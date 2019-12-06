@@ -70,9 +70,9 @@ class Piller extends React.Component {
           minWidth: '',
           flexGrow: 1,
         }}
-      >
-        {pointer && <div className="pointer"></div>}
-      </div>
+        >
+            { pointer.length>0 && <div className="pointer" style={{background: pointer[pointer.length - 1].color}} ></div> }
+        </div>
     );
   }
 }
