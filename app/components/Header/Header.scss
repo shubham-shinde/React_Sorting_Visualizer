@@ -4,46 +4,55 @@
   flex-direction: column;
   // background-color: cadetblue;
   width: 20rem;
-  .side-tray{
+
+  .side-tray {
     max-width: 100%;
     color: #aba7de;
     height: 100vh;
-    background:#0d121f;
-    width:100%;
+    background: #0d121f;
+    width: 100%;
     display: flex;
-    flex-direction: column;;
-    .Head_logo{
+    flex-direction: column;
+    ;
+
+    .Head_logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      .logo{
-        img
-        {
+
+      .logo {
+        img {
           WIDTH: 4REM;
           // MARGIN-TOP: 1.5REM;
           MARGIN-RIGHT: 0.2rem;
           transform: rotate(-15deg);
         }
       }
-      .heading{
+
+      .heading {
         text-align: center;
         line-height: 2rem;
-        h1{
+
+        h1 {
           color: #aba7de;
           font-weight: 700;
           font-size: 26px;
         }
       }
-  
+
     }
-    .content{
+
+    .content {
       margin-top: 3rem;
       align-items: center;
+
       a {
         text-decoration: none;
-        .content-li{
+
+        .content-li {
           display: flex;
           justify-content: flex-end;
+
           // .open{
           //   width: 20%;
           //   height: 1.5rem;
@@ -61,7 +70,7 @@
           //   background: #524b9a;
           //   margin-right:0.5rem ;
           // }
-          .tag{
+          .tag {
             align-items: center;
             margin-bottom: 1rem;
             width: 12rem;
@@ -69,25 +78,28 @@
             text-align: right;
             margin-right: 0.5rem;
             font-size: 22px;
-  
+
           }
-          
+
         }
 
       }
+
       .active {
-        .content-li{
+        .content-li {
           cursor: pointer;
-          .open{
+
+          .open {
             width: 20%;
             height: 1.5rem;
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
             background: #524b9a;
-            margin-right:0.5rem ;
+            margin-right: 0.5rem;
             flex-grow: 1;
           }
-          .tag{
+
+          .tag {
             color: #524b9a;
             font-size: 22px;
 
@@ -95,67 +107,92 @@
         }
       }
     }
-    .profile{
+
+    .profile {
       justify-content: center;
       margin-top: auto;
       justify-content: center;
       margin-bottom: 1rem;
-      .portfolio{
-        margin-top:1rem;
+
+      .github {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        // border: 1px solid red;
+
+        a {
+          text-decoration: none;
+        }
+
+        span {
+          text-decoration: none;
+          margin-left: 0.5rem;
+        }
+      }
+
+      .portfolio {
+        margin-top: 1rem;
         display: flex;
         justify-content: flex-end;
         margin-right: 1REM;
         align-items: flex-end;
-        .text_p{
+
+        .text_p {
           width: 10rem;
-          .text_p_link{
-            a{
+
+          .text_p_link {
+            a {
               text-decoration: none;
-              color:#aba7de
-              
+              color: #aba7de
             }
           }
-         .text_p_link:hover{
-           a{
-             color: #524b9a;
+
+          .text_p_link:hover {
+            a {
+              color: #524b9a;
+            }
+
+
           }
-          
-           
-         }
         }
-        .photo{
-          img{
+
+        .photo {
+          img {
             width: 3rem;
             border-radius: 50%;
             margin-right: 1rem;
           }
-                // flex-grow: 1;
+
+          // flex-grow: 1;
           // border-radius: 50%;
           cursor: pointer;
         }
       }
     }
   }
-} 
-@media screen  and (max-width:800px){
-  .Header{
+}
+
+@media screen and (max-width:800px) {
+  .Header {
     width: 80vw;
-    height:100vh;
-    .side-tray{
-      .Head_logo{
-        .heading{
-          h1{
+    height: 100vh;
+
+    .side-tray {
+      .Head_logo {
+        .heading {
+          h1 {
             font-size: 28px;
           }
         }
-        .logo{
-          img{
-            width:4rem;
+
+        .logo {
+          img {
+            width: 4rem;
           }
         }
       }
     }
   }
 }
-
-

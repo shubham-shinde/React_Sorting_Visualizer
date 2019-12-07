@@ -5,7 +5,7 @@ import './Header.scss';
 import shivam from '../../images/shivam.jpg';
 import shubham from '../../images/shubham.jpg';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-
+import { GoMarkGithub } from 'react-icons/go';
 // components
 
 // icons
@@ -43,7 +43,16 @@ function Header() {
           </NavLink>
         </div>
         <br></br>
+
         <div className="profile">
+          <div className="github">
+            <div>
+              <span>Soure Code </span>
+              <span className="logo">
+                <GoMarkGithub />
+              </span>
+            </div>
+          </div>
           <div className="portfolio">
             <div className="photo">
               <img src={shubham}></img>
@@ -88,5 +97,4 @@ function Header() {
     </div>
   );
 }
-
 export default Header;
