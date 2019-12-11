@@ -40,7 +40,8 @@ This Web App Visualize the Complex Sorting Technique in straightforward. This wi
  
  ## Support Us
  You can send your suggestion and query to us we are always willing to reply
-  shivam.mkp@gmail.com
+  shivam.mkp@gmail.com or
+  shindes0321@gmail.com
 
  
  
