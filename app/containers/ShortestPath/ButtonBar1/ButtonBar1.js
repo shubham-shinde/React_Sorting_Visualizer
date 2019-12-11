@@ -1,7 +1,7 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../../sorting_reducer/list_actions';
+import * as actions from '../../../sortest_path_reducer/grid_actions';
 import './ButtonBar1.scss';
 import {
   IoMdHappy,
@@ -40,18 +40,16 @@ class ButtonBar1 extends React.Component {
   handleSearch = () => {
     this.setState({ searching: true });
   };
-  handleStart = () => {
-    return this.setState({ start: 'yellow', dest: 'white', obst: 'white' });
-  };
-  handleDest = props => {
-    return this.setState({ start: 'white', dest: 'green', obst: 'white' });
-  };
-  handleObst = props => {
-    return this.setState({ start: 'white', dest: 'white', obst: 'red' });
-  };
 
   render() {
-    const { pause, sorting, wait_time } = this.props.list;
+    const { 
+      pause, 
+      wait_time, 
+      actv_srt_btn, 
+      actv_end_btn, 
+      actv_clog_btn 
+    } = this.props.grid;
+
     return (
       <div className="button1">
         <div className="X1">
@@ -60,9 +58,8 @@ class ButtonBar1 extends React.Component {
               <div className="X1_1">
                 <button
                   className="speed1 pulse active "
-                  onClick={this.props.actions.sorting_end}
-                  onClick={this.handleStart}
-                  style={{ color: this.state.start }}
+                  onClick={this.props.actions.act_start_btn}
+                  style={{ color: actv_srt_btn && 'yellow' }}
                 >
                   <span>BEGIN</span>
                   <span className="emoji">
@@ -71,9 +68,8 @@ class ButtonBar1 extends React.Component {
                 </button>
                 <button
                   className="speed1 pulse active "
-                  onClick={this.props.actions.sorting_end}
-                  onClick={this.handleDest}
-                  style={{ color: this.state.dest }}
+                  onClick={this.props.actions.act_end_btn}
+                  style={{ color: actv_end_btn && 'green' }}
                 >
                   <span>END</span>
                   <span className="emoji">
@@ -83,9 +79,8 @@ class ButtonBar1 extends React.Component {
 
                 <button
                   className="speed1 pulse active "
-                  onClick={this.props.actions.sorting_end}
-                  onClick={this.handleObst}
-                  style={{ color: this.state.obst }}
+                  onClick={this.props.actions.act_clog_btn}
+                  style={{ color: actv_clog_btn && 'red' }}
                 >
                   <span>CLOG</span>
                   <span className="emoji">
@@ -210,7 +205,7 @@ class ButtonBar1 extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  list: state.list,
+  grid: state.grid,
 });
 
 const mapDispatchToProps = dispatch => ({

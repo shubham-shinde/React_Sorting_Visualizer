@@ -1,33 +1,20 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
+import * as actions from '../../../sortest_path_reducer/grid_actions'
 import './Grid.scss';
 import Box from '../Box/Box.js';
 import '../ButtonBar1/ButtonBar1.js';
 
 class Grid extends React.Component {
   render() {
-    let row = 19;
-    let column = 23;
-    let grid = new Array(row);
-    for (let i = 0; i < row; i++) {
-      grid[i] = new Array(column);
-    }
-    console.log('grid', grid);
-    for (let i = 0; i < row; i++) {
-      for (let j = 0; j < column; j++) {
-        grid[i][j] = {
-          row: i + 1,
-          column: j + 1,
-        };
-      }
-    }
-    const start = { color: 'yellow', point: true };
-
+    const grid = this.props.grid.grid;
     return (
       <div className="grid">
         {grid.map(row => (
           <div className="array">
             {row.map(box => (
-                <Box {...box} {...start} />
+                <Box {...box} />
             ))}
           </div>
         ))}
@@ -36,4 +23,12 @@ class Grid extends React.Component {
   }
 }
 
-export default Grid;
+const mapStateToProps = state => ({
+  grid: state.grid,
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Grid);
