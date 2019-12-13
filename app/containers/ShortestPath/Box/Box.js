@@ -11,7 +11,7 @@ class Box extends React.Component {
   };
   render() {
     const { grid, row, column} = this.props;
-    const {start, end, clog, checked, queue} = grid;
+    const {start, end, clog, checked, queue, path} = grid;
     let color = 'black';
     if(start.length>0 && start[0] === row && start[1] === column) color = 'yellow';
     else if(end.length>0 && end[0] === row && end[1] === column) color = 'green';
@@ -20,10 +20,13 @@ class Box extends React.Component {
         if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'red';
       });
       queue.forEach(ele => {
-        if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'gray';
+        if(ele.point.length>0 && ele.point[0] === row && ele.point[1] === column) color = 'gray';
       });
       checked.forEach(ele => {
         if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'white';
+      });
+      path.forEach(ele => {
+        if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'green';
       });
     }
     return (

@@ -48,6 +48,9 @@ const listReducer = (state = initialState, action) => {
             if(action.elements.checked) {
                 new_state.checked = [...action.elements.checked];
             }
+            if(action.elements.path) {
+                new_state.path = [...action.elements.path];
+            }
             return new_state;
         }
         case types.ADD_ELEMENT: {

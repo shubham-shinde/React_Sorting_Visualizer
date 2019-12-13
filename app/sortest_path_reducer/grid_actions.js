@@ -100,28 +100,39 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
     const column = grid[0].length;
     dispatch(algo_start());
     const start = state.start;
-    const end = state.end;
-    const clog = state.clog
     let checked = state.checked;
     let queue = [...state.queue];
 
-    queue = [...queue,start];
+    queue = [...queue,{ point : start, path: [[...start]]}];
     if(await check(getState, dispatch, {queue})) return;
     console.log(queue, 'queue');
     let k = 0
     while(queue.length > 0) {
-        const top = [...queue[0]];
+        console.log('itr');
+        
+        const top = {...queue[0]};
         queue = [...queue.splice(1)];
         if(await check(getState, dispatch, {queue})) return;
-        const neighbour = surrounding_point(row, column, top);
-        checked = [...checked, [...top]];
+        const neighbour = surrounding_point(row, column, top.point);
+        checked = [...checked, [...top.point]];
         
         if(await check(getState, dispatch, {checked})) return;
 
+
         for(let i in neighbour) {
-            if(point_equal(neighbour[i], end)) break;
-            if(in_list(checked, neighbour[i]) || in_list(queue, neighbour[i]) || in_list(clog, neighbour[i])) continue;
-            queue = [...queue, [...neighbour[i]]];
+            if(point_equal(neighbour[i], getState().grid.end)) {
+                //draw path
+                if(await check(getState, dispatch, {path: [...top.path]})) return;
+                return;
+            };
+            if(in_list(checked, neighbour[i]) || in_list(queue, neighbour[i]) || in_list(getState().grid.clog, neighbour[i])) continue;
+            queue = [
+                ...queue, 
+                { 
+                    point : [...neighbour[i]], 
+                    path: [...top.path, [...neighbour[i]]]
+                }
+            ];
             if(await check(getState, dispatch, {queue})) return;
         }
         queue = [...queue];
