@@ -1,6 +1,9 @@
 export const RANDOMIZE_GRID = 'RANDOMIZE_GRID'
 export const ALGO_START = 'ALGO_START';
 export const ALGO_END = 'ALGO_END';
+export const ALGO_PAUSE = 'ALGO_PAUSE';
+export const ALGO_RESTART = 'ALGO_RESTART';
+export const UPDATE_GRID = 'UPDATE_GRID';
 export const RESET = 'RESET';
 
 export const ACV_START_BTN = 'ACV_START_BTN';

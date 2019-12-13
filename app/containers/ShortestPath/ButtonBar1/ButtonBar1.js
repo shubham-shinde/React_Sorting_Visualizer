@@ -44,7 +44,8 @@ class ButtonBar1 extends React.Component {
   render() {
     const { 
       pause, 
-      wait_time, 
+      wait_time,
+      finding,
       actv_srt_btn, 
       actv_end_btn, 
       actv_clog_btn 
@@ -54,7 +55,7 @@ class ButtonBar1 extends React.Component {
       <div className="button1">
         <div className="X1">
           <div className="X1_1">
-            {!this.state.searching ? (
+            {!finding ? (
               <div className="X1_1">
                 <button
                   className="speed1 pulse active "
@@ -90,7 +91,7 @@ class ButtonBar1 extends React.Component {
                 <button
                   className="speed1 pulse active "
                   style={{ color: 'oramge' }}
-                  onClick={this.handleSearch}
+                  onClick={this.props.actions.pathfinding_algo}
                 >
                   <span>START</span>
                   <span className="emoji">

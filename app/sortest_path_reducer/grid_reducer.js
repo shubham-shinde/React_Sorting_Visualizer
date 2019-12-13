@@ -22,19 +22,32 @@ const initialState = {
     grid: gridCreater(19, 23),
     finding: false,
     pause: false,
-    wait_time: 50,
+    wait_time: 1,
     actv_srt_btn: true,
     actv_end_btn: false,
     actv_clog_btn: false,
     start: [],
     end: [],
-    clog: []
+    clog: [],
+    checked : [],
+    path : [],
+    queue : [],
 }
 
 const listReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.RANDOMIZE_GRID: {
             const new_state = { ...state };
+            return new_state;
+        }
+        case types.UPDATE_GRID: {
+            const new_state = { ...state };
+            if(action.elements.queue) {
+                new_state.queue = [...action.elements.queue];
+            }
+            if(action.elements.checked) {
+                new_state.checked = [...action.elements.checked];
+            }
             return new_state;
         }
         case types.ADD_ELEMENT: {
