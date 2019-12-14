@@ -77,10 +77,6 @@ export const add_element = (ele) => ({
 
 const point_equal = (p1, p2) => (p1.row===p2.row && p1.column===p2.column);
 
-const in_list = (list, ele) => (
-    list.findIndex((e) => point_equal(e, ele)) > -1
-)
-
 const surrounding_point = (grid, point) => {
     const ret = [];
     const row = grid.length, column = grid[0].length;
@@ -178,7 +174,7 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
                 
                 if(await check(getState, dispatch, grid)) return;
             }
-            queue = [...queue];
+            // queue = [...queue];
         }
         dispatch(algo_end());
     }

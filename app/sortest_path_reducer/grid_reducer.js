@@ -33,11 +33,7 @@ const initialState = {
     actv_end_btn: false,
     actv_clog_btn: false,
     start: [],
-    end: [],
-    clog: [],
-    checked : [],
-    path : [],
-    queue : [],
+    end: []
 }
 
 const listReducer = (state = initialState, action) => {
@@ -61,9 +57,21 @@ const listReducer = (state = initialState, action) => {
                     srt.start = false;
                 }
                 else srt.start = true;
+
                 const coll = [...grid[srt.row-1]]
                 coll[srt.column-1] = {...srt};  
-                grid[srt.row-1] = [...coll];              
+                grid[srt.row-1] = [...coll];
+
+                if(new_state.start.length>0) {
+                    const old_srt = [...new_state.start];
+                    const old_srt_obj = {...grid[old_srt[0]-1][old_srt[1]-1]};
+                    old_srt_obj.start = false;
+                    const coll = [...grid[old_srt[0]-1]]
+                    coll[old_srt[1]-1] = {...old_srt_obj};  
+                    grid[old_srt[0]-1] = [...coll];
+                }
+                new_state.start = [ele[0], ele[1]];
+
                 new_state.actv_srt_btn = false;
                 new_state.actv_end_btn = true;
                 new_state.actv_clog_btn = false;
@@ -76,7 +84,18 @@ const listReducer = (state = initialState, action) => {
                 else end.end = true;
                 const coll = [...grid[end.row-1]]
                 coll[end.column-1] = {...end};  
-                grid[end.row-1] = [...coll];  
+                grid[end.row-1] = [...coll];
+                
+                if(new_state.end.length>0) {
+                    const old_end = new_state.end;
+                    const old_end_obj = {...grid[old_end[0]-1][old_end[1]-1]};
+                    old_end_obj.end = false;
+                    const coll = [...grid[old_end[0]-1]]
+                    coll[old_end[1]-1] = {...old_end_obj};  
+                    grid[old_end[0]-1] = [...coll];
+                }
+                new_state.end = [ele[0], ele[1]];
+
                 new_state.actv_srt_btn = false;
                 new_state.actv_end_btn = false;
                 new_state.actv_clog_btn = true;
