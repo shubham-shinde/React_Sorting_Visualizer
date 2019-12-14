@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import * as actions from '../../../sortest_path_reducer/grid_actions';
 import './Box.scss';
 import { bindActionCreators } from 'redux';
@@ -7,19 +7,28 @@ import { bindActionCreators } from 'redux';
 class Box extends React.Component {
   onHandleSelect = () => {
     console.log('select', this.props.row, this.props.column);
-    this.props.actions.add_element([this.props.row, this.props.column])
+    this.props.actions.add_element([this.props.row, this.props.column]);
   };
   render() {
-    const { grid, row, column, start, end, clog, checked, queue, path} = this.props;
-    let color = 'black';
-    if(start) color = 'yellow';
-    else if(end) color = 'green';
-    
+    const {
+      grid,
+      row,
+      column,
+      start,
+      end,
+      clog,
+      checked,
+      queue,
+      path,
+    } = this.props;
+    let color = '#0A0908';
+    if (start) color = '#FFE066';
+    else if (end) color = '#217C3B';
     else {
-      if(clog) color = 'red';
-      if(queue) color = 'gray';
-      if(checked) color = 'white';
-      if(path) color = 'green';
+      if (clog) color = '#FF3C38';
+      if (queue) color = '#70C1B3';
+      if (checked) color = '#B2DBBF';
+      if (path) color = '#F4F1B0';
     }
     return (
       <div
@@ -34,8 +43,7 @@ class Box extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),

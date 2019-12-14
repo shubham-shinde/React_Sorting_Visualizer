@@ -61,10 +61,10 @@ class ButtonBar1 extends React.Component {
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_start_btn}
                   style={{
-                    color: actv_srt_btn && 'yellow',
+                    color: actv_srt_btn && '#FFE066',
                     background: actv_srt_btn && 'black',
-                    boxShadow: actv_srt_btn && '0 8px 6px -6px yellow',
-                    border: actv_srt_btn && '4px solid yellow',
+                    boxShadow: actv_srt_btn && '0 8px 6px -6px #FFE066',
+                    border: actv_srt_btn && '4px solid #FFE066',
                   }}
                 >
                   <div>
@@ -78,10 +78,10 @@ class ButtonBar1 extends React.Component {
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_end_btn}
                   style={{
-                    color: actv_end_btn && '#16e016',
+                    color: actv_end_btn && '#217C3B',
                     background: actv_end_btn && 'black',
-                    boxShadow: actv_end_btn && '0 8px 6px -6px #16e016',
-                    border: actv_end_btn && '4px solid green',
+                    boxShadow: actv_end_btn && '0 8px 6px -6px #217C3B',
+                    border: actv_end_btn && '4px solid #217C3B',
                   }}
                 >
                   <span>END</span>
@@ -94,10 +94,10 @@ class ButtonBar1 extends React.Component {
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_clog_btn}
                   style={{
-                    color: actv_clog_btn && '#ff3604',
+                    color: actv_clog_btn && '#FF3C38',
                     background: actv_clog_btn && 'black',
-                    boxShadow: actv_clog_btn && '0 8px 6px -6px #ff3604',
-                    border: actv_clog_btn && '4px solid #ff3604',
+                    boxShadow: actv_clog_btn && '0 8px 6px -6px #FF3C38',
+                    border: actv_clog_btn && '4px solid #FF3C38',
                   }}
                 >
                   <span>CLOG</span>
