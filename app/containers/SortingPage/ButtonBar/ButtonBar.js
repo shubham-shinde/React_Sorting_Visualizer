@@ -34,7 +34,7 @@ class ButtonBar extends React.Component {
               </button>
             )}
             <button
-              className="speed pulse active end"
+              className="speed pulse active bt"
               onClick={this.props.actions.sorting_end}
             >
               END

@@ -46,12 +46,16 @@ function Header() {
 
         <div className="profile">
           <div className="github">
-            <div>
+            <span className="logo">
+              <GoMarkGithub size="2rem" />
+            </span>
+            <a
+              href="https://github.com/shubham-shinde/React_Sorting_Visualizer"
+              target="_blank"
+            >
               <span>Soure Code </span>
-              <span className="logo">
-                <GoMarkGithub />
-              </span>
-            </div>
+              <FaExternalLinkAlt />
+            </a>
           </div>
           <div className="portfolio">
             <div className="photo">

@@ -42,13 +42,13 @@ class ButtonBar1 extends React.Component {
   };
 
   render() {
-    const { 
-      pause, 
+    const {
+      pause,
       wait_time,
       finding,
-      actv_srt_btn, 
-      actv_end_btn, 
-      actv_clog_btn 
+      actv_srt_btn,
+      actv_end_btn,
+      actv_clog_btn,
     } = this.props.grid;
 
     return (
@@ -60,17 +60,29 @@ class ButtonBar1 extends React.Component {
                 <button
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_start_btn}
-                  style={{ color: actv_srt_btn && 'yellow' }}
+                  style={{
+                    color: actv_srt_btn && 'yellow',
+                    background: actv_srt_btn && 'black',
+                    boxShadow: actv_srt_btn && '0 8px 6px -6px yellow',
+                    border: actv_srt_btn && '4px solid yellow',
+                  }}
                 >
-                  <span>BEGIN</span>
-                  <span className="emoji">
-                    <IoMdSad />
-                  </span>
+                  <div>
+                    <span>BEGIN</span>
+                    <span className="emoji">
+                      <IoMdSad />
+                    </span>
+                  </div>
                 </button>
                 <button
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_end_btn}
-                  style={{ color: actv_end_btn && 'green' }}
+                  style={{
+                    color: actv_end_btn && '#16e016',
+                    background: actv_end_btn && 'black',
+                    boxShadow: actv_end_btn && '0 8px 6px -6px #16e016',
+                    border: actv_end_btn && '4px solid green',
+                  }}
                 >
                   <span>END</span>
                   <span className="emoji">
@@ -81,7 +93,12 @@ class ButtonBar1 extends React.Component {
                 <button
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_clog_btn}
-                  style={{ color: actv_clog_btn && 'red' }}
+                  style={{
+                    color: actv_clog_btn && '#ff3604',
+                    background: actv_clog_btn && 'black',
+                    boxShadow: actv_clog_btn && '0 8px 6px -6px #ff3604',
+                    border: actv_clog_btn && '4px solid #ff3604',
+                  }}
                 >
                   <span>CLOG</span>
                   <span className="emoji">
@@ -90,7 +107,7 @@ class ButtonBar1 extends React.Component {
                 </button>
                 <button
                   className="speed1 pulse active "
-                  style={{ color: 'oramge' }}
+                  style={{ color: 'oramge', background: '#98356d' }}
                   onClick={this.props.actions.pathfinding_algo}
                 >
                   <span>START</span>
@@ -98,44 +115,92 @@ class ButtonBar1 extends React.Component {
                     <GiThreePointedShuriken />
                   </span>
                 </button>
+                <button
+                  className="speed1 pulse active "
+                  style={{ color: 'oramge', background: '#98356d' }}
+                  // onClick={this.props.actions.pathfinding_algo}
+                >
+                  <span>RESET</span>
+                  <span className="emoji">
+                    <GiThreePointedShuriken />
+                  </span>
+                </button>
               </div>
-            ) : !this.state.pause ? (
-              <button
-                className="speed1 pulse active pp"
-                style={{ color: 'oramge' }}
-                onClick={this.handlePause}
-              >
-                <span></span>
-                <span className="emoji">
-                  <IoMdPause />
-                </span>
-              </button>
             ) : (
-              <div>
-                <div>
+              <div style={{ display: 'flex', flexGrow: '1' }}>
+                {!this.state.pause ? (
                   <button
-                    className="speed1 pulse active pp"
-                    style={{ color: 'oramge' }}
+                    className="speed1 pulse active"
+                    style={{
+                      color: 'oramge',
+                      width: '2rem',
+                      // border: '4px solid #95386d',
+                      background: '#95386d',
+                    }}
                     onClick={this.handlePause}
                   >
-                    <span></span>
                     <span className="emoji">
-                      <IoMdPlay />
+                      <IoMdPause />
                     </span>
+                  </button>
+                ) : (
+                  <div>
+                    <div>
+                      <button
+                        className="speed1 pulse active "
+                        style={{
+                          color: 'oramge',
+                          width: '2rem',
+                          // border: '4px solid #95386d',
+                          background: '#95386d',
+                        }}
+                        onClick={this.handlePause}
+                      >
+                        <span className="emoji">
+                          <IoMdPlay />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className="speed1 pulse active "
+                  style={{ color: 'oramge', background: '#98356d' }}
+                  // onClick={this.props.actions.pathfinding_algo}
+                >
+                  <span>END</span>
+                  {/* <span className="emoji">
+                    <GiThreePointedShuriken />
+                  </span> */}
+                </button>
+                <div className="X1_2">
+                  <button
+                    className="pulse active end xxx"
+                    onClick={this.props.actions.sorting_end}
+                  >
+                    <div className="xx active">
+                      <span>1x</span>
+                    </div>
+                    <div className="xx">
+                      <span>2x</span>
+                    </div>
+                    <div className="xx">
+                      <span>4x</span>
+                    </div>
                   </button>
                 </div>
               </div>
             )}
-            <div>
+            {/* <div>
               <button
-                className="speed1 pulse active end"
-                style={{ color: 'oramge' }}
+                className="speed1 pulse active "
+                style={{ color: 'oramge', background: '#95386d' }}
                 onClick={this.handlReset}
               >
                 <span>RESET</span>
                 <span className="emoji"></span>
               </button>
-            </div>
+            </div> */}
             {/* <button
               className="speed1 pulse active end"
               onClick={this.props.actions.sorting_end}
@@ -181,24 +246,6 @@ class ButtonBar1 extends React.Component {
               </span>
             </button> */}
           </div>
-          {this.state.searching && (
-            <div className="X1_2">
-              <button
-                className="pulse active end xxx"
-                onClick={this.props.actions.sorting_end}
-              >
-                <div className="xx">
-                  <span>1x</span>
-                </div>
-                <div className="xx">
-                  <span>2x</span>
-                </div>
-                <div className="xx">
-                  <span>4x</span>
-                </div>
-              </button>
-            </div>
-          )}
         </div>
       </div>
     );

@@ -124,7 +124,13 @@
 
         a {
           text-decoration: none;
+          color: #aba7de
         }
+
+        a:hover {
+          color: #524b9a;
+        }
+
 
         span {
           text-decoration: none;
@@ -135,8 +141,8 @@
       .portfolio {
         margin-top: 1rem;
         display: flex;
-        justify-content: flex-end;
-        margin-right: 1REM;
+        justify-content: center;
+        // margin-right: 1REM;
         align-items: flex-end;
 
         .text_p {

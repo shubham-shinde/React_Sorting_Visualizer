@@ -84,10 +84,11 @@ class App extends React.Component {
                 <Route exact path="/pathfinding">
                   <div className="godfather">
                     <Head1 onSetSidebarOpen={this.onSetSidebarOpen} />
-                    <ButtonBar1 />
+
                     <div className="main">
                       <Grid />
                     </div>
+                    <ButtonBar1 />
                   </div>
                 </Route>
                 <Route exact path="/">

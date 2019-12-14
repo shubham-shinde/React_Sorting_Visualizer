@@ -17,21 +17,16 @@
     .X1_1 {
       display: flex;
       flex-flow: wrap;
-      justify-content: center;
+      flex-grow: 1;
+      justify-content: space-between;
 
       .pp {
         width: 2rem;
         align-items: center;
-
-        span {
-
-          padding-bottom: .2rem;
-          margin: 0;
-        }
       }
 
       .end {
-        width: 4rem;
+        // width: 6rem;
         align-items: center;
 
       }
@@ -55,7 +50,7 @@
       display: flex;
       margin: .5rem;
       border-radius: 5rem;
-      padding: 0.1rem;
+      padding: rem;
       margin-top: .4rem;
       outline: none;
       width: 5rem;
@@ -71,9 +66,7 @@
       }
 
       .emoji {
-        font-size: 1.2rem;
-        padding-bottom: .2rem;
-        margin-left: .25rem;
+        font-size: 16px;
       }
 
       .active {
@@ -114,8 +107,8 @@
 
 
     .xx {
-      width: 2.2rem;
-      height: 2.2rem;
+      // width: 2.2rem;
+      // height: 2.2rem;
       margin-right: 1rem;
       border: 1px solid #95386D;
       background-color: #141927;
@@ -128,6 +121,12 @@
       span {
         margin-top: .4rem;
       }
+    }
+
+    .active {
+      --color: #e7e7e7;
+      background: #95386D;
+      outline: none;
     }
 
     .xx:hover {
