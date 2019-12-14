@@ -21,13 +21,16 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 //SIDEBAR
-// import Sidebar from "react-sidebar";
+import Sidebar from 'react-sidebar';
 
 import AlgorithmList from '../SortingPage/AlgorithmList/AlgorithmList';
 import SortingBox from '../SortingPage/SortingBox/SortingBox';
 import Head from '../SortingPage/Head/Head';
-import ButtonBox from '../SortingPage/ButtonBar/ButtonBar'
+import ButtonBox from '../SortingPage/ButtonBar/ButtonBar';
 
+import Grid from '../../containers/ShortestPath/Grid/Grid.js';
+import Head1 from '../../containers/ShortestPath/Head1/Head1.js';
+import ButtonBar1 from '../../containers/ShortestPath/ButtonBar1/ButtonBar1.js';
 import GlobalStyle from '../../global-styles';
 
 const mql = window.matchMedia(`(min-width: 1000px)`);
@@ -66,49 +69,42 @@ class App extends React.Component {
           titleTemplate="%s - React.js Boilerplate"
           defaultTitle="React.js Boilerplate"
         >
-        <meta name="description" content="Sorting Visualizer"/>
+          <meta name="description" content="Sorting Visualizer" />
         </Helmet>
-      <div className="grand-father">
-        {/* <Sidebar
-        sidebar={<Header/>}
-        open={this.state.sidebarOpen}
-        onSetOpen={this.onSetSidebarOpen}
-        docked={this.state.sidebarDocked}
-        styles={{ sidebar: { background: "white" } }}
-      >
-      </Sidebar> */}
+        <div className="grand-father">
+          <Sidebar
+            sidebar={<Header />}
+            open={this.state.sidebarOpen}
+            onSetOpen={this.onSetSidebarOpen}
+            docked={this.state.sidebarDocked}
+            // styles={{ sidebar: { background: "white" } }}
+          >
+            <div className="big-godfather">
+              <Switch>
+                <Route exact path="/pathfinding">
+                  <div className="godfather">
+                    <Head1 onSetSidebarOpen={this.onSetSidebarOpen} />
 
-
-{/* 
-        <Header/> */}
-
-
-        <div className='big-godfather'>
-          <Switch>
-            {/* <Route path="/pathfinding">
-              <div className="godfather">
-                <Head onSetSidebarOpen={this.onSetSidebarOpen} />
-                <div className="main">
-                </div>
-                <AlgorithmList/>
-              </div>
-            </Route> */}
-            <Route path="/">
-              <div className="godfather">
-                <Head onSetSidebarOpen={this.onSetSidebarOpen} />
-                <ButtonBox/>
-                <div className="main">
-                  <SortingBox />
-                </div>
-                <AlgorithmList/>
-              </div>
-            </Route>
-          </Switch>
+                    <div className="main">
+                      <Grid />
+                    </div>
+                    <ButtonBar1 />
+                  </div>
+                </Route>
+                <Route exact path="/">
+                  <div className="godfather">
+                    <Head onSetSidebarOpen={this.onSetSidebarOpen} />
+                    <ButtonBox />
+                    <div className="main">
+                      <SortingBox />
+                    </div>
+                    <AlgorithmList />
+                  </div>
+                </Route>
+              </Switch>
+            </div>
+          </Sidebar>
         </div>
-
-      </div>
-        
-
         <GlobalStyle />
       </div>
     );

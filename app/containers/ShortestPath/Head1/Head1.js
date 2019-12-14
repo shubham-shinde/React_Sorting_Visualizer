@@ -1,8 +1,8 @@
 import React from 'react';
-import './Head.scss';
+import './Head1.scss';
 import logo from '../../../images/logo.png';
 import { DiGhostSmall } from 'react-icons/di';
-class Head extends React.Component {
+class Head1 extends React.Component {
   render() {
     return (
       <div>
@@ -13,6 +13,7 @@ class Head extends React.Component {
               className="sidebutton"
             >
               <div className="symbol">
+                {' '}
                 <DiGhostSmall />
               </div>
             </button>
@@ -23,7 +24,7 @@ class Head extends React.Component {
             </div>
             <div className="heading">
               <h1>
-                SORTING <br></br> VISUALIZER
+                SHORTEST <br></br> PATH
               </h1>
             </div>
           </div>
@@ -33,4 +34,4 @@ class Head extends React.Component {
   }
 }
 
-export default Head;
+export default Head1;
