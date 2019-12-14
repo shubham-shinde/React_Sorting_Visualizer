@@ -33,16 +33,16 @@ export const speed_change = (speed) => ({
     speed
 })
 
-export const update_grid_a = (elements) => ({
+export const update_grid_a = (grid) => ({
     type: types.UPDATE_GRID,
-    elements: {...elements}
+    grid: [...grid]
 })
 
-const update_grid = async (getState, dispatch, ele) => {
+const update_grid = async (getState, dispatch, grid) => {
     const ms = getState().grid.wait_time;
     if (!getState().grid.finding) return;
     await waitTime(ms)
-    dispatch(update_grid_a({...ele}));
+    dispatch(update_grid_a([...grid]));
 }
 
 const pause_wait = async (getState) => {
@@ -51,10 +51,10 @@ const pause_wait = async (getState) => {
     }
 }
 
-const check = async (getState, dispatch, elements, force) => {
+const check = async (getState, dispatch, grid, force) => {
     await pause_wait(getState);
     if (!getState().grid.finding && !force) return true;
-    await update_grid(getState, dispatch, elements);
+    await update_grid(getState, dispatch, grid);
     return false
 }
 
@@ -75,67 +75,114 @@ export const add_element = (ele) => ({
     ele
 })
 
-const point_equal = (p1, p2) => (p1[0]===p2[0] && p1[1]===p2[1]);
+const point_equal = (p1, p2) => (p1.row===p2.row && p1.column===p2.column);
 
 const in_list = (list, ele) => (
     list.findIndex((e) => point_equal(e, ele)) > -1
 )
 
-const surrounding_point = (row, colomn, point) => {
+const surrounding_point = (grid, point) => {
     const ret = [];
-    const ro=point[0], col = point[1];
-    if(ro-1 > 0) ret.push([ro-1, col]);
-    if(col-1 > 0) ret.push([ro, col-1]);
-    if(ro+1 <= row) ret.push([ro+1, col]);
-    if(col+1 <= colomn) ret.push([ro, col+1]);
+    const row = grid.length, column = grid[0].length;
+    const ro=point.row-1, col = point.column-1;
+    if(ro-1 >= 0) ret.push({...grid[ro-1][col]});
+    if(col-1 >= 0) ret.push({...grid[ro][col-1]});
+    if(ro+1 < row) ret.push({...grid[ro+1][col]});
+    if(col+1 < column) ret.push({...grid[ro][col+1]});
     return ret;
 }
 
 export const pathfinding_algo = () => async (dispatch, getState) => {
-    const state = getState().grid;
-    console.log('algo start pathfinding');
-    
-    const grid =  state.grid;
-    const row = grid.length;
-    const column = grid[0].length;
-    dispatch(algo_start());
-    const start = state.start;
-    let checked = state.checked;
-    let queue = [...state.queue];
-
-    queue = [...queue,{ point : start, path: [[...start]]}];
-    if(await check(getState, dispatch, {queue})) return;
-    console.log(queue, 'queue');
-    let k = 0
-    while(queue.length > 0) {
-        console.log('itr');
+    try {
+        const state = getState().grid;
+        console.log('algo start pathfinding');
         
-        const top = {...queue[0]};
-        queue = [...queue.splice(1)];
-        if(await check(getState, dispatch, {queue})) return;
-        const neighbour = surrounding_point(row, column, top.point);
-        checked = [...checked, [...top.point]];
-        
-        if(await check(getState, dispatch, {checked})) return;
-
-
-        for(let i in neighbour) {
-            if(point_equal(neighbour[i], getState().grid.end)) {
-                //draw path
-                if(await check(getState, dispatch, {path: [...top.path]})) return;
-                return;
-            };
-            if(in_list(checked, neighbour[i]) || in_list(queue, neighbour[i]) || in_list(getState().grid.clog, neighbour[i])) continue;
-            queue = [
-                ...queue, 
-                { 
-                    point : [...neighbour[i]], 
-                    path: [...top.path, [...neighbour[i]]]
-                }
-            ];
-            if(await check(getState, dispatch, {queue})) return;
+        const grid =  [...state.grid];
+        dispatch(algo_start());
+        let start = {};
+        let end = {};
+        for(let i in grid) for(let j in grid[i]) {
+            if(grid[i][j].start) {
+                start = {...grid[i][j]};
+            }
+            if(grid[i][j].end) {
+                end = {...grid[i][j]}
+            }
         }
-        queue = [...queue];
+
+        start.queue = true;
+
+        const coll = [...grid[start.row-1]]
+        coll[start.column-1] = {...start};  
+        grid[start.row-1] = [...coll];
+        
+        if(await check(getState, dispatch, grid)) return;
+        
+        let queue = [
+            { 
+                point: {...start}, 
+                path: [{...start}]
+            }
+        ];
+        console.log(queue, 'queue');
+        let k = 0
+        while(queue.length > 0) {
+            console.log('itr');
+            
+            const top = {...queue[0].point};
+            const path = [...queue[0].path];
+            queue = [...queue.splice(1)];
+            
+            top.queue = false;
+            top.checked = true;
+
+            const coll = [...grid[top.row-1]]
+            coll[top.column-1] = {...top};  
+            grid[top.row-1] = [...coll];
+
+            if(await check(getState, dispatch, grid)) return;
+            const neighbour = surrounding_point(grid , top);
+
+            for(let i in neighbour) {
+                let curr = {...neighbour[i]}
+                if(point_equal(curr, end)) {
+                    for(k in path) {
+                    const kk = {...path[k]}
+                    kk.path = true;
+                    
+                    const coll = [...grid[kk.row-1]]
+                    coll[kk.column-1] = {...kk};  
+                    grid[kk.row-1] = [...coll];
+
+                    if(await check(getState, dispatch, grid)) return;
+                    }
+                    
+                    return;
+                };
+                if(curr.checked || curr.queue || curr.clog) continue;
+                const new_path = [...path, {...curr}];
+                
+                
+                queue = [
+                    ...queue, 
+                    { 
+                        point : {...curr}, 
+                        path: [...new_path]
+                    }
+                ];
+                curr.queue = true;
+                
+                const coll = [...grid[curr.row-1]]
+                coll[curr.column-1] = {...curr};  
+                grid[curr.row-1] = [...coll];
+                
+                if(await check(getState, dispatch, grid)) return;
+            }
+            queue = [...queue];
+        }
+        dispatch(algo_end());
     }
-    dispatch(algo_end());
+    catch(e) {
+        throw('catch err', e);
+    }
 }

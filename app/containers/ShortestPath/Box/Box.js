@@ -10,24 +10,16 @@ class Box extends React.Component {
     this.props.actions.add_element([this.props.row, this.props.column])
   };
   render() {
-    const { grid, row, column} = this.props;
-    const {start, end, clog, checked, queue, path} = grid;
+    const { grid, row, column, start, end, clog, checked, queue, path} = this.props;
     let color = 'black';
-    if(start.length>0 && start[0] === row && start[1] === column) color = 'yellow';
-    else if(end.length>0 && end[0] === row && end[1] === column) color = 'green';
+    if(start) color = 'yellow';
+    else if(end) color = 'green';
+    
     else {
-      clog.forEach(ele => {
-        if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'red';
-      });
-      queue.forEach(ele => {
-        if(ele.point.length>0 && ele.point[0] === row && ele.point[1] === column) color = 'gray';
-      });
-      checked.forEach(ele => {
-        if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'white';
-      });
-      path.forEach(ele => {
-        if(ele.length>0 && ele[0] === row && ele[1] === column) color = 'green';
-      });
+      if(clog) color = 'red';
+      if(queue) color = 'gray';
+      if(checked) color = 'white';
+      if(path) color = 'green';
     }
     return (
       <div

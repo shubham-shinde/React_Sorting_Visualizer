@@ -12,6 +12,12 @@ function gridCreater(rows, column) {
             grid[i][j] = {
                 row: i + 1,
                 column: j + 1,
+                start: false,
+                end : false,
+                clog : false,
+                checked : false,
+                path : false,
+                queue : false
             };
         }
     }
@@ -42,54 +48,52 @@ const listReducer = (state = initialState, action) => {
         }
         case types.UPDATE_GRID: {
             const new_state = { ...state };
-            if(action.elements.queue) {
-                new_state.queue = [...action.elements.queue];
-            }
-            if(action.elements.checked) {
-                new_state.checked = [...action.elements.checked];
-            }
-            if(action.elements.path) {
-                new_state.path = [...action.elements.path];
-            }
+            new_state.grid = [...action.grid];
             return new_state;
         }
         case types.ADD_ELEMENT: {
             const new_state = {...state};
             const ele = [...action.ele];
+            const grid = [...new_state.grid];
             if(new_state.actv_srt_btn) {
-                let srt = new_state.start;
-                if(srt.length > 0 && srt[0] == ele[0] && srt[0] == ele[0]) {
-                    srt = [];
+                const srt = {...grid[ele[0]-1][ele[1]-1]};
+                if(srt.start) {
+                    srt.start = false;
                 }
-                else srt = [...ele];
-                new_state.start = [...srt];
+                else srt.start = true;
+                const coll = [...grid[srt.row-1]]
+                coll[srt.column-1] = {...srt};  
+                grid[srt.row-1] = [...coll];              
                 new_state.actv_srt_btn = false;
                 new_state.actv_end_btn = true;
                 new_state.actv_clog_btn = false;
             }
             else if(new_state.actv_end_btn) {
-                let end = new_state.end;
-                if(end.length > 0 && end[0] == ele[0] && end[0] == ele[0]) {
-                    end = [];
+                let end = {...grid[ele[0]-1][ele[1]-1]};
+                if(end.end) {
+                    end.end = false;
                 }
-                else end = [...ele];
-                new_state.end = [...end];
+                else end.end = true;
+                const coll = [...grid[end.row-1]]
+                coll[end.column-1] = {...end};  
+                grid[end.row-1] = [...coll];  
                 new_state.actv_srt_btn = false;
                 new_state.actv_end_btn = false;
                 new_state.actv_clog_btn = true;
             }
             else if(new_state.actv_clog_btn) {
-                let clog = [...new_state.clog];
-                
-                if(clog.findIndex((e) => (e[0]===ele[0] && e[1]===ele[1])) > -1) {
-                    clog = clog.filter((e) => !(e[0]===ele[0] && e[1]===ele[1]))
+                let clog = {...grid[ele[0]-1][ele[1]-1]};
+                if(clog.clog) {
+                    clog.clog = false;
                 }
-                else clog = [...clog, ele];
-                new_state.clog = [...clog];
+                else clog.clog = true;
+                const coll = [...grid[clog.row-1]]
+                coll[clog.column-1] = {...clog};  
+                grid[clog.row-1] = [...coll];  
                 new_state.actv_srt_btn = false;
                 new_state.actv_end_btn = false;
             }
-            return new_state;
+            return {...new_state, grid: [...grid]};
         }
         case types.ACV_START_BTN: {
             const new_state = { ...state };
