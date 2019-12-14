@@ -35,7 +35,6 @@ class Box extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  grid: state.grid,
 });
 
 const mapDispatchToProps = dispatch => ({
