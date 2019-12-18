@@ -1,7 +1,8 @@
 import React from 'react';
 import './Head.scss';
 import logo from '../../../images/logo.png';
-import { DiGhostSmall } from 'react-icons/di';
+// import { DiGhostSmall } from 'react-icons/di';
+import { MdSort, MdDehaze, MdMenu } from 'react-icons/md';
 class Head extends React.Component {
   render() {
     return (
@@ -13,13 +14,13 @@ class Head extends React.Component {
               className="sidebutton"
             >
               <div className="symbol">
-                <DiGhostSmall />
+                <MdMenu />
               </div>
             </button>
           </div>
           <div className="Head_logo">
             <div className="logo">
-              <img src={logo}></img>
+              <MdSort size="7rem" />
             </div>
             <div className="heading">
               <h1>

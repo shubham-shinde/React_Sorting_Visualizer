@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../sortest_path_reducer/grid_actions';
 import './Box.scss';
 import { bindActionCreators } from 'redux';
+import $ from 'jquery';
 
 class Box extends React.Component {
   onHandleSelect = () => {
@@ -28,8 +29,9 @@ class Box extends React.Component {
       if (clog) color = '#FF3C38';
       if (queue) color = '#70C1B3';
       if (checked) color = '#B2DBBF';
-      if (path) color = '#F4F1B0';
+      if (path) color = '#C0E070';
     }
+
     return (
       <div
         className="box"

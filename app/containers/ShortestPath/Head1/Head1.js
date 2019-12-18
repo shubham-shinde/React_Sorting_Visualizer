@@ -2,6 +2,7 @@ import React from 'react';
 import './Head1.scss';
 import logo from '../../../images/logo.png';
 import { DiGhostSmall } from 'react-icons/di';
+import { FaRoute } from 'react-icons/fa';
 class Head1 extends React.Component {
   render() {
     return (
@@ -18,11 +19,11 @@ class Head1 extends React.Component {
               </div>
             </button>
           </div>
-          <div className="Head_logo">
-            <div className="logo">
-              <img src={logo}></img>
+          <div className="Head_logo1">
+            <div className="logo1">
+              <FaRoute size="2rem" />
             </div>
-            <div className="heading">
+            <div className="heading1">
               <h1>
                 SHORTEST <br></br> PATH
               </h1>

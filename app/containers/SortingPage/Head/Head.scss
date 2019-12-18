@@ -79,20 +79,21 @@
     flex-grow: 1;
 
     .logo {
-      img {
-        WIDTH: 4REM;
-        // MARGIN-TOP: 1.5REM;
-        MARGIN-RIGHT: 0.2rem;
-        transform: rotate(-15deg);
-      }
+
+      WIDTH: 4REM;
+      // MARGIN-TOP: 1.5REM;
+      MARGIN-RIGHT: 0.2rem;
+      transform: rotate(180deg);
+      color: #704091;
     }
+
 
     .heading {
       text-align: center;
       line-height: 2.25rem;
 
       h1 {
-        color: #aba7de;
+        color: #c4393c;
         font-weight: 600;
       }
     }
