@@ -1,9 +1,9 @@
 import React from 'react';
-import './Head.scss';
+import './Head1.scss';
 import logo from '../../../images/logo.png';
-// import { DiGhostSmall } from 'react-icons/di';
-import { MdSort, MdDehaze, MdMenu } from 'react-icons/md';
-class Head extends React.Component {
+import { DiGhostSmall } from 'react-icons/di';
+import { FaRoute } from 'react-icons/fa';
+class Head1 extends React.Component {
   render() {
     return (
       <div>
@@ -14,17 +14,18 @@ class Head extends React.Component {
               className="sidebutton"
             >
               <div className="symbol">
-                <MdMenu />
+                {' '}
+                <DiGhostSmall />
               </div>
             </button>
           </div>
-          <div className="Head_logo">
-            <div className="logo">
-              <MdSort size="7rem" />
+          <div className="Head_logo1">
+            <div className="logo1">
+              <FaRoute size="2rem" />
             </div>
-            <div className="heading">
+            <div className="heading1">
               <h1>
-                SORTING <br></br> VISUALIZER
+                SHORTEST <br></br> PATH
               </h1>
             </div>
           </div>
@@ -34,4 +35,4 @@ class Head extends React.Component {
   }
 }
 
-export default Head;
+export default Head1;

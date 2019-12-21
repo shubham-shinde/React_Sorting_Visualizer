@@ -115,7 +115,7 @@ module.exports = require('./webpack.base.babel')({
       short_name: 'Algo Visualizer',
       description: 'Best representation of algorithms',
       background_color: '#fafafa',
-      theme_color: '#a0205f',
+      theme_color: '#141927',
       inject: true,
       ios: true,
       icons: [
