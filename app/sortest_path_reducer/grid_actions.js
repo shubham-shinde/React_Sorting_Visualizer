@@ -17,7 +17,7 @@ export const algo_end = () => async (dispatch, getState) => {
     })
     await waitTime(getState().grid.wait_time);
     dispatch({
-        type: types.CLEAN_LIST
+        type: types.ALGO_END
     })
 }
 
@@ -41,8 +41,8 @@ export const update_grid_a = (grid) => ({
 const update_grid = async (getState, dispatch, grid) => {
     const ms = getState().grid.wait_time;
     if (!getState().grid.finding) return;
-    await waitTime(ms)
     dispatch(update_grid_a([...grid]));
+    await waitTime(ms)
 }
 
 const pause_wait = async (getState) => {
@@ -93,21 +93,16 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
         const state = getState().grid;
         console.log('algo start pathfinding');
         
-        const grid =  [...state.grid];
+        let grid = [...state.grid];
+        const srt = state.start;
+        const ed = state.end;
         dispatch(algo_start());
-        let start = {};
-        let end = {};
-        for(let i in grid) for(let j in grid[i]) {
-            if(grid[i][j].start) {
-                start = {...grid[i][j]};
-            }
-            if(grid[i][j].end) {
-                end = {...grid[i][j]}
-            }
-        }
+        let start = {...grid[srt[0]-1][srt[1]-1]};
+        let end = {...grid[ed[0]-1][ed[1]-1]};
 
         start.queue = true;
 
+        grid = [...getState().grid.grid];
         const coll = [...grid[start.row-1]]
         coll[start.column-1] = {...start};  
         grid[start.row-1] = [...coll];
@@ -120,39 +115,44 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
                 path: [{...start}]
             }
         ];
-        console.log(queue, 'queue');
         let k = 0
         while(queue.length > 0) {
             console.log('itr');
-            
-            const top = {...queue[0].point};
+            const tp = {...queue[0].point};
+            grid = [...getState().grid.grid];
+            const top = {...grid[tp.row-1][tp.column-1]}
             const path = [...queue[0].path];
             queue = [...queue.splice(1)];
             
             top.queue = false;
             top.checked = true;
 
+            grid = [...getState().grid.grid];
             const coll = [...grid[top.row-1]]
             coll[top.column-1] = {...top};  
             grid[top.row-1] = [...coll];
 
             if(await check(getState, dispatch, grid)) return;
+
+            grid = [...getState().grid.grid];
             const neighbour = surrounding_point(grid , top);
 
             for(let i in neighbour) {
-                let curr = {...neighbour[i]}
+                grid = [...getState().grid.grid];
+                let curr = {...grid[neighbour[i].row-1][neighbour[i].column-1]}
                 if(point_equal(curr, end)) {
                     for(k in path) {
-                    const kk = {...path[k]}
-                    kk.path = true;
-                    
-                    const coll = [...grid[kk.row-1]]
-                    coll[kk.column-1] = {...kk};  
-                    grid[kk.row-1] = [...coll];
-
-                    if(await check(getState, dispatch, grid)) return;
+                        const kk = {...path[k]}
+                        kk.path = true;
+                        
+                        grid = [...getState().grid.grid];
+                        const coll = [...grid[kk.row-1]]
+                        coll[kk.column-1] = {...kk};  
+                        grid[kk.row-1] = [...coll];
+                        if(await check(getState, dispatch, grid)) return;
                     }
                     
+                    dispatch(algo_pause());
                     return;
                 };
                 if(curr.checked || curr.queue || curr.clog) continue;
@@ -168,6 +168,7 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
                 ];
                 curr.queue = true;
                 
+                grid = [...getState().grid.grid];
                 const coll = [...grid[curr.row-1]]
                 coll[curr.column-1] = {...curr};  
                 grid[curr.row-1] = [...coll];
@@ -176,7 +177,7 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
             }
             // queue = [...queue];
         }
-        dispatch(algo_end());
+        // dispatch(algo_pause());
     }
     catch(e) {
         throw('catch err', e);

@@ -146,8 +146,18 @@ const listReducer = (state = initialState, action) => {
             new_state.finding = true;
             return new_state;
         }
-        case types.ALGO_END: {
+        case types.ALGO_PAUSE: {
             const new_state = { ...state };
+            new_state.pause = true;
+            return new_state;
+        }
+        case types.ALGO_RESTART: {
+            const new_state = { ...state };
+            new_state.pause = false;
+            return new_state;
+        }
+        case types.ALGO_END: {
+            const new_state = { ...initialState };
             new_state.finding = false;
             new_state.pause = false;
             return new_state;

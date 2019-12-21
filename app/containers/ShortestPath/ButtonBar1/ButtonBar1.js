@@ -34,7 +34,13 @@ class ButtonBar1 extends React.Component {
     });
   };
   handlePause = () => {
-    this.setState({ pause: !this.state.pause });
+    const paused = this.props.grid.pause;
+    console.log('pause', paused);
+    
+    if(paused) {
+      this.props.actions.algo_restart()
+    }
+    else this.props.actions.algo_pause()
   };
 
   handleSearch = () => {
@@ -43,9 +49,9 @@ class ButtonBar1 extends React.Component {
 
   render() {
     const {
-      pause,
-      wait_time,
       finding,
+      wait_time,
+      pause,
       actv_srt_btn,
       actv_end_btn,
       actv_clog_btn,
@@ -61,10 +67,10 @@ class ButtonBar1 extends React.Component {
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_start_btn}
                   style={{
-                    color: actv_srt_btn && 'yellow',
+                    color: actv_srt_btn && '#FFE066',
                     background: actv_srt_btn && 'black',
-                    boxShadow: actv_srt_btn && '0 8px 6px -6px yellow',
-                    border: actv_srt_btn && '4px solid yellow',
+                    boxShadow: actv_srt_btn && '0 8px 6px -6px #FFE066',
+                    border: actv_srt_btn && '4px solid #FFE066',
                   }}
                 >
                   <div>
@@ -78,10 +84,10 @@ class ButtonBar1 extends React.Component {
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_end_btn}
                   style={{
-                    color: actv_end_btn && '#16e016',
+                    color: actv_end_btn && '#217C3B',
                     background: actv_end_btn && 'black',
-                    boxShadow: actv_end_btn && '0 8px 6px -6px #16e016',
-                    border: actv_end_btn && '4px solid green',
+                    boxShadow: actv_end_btn && '0 8px 6px -6px #217C3B',
+                    border: actv_end_btn && '4px solid #217C3B',
                   }}
                 >
                   <span>END</span>
@@ -94,10 +100,10 @@ class ButtonBar1 extends React.Component {
                   className="speed1 pulse active "
                   onClick={this.props.actions.act_clog_btn}
                   style={{
-                    color: actv_clog_btn && '#ff3604',
+                    color: actv_clog_btn && '#FF3C38',
                     background: actv_clog_btn && 'black',
-                    boxShadow: actv_clog_btn && '0 8px 6px -6px #ff3604',
-                    border: actv_clog_btn && '4px solid #ff3604',
+                    boxShadow: actv_clog_btn && '0 8px 6px -6px #FF3C38',
+                    border: actv_clog_btn && '4px solid #FF3C38',
                   }}
                 >
                   <span>CLOG</span>
@@ -128,43 +134,27 @@ class ButtonBar1 extends React.Component {
               </div>
             ) : (
               <div style={{ display: 'flex', flexGrow: '1' }}>
-                {!this.state.pause ? (
-                  <button
-                    className="speed1 pulse active"
-                    style={{
-                      color: 'oramge',
-                      width: '2rem',
-                      // border: '4px solid #95386d',
-                      background: '#95386d',
-                    }}
-                    onClick={this.handlePause}
-                  >
-                    <span className="emoji">
-                      <IoMdPause />
-                    </span>
-                  </button>
-                ) : (
-                  <div>
-                    <div>
-                      <button
-                        className="speed1 pulse active "
-                        style={{
-                          color: 'oramge',
-                          width: '2rem',
-                          // border: '4px solid #95386d',
-                          background: '#95386d',
-                        }}
-                        onClick={this.handlePause}
-                      >
-                        <span className="emoji">
-                          <IoMdPlay />
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                )}
                 <button
-                  className="speed1 pulse active "
+                  className="speed1 pulse active"
+                  style={{
+                    color: 'oramge',
+                    width: '2rem',
+                    // border: '4px solid #95386d',
+                    background: '#95386d',
+                  }}
+                  onClick={this.handlePause}
+                >
+                  <span className="emoji">
+                    {
+                      pause 
+                      ? <IoMdPlay />
+                      : <IoMdPause />
+                    }
+                  </span>
+                </button>
+                <button
+                  className="speed1 pulse active"
+                  onClick={this.props.actions.algo_end}
                   style={{ color: 'oramge', background: '#98356d' }}
                   // onClick={this.props.actions.pathfinding_algo}
                 >
@@ -178,13 +168,22 @@ class ButtonBar1 extends React.Component {
                     className="pulse active end xxx"
                     onClick={this.props.actions.sorting_end}
                   >
-                    <div className="xx active">
+                    <div 
+                      onClick={() => this.props.actions.speed_change(200)} 
+                      className={wait_time===200 ? 'xx active' : 'xx'}
+                      >
                       <span>1x</span>
                     </div>
-                    <div className="xx">
+                    <div 
+                      onClick={() => this.props.actions.speed_change(50)} 
+                      className={wait_time===50 ? 'xx active' : 'xx'}
+                      >
                       <span>2x</span>
                     </div>
-                    <div className="xx">
+                    <div 
+                      onClick={() => this.props.actions.speed_change(1)} 
+                      className={wait_time===1 ? 'xx active' : 'xx'}
+                      >
                       <span>4x</span>
                     </div>
                   </button>
