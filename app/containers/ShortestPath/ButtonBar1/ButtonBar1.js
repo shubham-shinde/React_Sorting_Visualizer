@@ -34,7 +34,13 @@ class ButtonBar1 extends React.Component {
     });
   };
   handlePause = () => {
-    this.setState({ pause: !this.state.pause });
+    const paused = this.props.grid.pause;
+    console.log('pause', paused);
+    
+    if(paused) {
+      this.props.actions.algo_restart()
+    }
+    else this.props.actions.algo_pause()
   };
 
   handleSearch = () => {
@@ -43,9 +49,9 @@ class ButtonBar1 extends React.Component {
 
   render() {
     const {
-      pause,
-      wait_time,
       finding,
+      wait_time,
+      pause,
       actv_srt_btn,
       actv_end_btn,
       actv_clog_btn,
@@ -128,43 +134,27 @@ class ButtonBar1 extends React.Component {
               </div>
             ) : (
               <div style={{ display: 'flex', flexGrow: '1' }}>
-                {!this.state.pause ? (
-                  <button
-                    className="speed1 pulse active"
-                    style={{
-                      color: 'oramge',
-                      width: '2rem',
-                      // border: '4px solid #95386d',
-                      background: '#95386d',
-                    }}
-                    onClick={this.handlePause}
-                  >
-                    <span className="emoji">
-                      <IoMdPause />
-                    </span>
-                  </button>
-                ) : (
-                  <div>
-                    <div>
-                      <button
-                        className="speed1 pulse active "
-                        style={{
-                          color: 'oramge',
-                          width: '2rem',
-                          // border: '4px solid #95386d',
-                          background: '#95386d',
-                        }}
-                        onClick={this.handlePause}
-                      >
-                        <span className="emoji">
-                          <IoMdPlay />
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                )}
                 <button
-                  className="speed1 pulse active "
+                  className="speed1 pulse active"
+                  style={{
+                    color: 'oramge',
+                    width: '2rem',
+                    // border: '4px solid #95386d',
+                    background: '#95386d',
+                  }}
+                  onClick={this.handlePause}
+                >
+                  <span className="emoji">
+                    {
+                      pause 
+                      ? <IoMdPlay />
+                      : <IoMdPause />
+                    }
+                  </span>
+                </button>
+                <button
+                  className="speed1 pulse active"
+                  onClick={this.props.actions.algo_end}
                   style={{ color: 'oramge', background: '#98356d' }}
                   // onClick={this.props.actions.pathfinding_algo}
                 >
@@ -178,13 +168,22 @@ class ButtonBar1 extends React.Component {
                     className="pulse active end xxx"
                     onClick={this.props.actions.sorting_end}
                   >
-                    <div className="xx active">
+                    <div 
+                      onClick={() => this.props.actions.speed_change(200)} 
+                      className={wait_time===200 ? 'xx active' : 'xx'}
+                      >
                       <span>1x</span>
                     </div>
-                    <div className="xx">
+                    <div 
+                      onClick={() => this.props.actions.speed_change(50)} 
+                      className={wait_time===50 ? 'xx active' : 'xx'}
+                      >
                       <span>2x</span>
                     </div>
-                    <div className="xx">
+                    <div 
+                      onClick={() => this.props.actions.speed_change(1)} 
+                      className={wait_time===1 ? 'xx active' : 'xx'}
+                      >
                       <span>4x</span>
                     </div>
                   </button>

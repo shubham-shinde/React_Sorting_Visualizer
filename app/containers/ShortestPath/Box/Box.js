@@ -12,9 +12,6 @@ class Box extends React.Component {
   };
   render() {
     const {
-      grid,
-      row,
-      column,
       start,
       end,
       clog,
@@ -27,8 +24,8 @@ class Box extends React.Component {
     else if (end) color = '#217C3B';
     else {
       if (clog) color = '#FF3C38';
-      if (queue) color = '#70C1B3';
-      if (checked) color = '#B2DBBF';
+      if (queue) color = 'rgba(112, 193, 179, 0.3)';
+      if (checked) color = 'rgba(178, 219, 191, 0.1)';
       if (path) color = '#C0E070';
     }
 
