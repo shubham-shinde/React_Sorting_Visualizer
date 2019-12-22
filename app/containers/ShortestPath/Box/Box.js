@@ -27,8 +27,8 @@ class Box extends React.Component {
     else if (end) color = '#217C3B';
     else {
       if (clog) color = '#FF3C38';
-      if (queue) color = '#70C1B3';
-      if (checked) color = '#B2DBBF';
+      if (queue) color = 'grey';
+      if (checked) color = 'black';
       if (path) color = '#C0E070';
     }
 
