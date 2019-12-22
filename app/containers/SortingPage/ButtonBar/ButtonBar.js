@@ -3,7 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../sorting_reducer/list_actions';
 import './ButtonBar.scss';
-import { FaPause, FaPlay, FaStop } from 'react-icons/fa';
+import FaPause from 'react-icons/lib/fa/pause.js';
+import FaPlay from 'react-icons/lib/fa/play.js';
+
 class ButtonBar extends React.Component {
   render() {
     const { pause, sorting, wait_time } = this.props.list;

@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import './Header.scss';
 import shivam from '../../images/shivam.jpg';
 import shubham from '../../images/shubham.jpg';
-import { FaExternalLinkAlt } from 'react-icons/fa';
-import { GoMarkGithub } from 'react-icons/go';
+import FaExternalLinkAlt from 'react-icons/lib/fa/external-link.js';
+import GoMarkGithub from 'react-icons/lib/go/mark-github.js';
 // components
 
 // icons

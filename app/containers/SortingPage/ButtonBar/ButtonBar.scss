@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 
   .X {
     display: flex;
@@ -34,11 +34,10 @@
     cursor: pointer;
   }
 
-
   .speed {
     border-radius: 50%;
     padding: 0.4rem;
-    margin-top: .4rem;
+    margin-top: 0.4rem;
     outline: none;
   }
 
@@ -53,10 +52,9 @@
   //     color:#e7e7e7 !important
   // }
 
-
   .active {
     --color: #e7e7e7;
-    border-color: #95386D;
+    border-color: #95386d;
     outline: none;
   }
 
@@ -67,7 +65,7 @@
   .end {
     border-radius: 1rem;
     padding: 0.4rem 1rem;
-    background: #95386D;
+    background: #95386d;
     box-shadow: 0 8px 6px -6px #95386d;
   }
 

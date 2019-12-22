@@ -94,10 +94,10 @@ class App extends React.Component {
                 <Route exact path="/">
                   <div className="godfather">
                     <Head onSetSidebarOpen={this.onSetSidebarOpen} />
-                    <ButtonBox />
                     <div className="main">
                       <SortingBox />
                     </div>
+                    <ButtonBox />
                     <AlgorithmList />
                   </div>
                 </Route>
