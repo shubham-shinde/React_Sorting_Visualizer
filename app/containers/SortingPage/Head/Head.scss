@@ -2,11 +2,9 @@
   display: flex;
   // justify-content: center;
   align-items: center;
-  ;
   position: relative;
   // margin-bottom: 2rem;
   // margin-top:1rem;
-
 
   .Head_button {
     display: none;
@@ -15,10 +13,10 @@
     .sidebutton {
       position: absolute;
       // display: none;
-      border: 2px solid #aba7de;
-      color: black;
-      border-radius: 50%;
-      background-color: #aba7de;
+      border: none;
+      color: white;
+      // border-radius: 50%;
+      background-color: #141927;
       outline: none;
       width: 2.5rem;
       height: 2.5rem;
@@ -34,43 +32,12 @@
     }
 
     .sidebutton:hover {
-      color: #5e46a6;
-      border: 2px solid black;
-      background-color: black;
+      // color: #5e46a6;
+      // border: 2px solid black;
+      // background-color: black;
       cursor: pointer;
     }
-
   }
-
-  @media screen and (max-width:1000px) {
-
-    .Head_button {
-      display: none;
-
-      .sidebutton {
-        display: block;
-        position: relative;
-      }
-    }
-  }
-
-  @media screen and (max-width:800px) {
-    .Head_button {
-      display: block;
-
-      .sidebutton {
-        position: relative;
-
-
-        .symbol {
-          h1 {
-            font-weight: 600;
-          }
-        }
-      }
-    }
-  }
-
 
   .Head_logo {
     display: flex;
@@ -79,14 +46,14 @@
     flex-grow: 1;
 
     .logo {
-
-      WIDTH: 4REM;
+      font-size: 7rem;
       // MARGIN-TOP: 1.5REM;
-      MARGIN-RIGHT: 0.2rem;
+      margin-right: 0.2rem;
       transform: rotate(180deg);
       color: #704091;
+      display: flex;
+      align-items: flex-end;
     }
-
 
     .heading {
       text-align: center;
@@ -97,8 +64,13 @@
         font-weight: 600;
       }
     }
-
-    @media screen and (max-width:500px) {
+  }
+  @media screen and (max-width: 500px) {
+    .Head_logo {
+      .logo {
+        width: 4rem;
+        font-size: 4rem;
+      }
       .heading {
         line-height: 1.25rem;
 
@@ -106,14 +78,32 @@
           font-size: 18px;
         }
       }
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .Head_button {
+      display: none;
 
-      .logo {
-        img {
-          width: 3rem;
-        }
+      .sidebutton {
+        display: block;
+        position: relative;
       }
-
     }
   }
 
+  @media screen and (max-width: 800px) {
+    .Head_button {
+      display: block;
+
+      .sidebutton {
+        position: relative;
+
+        .symbol {
+          h1 {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
 }

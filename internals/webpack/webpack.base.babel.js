@@ -5,6 +5,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
+require('pretty-error').start();
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = options => ({
   mode: options.mode,
@@ -117,6 +119,7 @@ module.exports = options => ({
       },
     ],
   },
+
   plugins: options.plugins.concat([
     // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
     // inside your code for any environment checks; Terser will automatically
@@ -125,11 +128,15 @@ module.exports = options => ({
       NODE_ENV: 'development',
     }),
     new WebpackBar(),
+    new DashboardPlugin(),
   ]),
   resolve: {
     modules: ['node_modules', 'app'],
     extensions: ['.js', '.jsx', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main'],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window
