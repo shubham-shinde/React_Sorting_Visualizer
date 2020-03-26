@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../../sortest_path_reducer/grid_actions';
-import './Box.scss';
+import './index.scss';
 import { bindActionCreators } from 'redux';
 import $ from 'jquery';
 
 class Box extends React.Component {
   onHandleSelect = () => {
-    console.log('select', this.props.row, this.props.column);
     this.props.actions.add_element([this.props.row, this.props.column]);
   };
   render() {

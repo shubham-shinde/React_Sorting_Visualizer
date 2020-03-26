@@ -2,9 +2,9 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../sorting_reducer/list_actions';
-import './ButtonBar.scss';
 import FaPause from 'react-icons/lib/fa/pause.js';
 import FaPlay from 'react-icons/lib/fa/play.js';
+import './index.scss';
 
 class ButtonBar extends React.Component {
   render() {

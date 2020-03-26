@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../sortest_path_reducer/grid_actions';
-import './ButtonBar1.scss';
+import './index.scss';
 // import {
 //   ,
 //   IoMdSad,
@@ -41,7 +41,7 @@ class ButtonBar1 extends React.Component {
   handlePause = () => {
     const paused = this.props.grid.pause;
     console.log('pause', paused);
-    
+
     if(paused) {
       this.props.actions.algo_restart()
     }
@@ -151,7 +151,7 @@ class ButtonBar1 extends React.Component {
                 >
                   <span className="emoji">
                     {
-                      pause 
+                      pause
                       ? <IoMdPlay />
                       : <IoMdPause />
                     }
@@ -173,20 +173,20 @@ class ButtonBar1 extends React.Component {
                     className="pulse active end xxx"
                     onClick={this.props.actions.sorting_end}
                   >
-                    <div 
-                      onClick={() => this.props.actions.speed_change(200)} 
+                    <div
+                      onClick={() => this.props.actions.speed_change(200)}
                       className={wait_time===200 ? 'xx active' : 'xx'}
                       >
                       <span>1x</span>
                     </div>
-                    <div 
-                      onClick={() => this.props.actions.speed_change(50)} 
+                    <div
+                      onClick={() => this.props.actions.speed_change(50)}
                       className={wait_time===50 ? 'xx active' : 'xx'}
                       >
                       <span>2x</span>
                     </div>
-                    <div 
-                      onClick={() => this.props.actions.speed_change(1)} 
+                    <div
+                      onClick={() => this.props.actions.speed_change(1)}
                       className={wait_time===1 ? 'xx active' : 'xx'}
                       >
                       <span>4x</span>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux'
-import * as actions from '../../../sortest_path_reducer/grid_actions'
-import './Grid.scss';
-import Box from '../Box/Box.js';
-import '../ButtonBar1/ButtonBar1.js';
+import { connect } from 'react-redux';
+import * as actions from '../../../sortest_path_reducer/grid_actions';
+import './index.scss';
+import Box from '../Box';
+import '../ButtonBar';
 
 class Grid extends React.Component {
   render() {

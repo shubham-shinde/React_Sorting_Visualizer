@@ -1,8 +1,8 @@
 import React from 'react';
-import Piller from '../Piller/Piller';
+import Piller from '../Piller';
 import { connect } from 'react-redux';
+import './index.scss';
 
-import './SortingBox.scss';
 class SortingBox extends React.Component {
   render() {
     let list = this.props.list.list;

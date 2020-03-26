@@ -18,7 +18,7 @@ import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
 
 // Import root app
-import App from 'containers/App';
+import App from 'containers';
 
 // Load the favicon and the .htaccess file
 /* eslint-disable import/no-unresolved */
@@ -59,7 +59,7 @@ if (module.hot) {
   // Hot reloadable React components
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
-  module.hot.accept(['containers/App'], () => {
+  module.hot.accept(['containers'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
     render();
   });

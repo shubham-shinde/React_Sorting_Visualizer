@@ -1,10 +1,10 @@
 import React from 'react';
-import './Head.scss';
 import logo from '../../../images/logo.png';
 // import { DiGhostSmall } from 'react-icons/di';
 import DiGhostSmall from 'react-icons/lib/fa/bars';
 // import MdMenu from 'react-icons/lib/md/menu.js';
 import MdSort from 'react-icons/lib/md/sort.js';
+import './index.scss';
 class Head extends React.Component {
   render() {
     return (

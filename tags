@@ -308,87 +308,86 @@ STOP_SORTING	app/sorting_reducer/list_action_types.js	/^export const STOP_SORTIN
 openSansObserver	app/app.js	/^const openSansObserver = new FontFaceObserver('Open Sans', {});$/;"	V
 initialState	app/app.js	/^const initialState = {};$/;"	O
 render	app/app.js	/^const render = () => {$/;"	F
-actions	app/containers/ShortestPath/Grid/Grid.js	/^import * as actions from '..\/..\/..\/sortest_path_reducer\/grid_actions'$/;"	I
-Grid	app/containers/ShortestPath/Grid/Grid.js	/^class Grid extends React.Component {$/;"	C
-render	app/containers/ShortestPath/Grid/Grid.js	/^  render() {$/;"	M
-mapStateToProps	app/containers/ShortestPath/Grid/Grid.js	/^const mapStateToProps = state => ({$/;"	F
-mapDispatchToProps	app/containers/ShortestPath/Grid/Grid.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
-.grid	app/containers/ShortestPath/Grid/Grid.scss	/^.grid {$/;"	c
-.array	app/containers/ShortestPath/Grid/Grid.scss	/^  .array {$/;"	c
-.Head	app/containers/ShortestPath/Head1/Head1.scss	/^.Head {$/;"	c
-.Head_button	app/containers/ShortestPath/Head1/Head1.scss	/^  .Head_button {$/;"	c
-.sidebutton	app/containers/ShortestPath/Head1/Head1.scss	/^    .sidebutton {$/;"	c
-.symbol	app/containers/ShortestPath/Head1/Head1.scss	/^      .symbol {$/;"	c
-.sidebutton	app/containers/ShortestPath/Head1/Head1.scss	/^    .sidebutton:hover {$/;"	c
-.Head_button	app/containers/ShortestPath/Head1/Head1.scss	/^    .Head_button {$/;"	c
-.sidebutton	app/containers/ShortestPath/Head1/Head1.scss	/^      .sidebutton {$/;"	c
-.Head_button	app/containers/ShortestPath/Head1/Head1.scss	/^    .Head_button {$/;"	c
-.sidebutton	app/containers/ShortestPath/Head1/Head1.scss	/^      .sidebutton {$/;"	c
-.symbol	app/containers/ShortestPath/Head1/Head1.scss	/^        .symbol {$/;"	c
-h1	app/containers/ShortestPath/Head1/Head1.scss	/^          h1 {$/;"	t
-.Head_logo1	app/containers/ShortestPath/Head1/Head1.scss	/^  .Head_logo1 {$/;"	c
-.logo1	app/containers/ShortestPath/Head1/Head1.scss	/^    .logo1 {$/;"	c
-.heading1	app/containers/ShortestPath/Head1/Head1.scss	/^    .heading1 {$/;"	c
-h1	app/containers/ShortestPath/Head1/Head1.scss	/^      h1 {$/;"	t
-.heading1	app/containers/ShortestPath/Head1/Head1.scss	/^      .heading1 {$/;"	c
-h1	app/containers/ShortestPath/Head1/Head1.scss	/^        h1 {$/;"	t
-.logo1	app/containers/ShortestPath/Head1/Head1.scss	/^      .logo1 {$/;"	c
-Head1	app/containers/ShortestPath/Head1/Head1.js	/^class Head1 extends React.Component {$/;"	C
-render	app/containers/ShortestPath/Head1/Head1.js	/^  render() {$/;"	M
-.box	app/containers/ShortestPath/Box/Box.scss	/^.box {$/;"	c
-actions	app/containers/ShortestPath/Box/Box.js	/^import * as actions from '..\/..\/..\/sortest_path_reducer\/grid_actions';$/;"	I
-Box	app/containers/ShortestPath/Box/Box.js	/^class Box extends React.Component {$/;"	C
-onHandleSelect	app/containers/ShortestPath/Box/Box.js	/^  onHandleSelect = () => {$/;"	M
-render	app/containers/ShortestPath/Box/Box.js	/^  render() {$/;"	M
-color	app/containers/ShortestPath/Box/Box.js	/^    let color = '#0A0908';$/;"	V
-mapStateToProps	app/containers/ShortestPath/Box/Box.js	/^const mapStateToProps = state => ({});$/;"	F
-mapDispatchToProps	app/containers/ShortestPath/Box/Box.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
-actions	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^import * as actions from '..\/..\/..\/sortest_path_reducer\/grid_actions';$/;"	I
-ButtonBar1	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^class ButtonBar1 extends React.Component {$/;"	C
-constructor	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^  constructor(props) {$/;"	M
-state	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^    this.state = {$/;"	P
-pause	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^      pause: false,$/;"	P
-searching	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^      searching: false,$/;"	P
-handlReset	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^  handlReset = () => {$/;"	M
-pause	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^      pause: false,$/;"	P
-searching	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^      searching: false,$/;"	P
-handlePause	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^  handlePause = () => {$/;"	M
-if	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^    if(paused) {$/;"	M
-handleSearch	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^  handleSearch = () => {$/;"	M
-render	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^  render() {$/;"	M
-mapStateToProps	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^const mapStateToProps = state => ({$/;"	F
-mapDispatchToProps	app/containers/ShortestPath/ButtonBar1/ButtonBar1.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
-.button1	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.button1 {$/;"	c
-.X1	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^  .X1 {$/;"	c
-.X1_1	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .X1_1 {$/;"	c
-.pp	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .pp {$/;"	c
-.end	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .end {$/;"	c
-.X1_2	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .X1_2 {$/;"	c
-button	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      button {$/;"	t
-.speed1	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .speed1 {$/;"	c
-span	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      span {$/;"	t
-.emoji	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .emoji {$/;"	c
-.active	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .active {$/;"	c
-.active	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .active:hover {$/;"	c
-.end	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .end {$/;"	c
-.raise	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .raise:hover,$/;"	c
-.raise	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      .raise:focus {$/;"	c
-.pulse	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .pulse:hover,$/;"	c
-.pulse	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .pulse:focus {$/;"	c
-.xxx	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^  .xxx {$/;"	c
-.xx	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .xx {$/;"	c
-span	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^      span {$/;"	t
-.active	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .active {$/;"	c
-.xx	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^    .xx:hover {$/;"	c
-.X	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.X {$/;"	c
-.active	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.active {$/;"	c
-.active	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.active:hover {$/;"	c
-.end	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.end {$/;"	c
-.raise	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.raise:hover,$/;"	c
-.raise	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.raise:focus {$/;"	c
-.pulse	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.pulse:hover,$/;"	c
-.pulse	app/containers/ShortestPath/ButtonBar1/ButtonBar1.scss	/^.pulse:focus {$/;"	c
-NotFound	app/containers/NotFoundPage/NotFound.js	/^export default function NotFound() {$/;"	E
+Head1	app/containers/ShortestPath/Head/index.js	/^class Head1 extends React.Component {$/;"	C
+render	app/containers/ShortestPath/Head/index.js	/^  render() {$/;"	M
+.Head	app/containers/ShortestPath/Head/index.scss	/^.Head {$/;"	c
+.Head_button	app/containers/ShortestPath/Head/index.scss	/^  .Head_button {$/;"	c
+.sidebutton	app/containers/ShortestPath/Head/index.scss	/^    .sidebutton {$/;"	c
+.symbol	app/containers/ShortestPath/Head/index.scss	/^      .symbol {$/;"	c
+.sidebutton	app/containers/ShortestPath/Head/index.scss	/^    .sidebutton:hover {$/;"	c
+.Head_button	app/containers/ShortestPath/Head/index.scss	/^    .Head_button {$/;"	c
+.sidebutton	app/containers/ShortestPath/Head/index.scss	/^      .sidebutton {$/;"	c
+.Head_button	app/containers/ShortestPath/Head/index.scss	/^    .Head_button {$/;"	c
+.sidebutton	app/containers/ShortestPath/Head/index.scss	/^      .sidebutton {$/;"	c
+.symbol	app/containers/ShortestPath/Head/index.scss	/^        .symbol {$/;"	c
+h1	app/containers/ShortestPath/Head/index.scss	/^          h1 {$/;"	t
+.Head_logo1	app/containers/ShortestPath/Head/index.scss	/^  .Head_logo1 {$/;"	c
+.logo1	app/containers/ShortestPath/Head/index.scss	/^    .logo1 {$/;"	c
+.heading1	app/containers/ShortestPath/Head/index.scss	/^    .heading1 {$/;"	c
+h1	app/containers/ShortestPath/Head/index.scss	/^      h1 {$/;"	t
+.heading1	app/containers/ShortestPath/Head/index.scss	/^      .heading1 {$/;"	c
+h1	app/containers/ShortestPath/Head/index.scss	/^        h1 {$/;"	t
+.logo1	app/containers/ShortestPath/Head/index.scss	/^      .logo1 {$/;"	c
+actions	app/containers/ShortestPath/Grid/index.js	/^import * as actions from '..\/..\/..\/sortest_path_reducer\/grid_actions';$/;"	I
+Grid	app/containers/ShortestPath/Grid/index.js	/^class Grid extends React.Component {$/;"	C
+render	app/containers/ShortestPath/Grid/index.js	/^  render() {$/;"	M
+mapStateToProps	app/containers/ShortestPath/Grid/index.js	/^const mapStateToProps = state => ({$/;"	F
+mapDispatchToProps	app/containers/ShortestPath/Grid/index.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
+.grid	app/containers/ShortestPath/Grid/index.scss	/^.grid {$/;"	c
+.array	app/containers/ShortestPath/Grid/index.scss	/^  .array {$/;"	c
+actions	app/containers/ShortestPath/ButtonBar/index.js	/^import * as actions from '..\/..\/..\/sortest_path_reducer\/grid_actions';$/;"	I
+ButtonBar1	app/containers/ShortestPath/ButtonBar/index.js	/^class ButtonBar1 extends React.Component {$/;"	C
+constructor	app/containers/ShortestPath/ButtonBar/index.js	/^  constructor(props) {$/;"	M
+state	app/containers/ShortestPath/ButtonBar/index.js	/^    this.state = {$/;"	P
+pause	app/containers/ShortestPath/ButtonBar/index.js	/^      pause: false,$/;"	P
+searching	app/containers/ShortestPath/ButtonBar/index.js	/^      searching: false,$/;"	P
+handlReset	app/containers/ShortestPath/ButtonBar/index.js	/^  handlReset = () => {$/;"	M
+pause	app/containers/ShortestPath/ButtonBar/index.js	/^      pause: false,$/;"	P
+searching	app/containers/ShortestPath/ButtonBar/index.js	/^      searching: false,$/;"	P
+handlePause	app/containers/ShortestPath/ButtonBar/index.js	/^  handlePause = () => {$/;"	M
+if	app/containers/ShortestPath/ButtonBar/index.js	/^    if(paused) {$/;"	M
+handleSearch	app/containers/ShortestPath/ButtonBar/index.js	/^  handleSearch = () => {$/;"	M
+render	app/containers/ShortestPath/ButtonBar/index.js	/^  render() {$/;"	M
+mapStateToProps	app/containers/ShortestPath/ButtonBar/index.js	/^const mapStateToProps = state => ({$/;"	F
+mapDispatchToProps	app/containers/ShortestPath/ButtonBar/index.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
+.button1	app/containers/ShortestPath/ButtonBar/index.scss	/^.button1 {$/;"	c
+.X1	app/containers/ShortestPath/ButtonBar/index.scss	/^  .X1 {$/;"	c
+.X1_1	app/containers/ShortestPath/ButtonBar/index.scss	/^    .X1_1 {$/;"	c
+.pp	app/containers/ShortestPath/ButtonBar/index.scss	/^      .pp {$/;"	c
+.end	app/containers/ShortestPath/ButtonBar/index.scss	/^      .end {$/;"	c
+.X1_2	app/containers/ShortestPath/ButtonBar/index.scss	/^    .X1_2 {$/;"	c
+button	app/containers/ShortestPath/ButtonBar/index.scss	/^      button {$/;"	t
+.speed1	app/containers/ShortestPath/ButtonBar/index.scss	/^    .speed1 {$/;"	c
+span	app/containers/ShortestPath/ButtonBar/index.scss	/^      span {$/;"	t
+.emoji	app/containers/ShortestPath/ButtonBar/index.scss	/^      .emoji {$/;"	c
+.active	app/containers/ShortestPath/ButtonBar/index.scss	/^      .active {$/;"	c
+.active	app/containers/ShortestPath/ButtonBar/index.scss	/^      .active:hover {$/;"	c
+.end	app/containers/ShortestPath/ButtonBar/index.scss	/^      .end {$/;"	c
+.raise	app/containers/ShortestPath/ButtonBar/index.scss	/^      .raise:hover,$/;"	c
+.raise	app/containers/ShortestPath/ButtonBar/index.scss	/^      .raise:focus {$/;"	c
+.pulse	app/containers/ShortestPath/ButtonBar/index.scss	/^    .pulse:hover,$/;"	c
+.pulse	app/containers/ShortestPath/ButtonBar/index.scss	/^    .pulse:focus {$/;"	c
+.xxx	app/containers/ShortestPath/ButtonBar/index.scss	/^  .xxx {$/;"	c
+.xx	app/containers/ShortestPath/ButtonBar/index.scss	/^    .xx {$/;"	c
+span	app/containers/ShortestPath/ButtonBar/index.scss	/^      span {$/;"	t
+.active	app/containers/ShortestPath/ButtonBar/index.scss	/^    .active {$/;"	c
+.xx	app/containers/ShortestPath/ButtonBar/index.scss	/^    .xx:hover {$/;"	c
+.X	app/containers/ShortestPath/ButtonBar/index.scss	/^.X {$/;"	c
+.active	app/containers/ShortestPath/ButtonBar/index.scss	/^.active {$/;"	c
+.active	app/containers/ShortestPath/ButtonBar/index.scss	/^.active:hover {$/;"	c
+.end	app/containers/ShortestPath/ButtonBar/index.scss	/^.end {$/;"	c
+.raise	app/containers/ShortestPath/ButtonBar/index.scss	/^.raise:hover,$/;"	c
+.raise	app/containers/ShortestPath/ButtonBar/index.scss	/^.raise:focus {$/;"	c
+.pulse	app/containers/ShortestPath/ButtonBar/index.scss	/^.pulse:hover,$/;"	c
+.pulse	app/containers/ShortestPath/ButtonBar/index.scss	/^.pulse:focus {$/;"	c
+actions	app/containers/ShortestPath/Box/index.js	/^import * as actions from '..\/..\/..\/sortest_path_reducer\/grid_actions';$/;"	I
+Box	app/containers/ShortestPath/Box/index.js	/^class Box extends React.Component {$/;"	C
+onHandleSelect	app/containers/ShortestPath/Box/index.js	/^  onHandleSelect = () => {$/;"	M
+render	app/containers/ShortestPath/Box/index.js	/^  render() {$/;"	M
+color	app/containers/ShortestPath/Box/index.js	/^    let color = '#0A0908';$/;"	V
+mapStateToProps	app/containers/ShortestPath/Box/index.js	/^const mapStateToProps = state => ({});$/;"	F
+mapDispatchToProps	app/containers/ShortestPath/Box/index.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
+.box	app/containers/ShortestPath/Box/index.scss	/^.box {$/;"	c
 .Head	app/containers/SortingPage/Head/Head.scss	/^.Head {$/;"	c
 .Head_button	app/containers/SortingPage/Head/Head.scss	/^  .Head_button {$/;"	c
 .sidebutton	app/containers/SortingPage/Head/Head.scss	/^    .sidebutton {$/;"	c
@@ -456,73 +455,55 @@ AlgorithmList	app/containers/SortingPage/AlgorithmList/AlgorithmList.js	/^class 
 render	app/containers/SortingPage/AlgorithmList/AlgorithmList.js	/^  render() {$/;"	M
 mapStateToProps	app/containers/SortingPage/AlgorithmList/AlgorithmList.js	/^const mapStateToProps = state => ({$/;"	F
 mapDispatchToProps	app/containers/SortingPage/AlgorithmList/AlgorithmList.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
-SortingBox	app/containers/SortingPage/SortingBox/SortingBox.js	/^class SortingBox extends React.Component {$/;"	C
-render	app/containers/SortingPage/SortingBox/SortingBox.js	/^  render() {$/;"	M
-mapStateToProps	app/containers/SortingPage/SortingBox/SortingBox.js	/^const mapStateToProps = state => ({$/;"	F
 .father	app/containers/SortingPage/SortingBox/SortingBox.scss	/^.father {$/;"	c
 .SortingBox	app/containers/SortingPage/SortingBox/SortingBox.scss	/^  .SortingBox {$/;"	c
 .piller	app/containers/SortingPage/SortingBox/SortingBox.scss	/^    .piller {$/;"	c
 .ray	app/containers/SortingPage/SortingBox/SortingBox.scss	/^  .ray {$/;"	c
-render	app/containers/FeaturePage/FeaturePage.js	/^  render() {$/;"	M
-.features-page	app/containers/FeaturePage/FeaturePage.scss	/^.features-page {$/;"	c
-render	app/containers/HomePage/Homepage.js	/^  render() {$/;"	M
-Navbar	app/containers/Navbar/Navbar.js	/^class Navbar extends Component {$/;"	C
-render	app/containers/Navbar/Navbar.js	/^    render() { $/;"	M
-selectRouter	app/containers/App/selectors.js	/^const selectRouter = state => state.router;$/;"	F
-makeSelectLocation	app/containers/App/selectors.js	/^const makeSelectLocation = () =>$/;"	F
-App	app/containers/App/index.js	/^class App extends React.Component {$/;"	C
-constructor	app/containers/App/index.js	/^  constructor(props) {$/;"	M
-state	app/containers/App/index.js	/^    this.state = {$/;"	P
-sidebarOpen	app/containers/App/index.js	/^      sidebarOpen: false,$/;"	P
-componentWillMount	app/containers/App/index.js	/^  componentWillMount() {$/;"	M
-componentWillUnmount	app/containers/App/index.js	/^  componentWillUnmount() {$/;"	M
-onSetSidebarOpen	app/containers/App/index.js	/^  onSetSidebarOpen(open) {$/;"	M
-mediaQueryChanged	app/containers/App/index.js	/^  mediaQueryChanged() {$/;"	M
-render	app/containers/App/index.js	/^  render() {$/;"	M
-body	app/containers/App/index.scss	/^body {$/;"	t
-.grand-father	app/containers/App/index.scss	/^.grand-father {$/;"	c
-.big-godfather	app/containers/App/index.scss	/^  .big-godfather {$/;"	c
-.main	app/containers/App/index.scss	/^  .main {$/;"	c
-.godfather	app/containers/App/index.scss	/^  .godfather {$/;"	c
-.grand-father	app/containers/App/index.scss	/^  .grand-father {$/;"	c
-.godfather	app/containers/App/index.scss	/^    .godfather {$/;"	c
-.Header	app/containers/App/index.scss	/^    .Header {$/;"	c
-.Header	app/components/Header/Header.scss	/^.Header {$/;"	c
-.side-tray	app/components/Header/Header.scss	/^  .side-tray {$/;"	c
-.Head_logo	app/components/Header/Header.scss	/^    .Head_logo {$/;"	c
-.logo	app/components/Header/Header.scss	/^      .logo {$/;"	c
-img	app/components/Header/Header.scss	/^        img {$/;"	t
-.heading	app/components/Header/Header.scss	/^      .heading {$/;"	c
-h1	app/components/Header/Header.scss	/^        h1 {$/;"	t
-.content	app/components/Header/Header.scss	/^    .content {$/;"	c
-a	app/components/Header/Header.scss	/^      a {$/;"	t
-.content-li	app/components/Header/Header.scss	/^        .content-li {$/;"	c
-.tag	app/components/Header/Header.scss	/^          .tag {$/;"	c
-.active	app/components/Header/Header.scss	/^      .active {$/;"	c
-.content-li	app/components/Header/Header.scss	/^        .content-li {$/;"	c
-.open	app/components/Header/Header.scss	/^          .open {$/;"	c
-.tag	app/components/Header/Header.scss	/^          .tag {$/;"	c
-.profile	app/components/Header/Header.scss	/^    .profile {$/;"	c
-.github	app/components/Header/Header.scss	/^      .github {$/;"	c
-a	app/components/Header/Header.scss	/^        a {$/;"	t
-span	app/components/Header/Header.scss	/^        span {$/;"	t
-.portfolio	app/components/Header/Header.scss	/^      .portfolio {$/;"	c
-.text_p	app/components/Header/Header.scss	/^        .text_p {$/;"	c
-.text_p_link	app/components/Header/Header.scss	/^          .text_p_link {$/;"	c
-a	app/components/Header/Header.scss	/^            a {$/;"	t
-.text_p_link	app/components/Header/Header.scss	/^          .text_p_link:hover {$/;"	c
-a	app/components/Header/Header.scss	/^            a {$/;"	t
-.photo	app/components/Header/Header.scss	/^        .photo {$/;"	c
-img	app/components/Header/Header.scss	/^          img {$/;"	t
-.Header	app/components/Header/Header.scss	/^  .Header {$/;"	c
-.side-tray	app/components/Header/Header.scss	/^    .side-tray {$/;"	c
-.Head_logo	app/components/Header/Header.scss	/^      .Head_logo {$/;"	c
-.heading	app/components/Header/Header.scss	/^        .heading {$/;"	c
-h1	app/components/Header/Header.scss	/^          h1 {$/;"	t
-.logo	app/components/Header/Header.scss	/^        .logo {$/;"	c
-img	app/components/Header/Header.scss	/^          img {$/;"	t
-Footer	app/components/Footer/Footer.js	/^function Footer() {$/;"	F
-.Footer	app/components/Footer/Footer.scss	/^.Footer {$/;"	c
+selectRouter	app/containers/selectors.js	/^const selectRouter = state => state.router;$/;"	F
+makeSelectLocation	app/containers/selectors.js	/^const makeSelectLocation = () =>$/;"	F
+body	app/containers/index.scss	/^body {$/;"	t
+.grand-father	app/containers/index.scss	/^.grand-father {$/;"	c
+.big-godfather	app/containers/index.scss	/^  .big-godfather {$/;"	c
+.main	app/containers/index.scss	/^  .main {$/;"	c
+.godfather	app/containers/index.scss	/^  .godfather {$/;"	c
+.grand-father	app/containers/index.scss	/^  .grand-father {$/;"	c
+.godfather	app/containers/index.scss	/^    .godfather {$/;"	c
+.Header	app/containers/index.scss	/^    .Header {$/;"	c
+Header	app/components/Header/index.js	/^function Header() {$/;"	F
+.Header	app/components/Header/index.scss	/^.Header {$/;"	c
+.side-tray	app/components/Header/index.scss	/^  .side-tray {$/;"	c
+.Head_logo	app/components/Header/index.scss	/^    .Head_logo {$/;"	c
+.logo	app/components/Header/index.scss	/^      .logo {$/;"	c
+img	app/components/Header/index.scss	/^        img {$/;"	t
+.heading	app/components/Header/index.scss	/^      .heading {$/;"	c
+h1	app/components/Header/index.scss	/^        h1 {$/;"	t
+.content	app/components/Header/index.scss	/^    .content {$/;"	c
+a	app/components/Header/index.scss	/^      a {$/;"	t
+.content-li	app/components/Header/index.scss	/^        .content-li {$/;"	c
+.tag	app/components/Header/index.scss	/^          .tag {$/;"	c
+.active	app/components/Header/index.scss	/^      .active {$/;"	c
+.content-li	app/components/Header/index.scss	/^        .content-li {$/;"	c
+.open	app/components/Header/index.scss	/^          .open {$/;"	c
+.tag	app/components/Header/index.scss	/^          .tag {$/;"	c
+.profile	app/components/Header/index.scss	/^    .profile {$/;"	c
+.github	app/components/Header/index.scss	/^      .github {$/;"	c
+a	app/components/Header/index.scss	/^        a {$/;"	t
+span	app/components/Header/index.scss	/^        span {$/;"	t
+.portfolio	app/components/Header/index.scss	/^      .portfolio {$/;"	c
+.text_p	app/components/Header/index.scss	/^        .text_p {$/;"	c
+.text_p_link	app/components/Header/index.scss	/^          .text_p_link {$/;"	c
+a	app/components/Header/index.scss	/^            a {$/;"	t
+.text_p_link	app/components/Header/index.scss	/^          .text_p_link:hover {$/;"	c
+a	app/components/Header/index.scss	/^            a {$/;"	t
+.photo	app/components/Header/index.scss	/^        .photo {$/;"	c
+img	app/components/Header/index.scss	/^          img {$/;"	t
+.Header	app/components/Header/index.scss	/^  .Header {$/;"	c
+.side-tray	app/components/Header/index.scss	/^    .side-tray {$/;"	c
+.Head_logo	app/components/Header/index.scss	/^      .Head_logo {$/;"	c
+.heading	app/components/Header/index.scss	/^        .heading {$/;"	c
+h1	app/components/Header/index.scss	/^          h1 {$/;"	t
+.logo	app/components/Header/index.scss	/^        .logo {$/;"	c
+img	app/components/Header/index.scss	/^          img {$/;"	t
 GlobalStyle	app/global-styles.js	/^const GlobalStyle = createGlobalStyle`$/;"	S
 configureAppStore	app/configureStore.js	/^export default function configureAppStore(initialState = {}, history) {$/;"	E
 reduxSagaMonitorOptions	app/configureStore.js	/^  const reduxSagaMonitorOptions = {};$/;"	O
@@ -662,4 +643,34 @@ plugins	babel.config.js	/^      plugins: [$/;"	P
 React_Sorting_Visualizer	README.md	/^## React_Sorting_Visualizer$/;"	h
 Types Of Sorting Technique	README.md	/^## Types Of Sorting Technique$/;"	h
 Web View	README.md	/^### Web View$/;"	h
-Header	app/components/Header/Header.js	/^function Header() {$/;"	F
+actions	app/containers/SortingPage/ButtonBar/index.js	/^import * as actions from '..\/..\/..\/sorting_reducer\/list_actions';$/;"	I
+ButtonBar	app/containers/SortingPage/ButtonBar/index.js	/^class ButtonBar extends React.Component {$/;"	C
+render	app/containers/SortingPage/ButtonBar/index.js	/^  render() {$/;"	M
+mapStateToProps	app/containers/SortingPage/ButtonBar/index.js	/^const mapStateToProps = state => ({$/;"	F
+mapDispatchToProps	app/containers/SortingPage/ButtonBar/index.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
+actions	app/containers/SortingPage/AlgorithmList/index.js	/^import * as actions from '..\/..\/..\/sorting_reducer\/list_actions';$/;"	I
+AlgorithmList	app/containers/SortingPage/AlgorithmList/index.js	/^class AlgorithmList extends React.Component {$/;"	C
+render	app/containers/SortingPage/AlgorithmList/index.js	/^  render() {$/;"	M
+mapStateToProps	app/containers/SortingPage/AlgorithmList/index.js	/^const mapStateToProps = state => ({$/;"	F
+mapDispatchToProps	app/containers/SortingPage/AlgorithmList/index.js	/^const mapDispatchToProps = dispatch => ({$/;"	F
+Head	app/containers/SortingPage/Head/index.js	/^class Head extends React.Component {$/;"	C
+render	app/containers/SortingPage/Head/index.js	/^  render() {$/;"	M
+Piller	app/containers/SortingPage/Piller/index.js	/^class Piller extends React.Component {$/;"	C
+render	app/containers/SortingPage/Piller/index.js	/^  render() {$/;"	M
+color	app/containers/SortingPage/Piller/index.js	/^    let color = [$/;"	A
+flexGrow	app/containers/SortingPage/Piller/index.js	/^          flexGrow: 1,$/;"	P
+SortingBox	app/containers/SortingPage/SortingBox/SortingBox.js	/^class SortingBox extends React.Component {$/;"	C
+render	app/containers/SortingPage/SortingBox/SortingBox.js	/^  render() {$/;"	M
+mapStateToProps	app/containers/SortingPage/SortingBox/SortingBox.js	/^const mapStateToProps = state => ({$/;"	F
+SortingBox	app/containers/SortingPage/SortingBox/index.js	/^class SortingBox extends React.Component {$/;"	C
+render	app/containers/SortingPage/SortingBox/index.js	/^  render() {$/;"	M
+mapStateToProps	app/containers/SortingPage/SortingBox/index.js	/^const mapStateToProps = state => ({$/;"	F
+App	app/containers/index.js	/^class App extends React.Component {$/;"	C
+constructor	app/containers/index.js	/^  constructor(props) {$/;"	M
+state	app/containers/index.js	/^    this.state = {$/;"	P
+sidebarOpen	app/containers/index.js	/^      sidebarOpen: false,$/;"	P
+componentWillMount	app/containers/index.js	/^  componentWillMount() {$/;"	M
+componentWillUnmount	app/containers/index.js	/^  componentWillUnmount() {$/;"	M
+onSetSidebarOpen	app/containers/index.js	/^  onSetSidebarOpen(open) {$/;"	M
+mediaQueryChanged	app/containers/index.js	/^  mediaQueryChanged() {$/;"	M
+render	app/containers/index.js	/^  render() {$/;"	M

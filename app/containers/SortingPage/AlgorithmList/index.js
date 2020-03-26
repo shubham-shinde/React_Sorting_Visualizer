@@ -2,7 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../sorting_reducer/list_actions';
-import './AlgorithmList.scss';
+import './index.scss';
 
 class AlgorithmList extends React.Component {
   render() {

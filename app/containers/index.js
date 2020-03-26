@@ -8,30 +8,25 @@
  */
 
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import './index.scss';
 
-import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
-
 // Header and Footer
 import Header from 'components/Header';
-import Footer from 'components/Footer';
 
-//SIDEBAR
+// SIDEBAR
 import Sidebar from 'react-sidebar';
 
-import AlgorithmList from '../SortingPage/AlgorithmList/AlgorithmList';
-import SortingBox from '../SortingPage/SortingBox/SortingBox';
-import Head from '../SortingPage/Head/Head';
-import ButtonBox from '../SortingPage/ButtonBar/ButtonBar';
+import AlgorithmList from './SortingPage/AlgorithmList';
+import SortingBox from './SortingPage/SortingBox';
+import Head from './SortingPage/Head';
+import ButtonBox from './SortingPage/ButtonBar';
 
-import Grid from '../../containers/ShortestPath/Grid/Grid.js';
-import Head1 from '../../containers/ShortestPath/Head1/Head1.js';
-import ButtonBar1 from '../../containers/ShortestPath/ButtonBar1/ButtonBar1.js';
-import GlobalStyle from '../../global-styles';
+import Grid from './ShortestPath/Grid';
+import HeadShortestPath from './ShortestPath/Head';
+import ButtonBarShortestPath from './ShortestPath/ButtonBar';
+import GlobalStyle from '../global-styles';
 
 const mql = window.matchMedia(`(min-width: 1000px)`);
 
@@ -83,12 +78,11 @@ class App extends React.Component {
               <Switch>
                 <Route exact path="/pathfinding">
                   <div className="godfather">
-                    <Head1 onSetSidebarOpen={this.onSetSidebarOpen} />
-
+                    <HeadShortestPath onSetSidebarOpen={this.onSetSidebarOpen} />
                     <div className="main">
                       <Grid />
                     </div>
-                    <ButtonBar1 />
+                    <ButtonBarShortestPath />
                   </div>
                 </Route>
                 <Route exact path="/">

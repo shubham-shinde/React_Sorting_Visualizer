@@ -1,5 +1,5 @@
 import React from 'react';
-import './Head1.scss';
+import './index.scss';
 import logo from '../../../images/logo.png';
 import DiGhostSmall from 'react-icons/lib/fa/bars';
 import FaRoute from 'react-icons/lib/fa/delicious';

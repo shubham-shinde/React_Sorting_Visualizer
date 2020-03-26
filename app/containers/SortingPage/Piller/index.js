@@ -1,5 +1,5 @@
 import React from 'react';
-import './Piller.scss';
+import './index.scss';
 class Piller extends React.Component {
   render() {
     const { height, white, pointer } = this.props;
