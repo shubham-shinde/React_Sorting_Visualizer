@@ -8,3 +8,9 @@ stats.json
 .DS_Store
 npm-debug.log
 .idea
+
+#Ignore temp and swp files
+*~
+*.swp
+*.swo
+tags
