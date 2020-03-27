@@ -8,13 +8,13 @@ import '../ButtonBar';
 
 class Grid extends React.Component {
   render() {
-    const grid = this.props.grid.grid;
+    const { grid } = this.props.grid || {};
     return (
       <div className="grid">
         {grid.map(row => (
           <div className="array">
             {row.map(box => (
-                <Box {...box} />
+              <Box {...box} />
             ))}
           </div>
         ))}

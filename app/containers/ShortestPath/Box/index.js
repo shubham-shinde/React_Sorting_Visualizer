@@ -32,7 +32,6 @@ class Box extends React.Component {
       <div
         className="box"
         onClick={this.onHandleSelect}
-        // onTouchStartCapture={this.onHandleSelect}
         style={{ backgroundColor: color, borderRadius: '0.35rem' }}
       >
         <span>{/* <IoMdHappy /> */}</span>

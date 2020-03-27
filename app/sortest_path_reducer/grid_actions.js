@@ -47,7 +47,7 @@ const update_grid = async (getState, dispatch, grid) => {
 
 const pause_wait = async (getState) => {
     while (getState().grid.pause && getState().grid.finding) {
-        await waitTime(20);
+        await waitTime(10);
     }
 }
 
@@ -92,7 +92,7 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
     try {
         const state = getState().grid;
         console.log('algo start pathfinding');
-        
+
         let grid = [...state.grid];
         const srt = state.start;
         const ed = state.end;
@@ -104,14 +104,14 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
 
         grid = [...getState().grid.grid];
         const coll = [...grid[start.row-1]]
-        coll[start.column-1] = {...start};  
+        coll[start.column-1] = {...start};
         grid[start.row-1] = [...coll];
-        
+
         if(await check(getState, dispatch, grid)) return;
-        
+
         let queue = [
-            { 
-                point: {...start}, 
+            {
+                point: {...start},
                 path: [{...start}]
             }
         ];
@@ -123,13 +123,13 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
             const top = {...grid[tp.row-1][tp.column-1]}
             const path = [...queue[0].path];
             queue = [...queue.splice(1)];
-            
+
             top.queue = false;
             top.checked = true;
 
             grid = [...getState().grid.grid];
             const coll = [...grid[top.row-1]]
-            coll[top.column-1] = {...top};  
+            coll[top.column-1] = {...top};
             grid[top.row-1] = [...coll];
 
             if(await check(getState, dispatch, grid)) return;
@@ -144,35 +144,35 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
                     for(k in path) {
                         const kk = {...path[k]}
                         kk.path = true;
-                        
+
                         grid = [...getState().grid.grid];
                         const coll = [...grid[kk.row-1]]
-                        coll[kk.column-1] = {...kk};  
+                        coll[kk.column-1] = {...kk};
                         grid[kk.row-1] = [...coll];
                         if(await check(getState, dispatch, grid)) return;
                     }
-                    
+
                     dispatch(algo_pause());
                     return;
                 };
                 if(curr.checked || curr.queue || curr.clog) continue;
                 const new_path = [...path, {...curr}];
-                
-                
+
+
                 queue = [
-                    ...queue, 
-                    { 
-                        point : {...curr}, 
+                    ...queue,
+                    {
+                        point : {...curr},
                         path: [...new_path]
                     }
                 ];
                 curr.queue = true;
-                
+
                 grid = [...getState().grid.grid];
                 const coll = [...grid[curr.row-1]]
-                coll[curr.column-1] = {...curr};  
+                coll[curr.column-1] = {...curr};
                 grid[curr.row-1] = [...coll];
-                
+
                 if(await check(getState, dispatch, grid)) return;
             }
             // queue = [...queue];
