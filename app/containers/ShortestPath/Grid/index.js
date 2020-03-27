@@ -6,7 +6,10 @@ import './index.scss';
 import Box from '../Box';
 import '../ButtonBar';
 
-class Grid extends React.Component {
+class Grid extends React.PureComponent {
+
+  shouldComponentUpdate = () => false
+
   render() {
     const { grid } = this.props.grid || {};
     return (
@@ -27,8 +30,4 @@ const mapStateToProps = state => ({
   grid: state.grid,
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Grid);
+export default connect(mapStateToProps)(Grid);

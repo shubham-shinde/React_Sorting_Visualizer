@@ -5,7 +5,7 @@ import './index.scss';
 import { bindActionCreators } from 'redux';
 import $ from 'jquery';
 
-class Box extends React.Component {
+class Box extends React.PureComponent {
   onHandleSelect = () => {
     this.props.actions.add_element([this.props.row, this.props.column]);
   };
@@ -40,7 +40,10 @@ class Box extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = (state, currState, stae2) => {
+  const { row, column } = currState;
+  return { ...state.grid.grid[row-1][column-1] }
+};
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),

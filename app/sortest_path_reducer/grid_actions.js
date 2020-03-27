@@ -47,7 +47,7 @@ const update_grid = async (getState, dispatch, grid) => {
 
 const pause_wait = async (getState) => {
     while (getState().grid.pause && getState().grid.finding) {
-        await waitTime(10);
+        await waitTime(5);
     }
 }
 
@@ -91,7 +91,6 @@ const surrounding_point = (grid, point) => {
 export const pathfinding_algo = () => async (dispatch, getState) => {
     try {
         const state = getState().grid;
-        console.log('algo start pathfinding');
 
         let grid = [...state.grid];
         const srt = state.start;
@@ -117,7 +116,6 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
         ];
         let k = 0
         while(queue.length > 0) {
-            console.log('itr');
             const tp = {...queue[0].point};
             grid = [...getState().grid.grid];
             const top = {...grid[tp.row-1][tp.column-1]}
