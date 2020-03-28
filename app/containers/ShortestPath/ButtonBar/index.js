@@ -3,13 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../sortest_path_reducer/grid_actions';
 import './index.scss';
-// import {
-//   ,
-//   IoMdSad,
-//   IoIosPlay,
-//   IoMdPlay,
-//   IoMdPause,
-// } from 'react-icons/io';
 import IoMdHappy from 'react-icons/lib/io/happy.js';
 import IoMdPlay from 'react-icons/lib/io/play.js';
 import IoMdPause from 'react-icons/lib/io/pause';
@@ -17,7 +10,8 @@ import IoMdSad from 'react-icons/lib/io/sad';
 import GiGhost from 'react-icons/lib/fa/empire';
 import FaStart from 'react-icons/lib/fa/angle-right';
 import FaStop from 'react-icons/lib/fa/bullseye';
-class ButtonBar1 extends React.Component {
+
+class ButtonBarPath extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -264,4 +258,4 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ButtonBar1);
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonBarPath);

@@ -9,6 +9,7 @@ class Box extends React.PureComponent {
   onHandleSelect = () => {
     this.props.actions.add_element([this.props.row, this.props.column]);
   };
+
   render() {
     const {
       start,
