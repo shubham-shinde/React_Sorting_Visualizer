@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../sortest_path_reducer/grid_actions';
+import DropDown from '../../../components/common/components/dropdown.js'
 import './index.scss';
 import IoMdHappy from 'react-icons/lib/io/happy.js';
 import IoMdPlay from 'react-icons/lib/io/play.js';
@@ -55,6 +56,19 @@ class ButtonBarPath extends React.Component {
       actv_end_btn,
       actv_clog_btn,
     } = this.props.grid;
+
+    const dropdownList = [
+      {
+        id: 2343,
+        title: "Dijkastra's",
+        click: this.props.actions.pathfinding_algo
+      },
+      {
+        id: 35345,
+        title: "A*(Manhattan)",
+        click: this.props.actions.a_star_algo
+      }
+    ]
 
     return (
       <div className="button1">
@@ -110,26 +124,7 @@ class ButtonBarPath extends React.Component {
                     <GiGhost />
                   </span>
                 </button>
-                <button
-                  className="speed1 pulse active "
-                  style={{ color: 'oramge', background: '#98356d' }}
-                  onClick={this.props.actions.pathfinding_algo}
-                >
-                  <span>START</span>
-                  <span className="emoji">
-                    <FaStart />
-                  </span>
-                </button>
-                {/* <button
-                  className="speed1 pulse active "
-                  style={{ color: 'oramge', background: '#98356d' }}
-                  // onClick={this.props.actions.pathfinding_algo}
-                >
-                  <span>RESET</span>
-                  <span className="emoji">
-                    <FaStop />
-                  </span>
-                </button> */}
+                <DropDown headerTitle="Algorithms" list={dropdownList}/>
               </div>
             ) : (
               <div style={{ display: 'flex', flexGrow: '1' }}>
@@ -138,7 +133,6 @@ class ButtonBarPath extends React.Component {
                   style={{
                     color: 'oramge',
                     width: '2rem',
-                    // border: '4px solid #95386d',
                     background: '#95386d',
                   }}
                   onClick={this.handlePause}
@@ -146,8 +140,8 @@ class ButtonBarPath extends React.Component {
                   <span className="emoji">
                     {
                       pause
-                      ? <IoMdPlay />
-                      : <IoMdPause />
+                        ? <IoMdPlay />
+                        : <IoMdPause />
                     }
                   </span>
                 </button>
@@ -155,7 +149,6 @@ class ButtonBarPath extends React.Component {
                   className="speed1 pulse active"
                   onClick={this.props.actions.algo_end}
                   style={{ color: 'oramge', background: '#98356d' }}
-                  // onClick={this.props.actions.pathfinding_algo}
                 >
                   <span>END</span>
                   {/* <span className="emoji">
@@ -170,79 +163,25 @@ class ButtonBarPath extends React.Component {
                     <div
                       onClick={() => this.props.actions.speed_change(200)}
                       className={wait_time===200 ? 'xx active' : 'xx'}
-                      >
+                    >
                       <span>1x</span>
                     </div>
                     <div
                       onClick={() => this.props.actions.speed_change(50)}
                       className={wait_time===50 ? 'xx active' : 'xx'}
-                      >
+                    >
                       <span>2x</span>
                     </div>
                     <div
                       onClick={() => this.props.actions.speed_change(1)}
                       className={wait_time===1 ? 'xx active' : 'xx'}
-                      >
+                    >
                       <span>4x</span>
                     </div>
                   </button>
                 </div>
               </div>
             )}
-            {/* <div>
-              <button
-                className="speed1 pulse active "
-                style={{ color: 'oramge', background: '#95386d' }}
-                onClick={this.handlReset}
-              >
-                <span>RESET</span>
-                <span className="emoji"></span>
-              </button>
-            </div> */}
-            {/* <button
-              className="speed1 pulse active end"
-              onClick={this.props.actions.sorting_end}
-              onClick={this.handleStart}
-              style={{ color: this.state.start }}
-            >
-              <span>BEGIN</span>
-              <span className="emoji">
-                <IoMdSad />
-              </span>
-            </button>
-
-            <button
-              className="speed1 pulse active end"
-              onClick={this.props.actions.sorting_end}
-              onClick={this.handleDest}
-              style={{ color: this.state.dest }}
-            >
-              <span>END</span>
-              <span className="emoji">
-                <IoMdHappy />
-              </span>
-            </button>
-
-            <button
-              className="speed1 pulse active end"
-              onClick={this.props.actions.sorting_end}
-              onClick={this.handleObst}
-              style={{ color: this.state.obst }}
-            >
-              <span>CLOG</span>
-              <span className="emoji">
-                <GiGhost />
-              </span>
-            </button>
-            <button
-              className="speed1 pulse active end"
-              style={{ color: 'oramge' }}
-            >
-              <span>START</span>
-              <span className="emoji">
-                <GiThreePointedShuriken />
-              </span>
-            </button> */}
           </div>
         </div>
       </div>
