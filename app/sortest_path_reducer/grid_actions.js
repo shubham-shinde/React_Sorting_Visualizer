@@ -95,6 +95,7 @@ export const pathfinding_algo = () => async (dispatch, getState) => {
     let grid = state.grid;
     const srt = state.start;
     const ed = state.end;
+    if(srt.length!=2 || ed.length!=2) return;
     dispatch(algo_start());
     let start = grid[srt[0]-1][srt[1]-1];
     let end = grid[ed[0]-1][ed[1]-1];
@@ -225,6 +226,7 @@ export const a_star_algo = () => async (dispatch, getState) => {
     let grid = state.grid;
     const srt = state.start;
     const ed = state.end;
+    if(srt.length!=2 || ed.length!=2) return;
     dispatch(algo_start());
     let start = grid[srt[0]-1][srt[1]-1];
     let end = grid[ed[0]-1][ed[1]-1];
