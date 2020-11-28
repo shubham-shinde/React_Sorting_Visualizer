@@ -124,7 +124,7 @@ class ButtonBarPath extends React.Component {
                     <GiGhost />
                   </span>
                 </button>
-                <DropDown headerTitle="Algorithms" list={dropdownList}/>
+                <DropDown headerTitle="Select Algo" list={dropdownList}/>
               </div>
             ) : (
               <div style={{ display: 'flex', flexGrow: '1' }}>
