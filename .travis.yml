@@ -16,7 +16,7 @@ before_install:
   - export DISPLAY=:99.0
 
 install:
-  - pnpm install
+  - npm install
 
 notifications:
   email:
