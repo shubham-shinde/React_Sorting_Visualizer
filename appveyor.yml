@@ -21,7 +21,7 @@ init:
 install:
   - ps: Install-Product node $env:nodejs_version
   - curl -L https://unpkg.com/@pnpm/self-installer | node
-  - pnpm install
+  - npm install
 
 # Disable automatic builds
 build: off
